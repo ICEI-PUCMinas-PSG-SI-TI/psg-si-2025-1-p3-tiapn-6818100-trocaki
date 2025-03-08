@@ -1,46 +1,59 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
-
+Este documento apresenta a concepção de um site destinado à compra, venda e troca de dispositivos eletrônicos usados, promovendo uma experiência segura e eficiente para os usuários.
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
+Com o avanço contínuo da tecnologia, os dispositivos móveis tornaram-se quase indispensáveis para as pessoas. No entanto, questões como a troca e o descarte desses aparelhos cresceram junto com sua popularidade. Muitos consumidores enfrentam dificuldades ao buscar um telefone usado para compra, seja pela falta de transparência nos preços, pela insegurança nas transações ou pelas limitações na comunicação com os vendedores. Além disso, empreendedores que desejam vender seus produtos enfrentam desafios na gestão do estoque, na divulgação eficiente dos aparelhos e na fidelização dos clientes.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
-
-> **Links Úteis**:
-> - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-> - [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-> - [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+1.3 Objetivo geral
+	Desenvolver um aplicativo para compra, venda e troca de dispositivos eletrônicos usados, proporcionando segurança, transparência e facilidade nas transações.
+1.3.1 Objetivos específicos
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
- 
-> **Links Úteis**:
-> - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
+* Criar um sistema web de classificação e avaliação de vendedores e compradores;
+* Implementar um sistema de pagamento seguro e garantias nas transações;
+* Desenvolver uma interface intuitiva e responsiva para facilitar a experiência do usuário;
+* Oferecer ferramentas de gestão para vendedores, como controle de estoque e histórico de vendas;
+* Promover a sustentabilidade através do reuso e descarte adequado de eletrônicos (justificativa).
+
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-> **Links Úteis**:
-> - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
+O desenvolvimento deste sistema é justificado por vários fatores relevantes para o mercado e para a sociedade, além da crescente demanda por plataformas seguras para a comercialização de eletrônicos usados, dado o aumento da compra de dispositivos recondicionados como uma alternativa mais econômica. Esse sistema está alinhado com a ODS 12 - Consumo e Produção responsável (ONU, 2025), que incentiva a redução do impacto ambiental por meio de práticas sustentáveis. A criação de um sistema que comercializa eletrônicos usados contribui diretamente para a economia circular prolongando o ciclo de vida desses dispositivos, além de garantir mais transparência e segurança nessa transação. A reutilização de aparelhos reforça o compromisso com um consumo mais consciente e responsável.
 
 ## Público-Alvo
+**Persona 1: João Silva (Comprador Casual)**
+* **Idade:** 28 anos
+* **Profissão:** Analista de Suporte Técnico
+* **Hobbies:** Jogos online, tecnologia, assistir séries
+* **Necessidades:**
+    * Adquirir eletrônicos usados em bom estado com preços acessíveis
+    * Ter segurança na compra, evitando fraudes
+    * Comparar preços e condições de diferentes vendedores
+* **Frustrações:**
+    * Dificuldade em confiar nos vendedores
+    * Falta de garantia nos produtos usados
+    * Preços pouco transparentes ou negociáveis
+* **Comportamento:**
+    * Pesquisa bastante antes de comprar
+    * Prefere plataformas com avaliações e históricos de vendedores
+    * Dá prioridade para pagamentos seguros
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
+**Persona 2: Mariana Costa (Vendedora Empreendedora)**
+* **Idade: 34 anos**
+* **Profissão:** Pequena empresária, dona de loja de eletrônicos usados
+* **Hobbies:** Empreendedorismo, e-commerce, tecnologia
+* **Necessidades:**
+    * Ampliar sua clientela e vender mais rápido
+    * Ter um sistema prático para gerenciar seu estoque
+    * Receber pagamentos de forma segura e evitar golpes
+* **Frustrações:**
+    * Dificuldade em alcançar novos clientes online
+    * Processos manuais para organizar estoque e preços
+    * Risco de calote ou compradores indecisos
+* **Comportamento:**
+    * Usa redes sociais e marketplaces para vender
+    * Gosta de plataformas com funcionalidades automatizadas
+    * Busca sempre formas de otimizar o tempo e vender mais
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
-
-> **Links Úteis**:
-> - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
-> - [Como definir o público alvo](https://exame.com/pme/5-dicas-essenciais-para-definir-o-publico-alvo-do-seu-negocio/)
-> - [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-> - [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
