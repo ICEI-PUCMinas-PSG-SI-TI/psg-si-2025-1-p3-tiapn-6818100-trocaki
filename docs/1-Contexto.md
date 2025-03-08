@@ -7,10 +7,10 @@ Com o avanço contínuo da tecnologia, os dispositivos móveis tornaram-se quase
 
 ## Objetivos
 
-1.3 Objetivo geral
+**Objetivo geral**
 	Desenvolver um aplicativo para compra, venda e troca de dispositivos eletrônicos usados, proporcionando segurança, transparência e facilidade nas transações.
-1.3.1 Objetivos específicos
-
+ 
+**Objetivos específicos:**
 * Criar um sistema web de classificação e avaliação de vendedores e compradores;
 * Implementar um sistema de pagamento seguro e garantias nas transações;
 * Desenvolver uma interface intuitiva e responsiva para facilitar a experiência do usuário;
@@ -20,7 +20,7 @@ Com o avanço contínuo da tecnologia, os dispositivos móveis tornaram-se quase
 
 ## Justificativa
 
-O desenvolvimento deste sistema é justificado por vários fatores relevantes para o mercado e para a sociedade, além da crescente demanda por plataformas seguras para a comercialização de eletrônicos usados, dado o aumento da compra de dispositivos recondicionados como uma alternativa mais econômica. Esse sistema está alinhado com a ODS 12 - Consumo e Produção responsável (ONU, 2025), que incentiva a redução do impacto ambiental por meio de práticas sustentáveis. A criação de um sistema que comercializa eletrônicos usados contribui diretamente para a economia circular prolongando o ciclo de vida desses dispositivos, além de garantir mais transparência e segurança nessa transação. A reutilização de aparelhos reforça o compromisso com um consumo mais consciente e responsável.
+O desenvolvimento deste sistema é justificado por vários fatores relevantes para o mercado e para a sociedade, além da crescente demanda por plataformas seguras para a comercialização de eletrônicos usados, dado o aumento da compra de dispositivos recondicionados como uma alternativa mais econômica. Esse sistema está alinhado com a <a href="https://brasil.un.org/pt-br/sdgs/12">ODS 12</a> - Consumo e Produção responsável (ONU, 2025), que incentiva a redução do impacto ambiental por meio de práticas sustentáveis. A criação de um sistema que comercializa eletrônicos usados contribui diretamente para a economia circular prolongando o ciclo de vida desses dispositivos, além de garantir mais transparência e segurança nessa transação. A reutilização de aparelhos reforça o compromisso com um consumo mais consciente e responsável.
 
 ## Público-Alvo
 **Persona 1: João Silva (Comprador Casual)**
