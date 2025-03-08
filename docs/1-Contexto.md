@@ -8,7 +8,7 @@ Com o avanço contínuo da tecnologia, os dispositivos móveis tornaram-se quase
 ## Objetivos
 
 **Objetivo geral**
-	Desenvolver um aplicativo para compra, venda e troca de dispositivos eletrônicos usados, proporcionando segurança, transparência e facilidade nas transações.
+* Desenvolver um aplicativo para compra, venda e troca de dispositivos eletrônicos usados, proporcionando segurança, transparência e facilidade nas transações.
  
 **Objetivos específicos:**
 * Criar um sistema web de classificação e avaliação de vendedores e compradores;
