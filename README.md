@@ -1,23 +1,25 @@
-# TÍTULO DO PROJETO
+# Trocaki
 
-`CURSO`
+`Sistemas de Informação`
 
-`DISCIPLINA`
+`Trabalho Interdisciplinar: Aplicações para Processos de Negócios`
 
-`SEMESTRE`
+`1º Semestre`
 
-Descrever resumidamente, em um ou dois parágrafos, o projeto que está sendo desenvolvido.
+Trocaki é um aplicativo para compra, venda e troca de dispositivos eletrônicos usados, proporcionando segurança, transparência e facilidade nas transações.
 
 ## Integrantes
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Anael Ferreira de Oliveira
+* Abel Rodrigues Louback Filho
+* Gabrielle Maia de Andrade Souza
+* Miguel Oliveira Faria
+* Pedro Ivo Barroso Garrido
+* Wagner Alexsander de Carvalho Viana
 
 ## Orientador
 
-* Nome completo do professor 1
+* Cleia Marcia Gomes Amaral
 
 ## Instruções de utilização
 
