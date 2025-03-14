@@ -10,16 +10,16 @@ A análise de personas também desempenha um papel fundamental nesta parte do do
 
 ## Personas
 
-1º FERNANDA LACERDA
+### 1º FERNANDA LACERDA
 Fernanda é uma mulher de 27 anos, de classe média e brasileira, que vive em Curitiba, Paraná. Graduada em Design Gráfico, atua como designer freelance, o que lhe permite explorar sua criatividade em diversos projetos. Apaixonada por arte, música, design e cultura pop, ela procura sempre um equilíbrio entre preço e qualidade, optando por produtos que ofereçam um design inovador, durabilidade e versatilidade. Criativa e comunicativa, seu estilo de vida é alternativo e conectado às tendências, sempre guiado por valores de autenticidade, respeito à diversidade e sustentabilidade.
 
-2º RICARDO AMARAL
+### 2º RICARDO AMARAL
 Ricardo é um homem de 38 anos, de classe média alta e brasileiro, que reside em Porto Alegre, RS. Formado em Engenharia, é empresário no setor de tecnologia e está sempre antenado nas últimas inovações. Fascinado por investimentos e networking, ele busca produtos de alta performance e inovação, investindo sem muita preocupação com o preço, desde que o custo esteja justificado pela qualidade e exclusividade. Com uma personalidade visionária e pragmática, Ricardo mantém um estilo de vida moderno e dinâmico, pautado pela ética profissional, responsabilidade social e ambiental.
 
-3º LUANA ANDRADE
+### 3º LUANA ANDRADE
 Luana é uma mulher de 31 anos, de classe média e brasileira, que mora em Salvador, Bahia. Pós-graduada em Comunicação Social, trabalha como jornalista e comunicadora digital, sempre engajada em questões sociais. Apaixonada pela cultura local, música, debates sobre justiça e literatura, ela valoriza produtos que ofereçam um bom custo-benefício sem abrir mão da qualidade. Luana busca produtos duráveis com bom suporte pós-compra, refletindo seu estilo de vida culturalmente rico e socialmente ativo. Empática, articulada e crítica, ela defende valores como justiça, igualdade, ética e o compromisso com a verdade.
 
-4º LARISSA BRANDÃO
+### 4º LARISSA BRANDÃO
 Larissa é uma mulher de 28 anos, de classe média, brasileira, que mora em Curitiba. Com formação em Comunicação e Marketing, ela empreendeu no ramo dos eletrônicos usados, lançando uma plataforma digital para a venda desses produtos. Apaixonada por design e inovação, Larissa seleciona dispositivos que combinam funcionalidade com estética moderna, sem abrir mão do equilíbrio entre qualidade e preço. Sempre antenada nas tendências do mercado, ela investe em estratégias digitais para promover seus produtos e fidelizar clientes, mantendo uma postura transparente e ética em todas as negociações.
 
 
