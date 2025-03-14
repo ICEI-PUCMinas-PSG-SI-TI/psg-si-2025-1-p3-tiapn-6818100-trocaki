@@ -2,12 +2,6 @@
 
 <span style="color:red">Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a></span>
 
-Esta seção tem como objetivo apresentar algumas especificações do projeto. A abordagem será centrada na experiência do usuário, com o intuito de entender as necessidades e expectativas de cada perfil que utilizará o site, incluindo compradores e vendedores.
-
-Utilizaremos o BPMN (Business Process Model and Notation) para mapear e documentar os processos de negócios envolvidos na plataforma, como o cadastro de usuários, a negociação de telefones e a realização de pagamentos. O uso do BPMN ajudará a criar um fluxo visual claro e bem estruturado, facilitando a compreensão dos processos do ponto de vista tanto técnico quanto do usuário, garantindo que todas as etapas da plataforma sejam abordadas de maneira eficiente e fluida.
-
-A análise de personas também desempenha um papel fundamental nesta parte do documento. A criação de personas, ou perfis fictícios de usuários, ajudará a representar as diversas necessidades e comportamentos dos usuários que interagem com o site. Cada persona tem seus objetivos e desafios específicos, e entender esses aspectos permitirá que a plataforma seja desenvolvida de forma a oferecer uma experiência mais personalizada e eficiente.
-
 ## Personas
 
 ### 1º Mariana Silva:
@@ -38,24 +32,29 @@ Thiago é um homem de 33 anos, de classe média, brasileiro, residente em Porto 
 
 Com base na análise das personas forma identificadas as seguintes histórias de usuários:
 
+### Compradores
+
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
 | Mariana | Visualizar e filtrar a listagem de produtos disponíveis para venda | Encontrar com mais facilidade o item que me interessa e efetuar a compra. |  
 | Fernanda | Enviar mensagens diretas ao vendedor | Esclarecer dúvidas sobre o produto antes de concluir a compra. |  
 | João | Adicionar produtos a uma lista de desejos | Acessá-los posteriormente de maneira rápida e prática. |  
 | Ricardo | Definir meus principais interesses dentro da plataforma | Receber ofertas personalizadas e relevantes para minhas necessidades. |  
+
+### Vendedores
+
+|EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
+|--------------------|------------------------------------|----------------------------------------|
 | Marcelo | Cadastrar meus produtos no sistema de forma simples e eficiente | Disponibilizá-los para potenciais compradores e aumentar minhas vendas. |  
 | Eduardo | Acompanhar o desempenho dos meus produtos cadastrados – quantidade de acessos e feedbacks | Otimizar minhas estratégias de venda. |  
 | Larissa | Notificar clientes interessados nos meus produtos | Aumentar o engajamento e potencializar as chances de venda. |  
 | Thiago | Aceitar ou recusar propostas de alteração de preço feitas pelos usuários | Negociar melhor os valores e aumentar as chances de venda. | 
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
 ## Requisitos
 
-Requisitos de uma aplicação são as condições, características ou funcionalidades que uma aplicação deve possuir para atender às necessidades dos usuários e às expectativas do negócio. Eles são essenciais para o desenvolvimento do software e são geralmente classificados em requisitos funcionais e requisitos não funcionais. Ambos os tipos de requisitos têm papel crucial no sucesso do projeto, mas abordam aspectos diferentes da aplicação.
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. 
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplica-se uma técnica de priorização de requisitos também detalhando como a técnica foi aplicada.
+A prioridade dos requisitos foi determinado de acordo com seu nível de importância para o funcionamento geral do sistema e também na ordem que deverão ser desenvolvidos.
 
 ### Requisitos Funcionais
 
@@ -79,22 +78,6 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-003| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge) |  ALTA | 
 |RNF-004| O site deve seguir as melhores práticas de UX/UI, com foco na simplicidade e clareza das informações. |  ALTA | 
 
-
-Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
-
-- [Requisitos Funcionais
- (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
- correspondem a uma funcionalidade que deve estar presente na
-  plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais
-  (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
-  correspondem a uma característica técnica, seja de usabilidade,
-  desempenho, confiabilidade, segurança ou outro (ex: suporte a
-  dispositivos iOS e Android).
-Lembre-se que cada requisito deve corresponder à uma e somente uma
-característica alvo da sua solução. Além disso, certifique-se de que
-todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
 ## Restrições
 
 O projeto está restrito pelos itens apresentados na tabela a seguir.
@@ -105,9 +88,3 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |02| Sem integração com redes sociais para login ou cadastro |
 |04| Sem comunicação ao vivo entre comprador e vendedor 
 |03| Sem integração com sistemas de pagamento, sendo susbtituídos apenas por simulações |
-
-Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
-
-> **Links Úteis**:
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
