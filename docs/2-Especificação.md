@@ -10,26 +10,29 @@ A análise de personas também desempenha um papel fundamental nesta parte do do
 
 ## Personas
 
-### 1º Fernanda Lacerda
+### 1º Mariana Silva:
+Mariana é uma mulher de 34 anos, de classe média alta e brasileira, residente em São Paulo. Graduada em Marketing Digital, atua como gerente de marketing em uma empresa renomada. Apaixonada por tecnologia, viagens internacionais, cultura contemporânea e redes sociais, ela valoriza produtos que ofereçam eficiência, inovação e um design moderno. Determinada e analítica, Mariana vive uma rotina urbana e dinâmica, sempre em busca de novas tendências e oportunidades, pautada por valores de integridade, responsabilidade social e sustentabilidade.
+
+### 2º João Viana:
+João é um homem de 45 anos, de classe baixa e brasileiro, que mora em Recife, Pernambuco. Com o ensino médio completo, trabalha como técnico em manutenção. Amante do futebol e de momentos com a família, João é prático e sempre busca o melhor custo-benefício em suas escolhas, preferindo produtos robustos que ofereçam garantia e assistência técnica acessível. Sua personalidade reservada e trabalhadora se reflete no seu estilo de vida focado na economia doméstica, valorizando honestidade, responsabilidade e o esforço do trabalho duro.
+
+### 3º Fernanda Carvalho:
 Fernanda é uma mulher de 27 anos, de classe média e brasileira, que vive em Curitiba, Paraná. Graduada em Design Gráfico, atua como designer freelance, o que lhe permite explorar sua criatividade em diversos projetos. Apaixonada por arte, música, design e cultura pop, ela procura sempre um equilíbrio entre preço e qualidade, optando por produtos que ofereçam um design inovador, durabilidade e versatilidade. Criativa e comunicativa, seu estilo de vida é alternativo e conectado às tendências, sempre guiado por valores de autenticidade, respeito à diversidade e sustentabilidade.
 
-### 2º Ricardo Amaral
+### 4º Ricardo Borba:
 Ricardo é um homem de 38 anos, de classe média alta e brasileiro, que reside em Porto Alegre, RS. Formado em Engenharia, é empresário no setor de tecnologia e está sempre antenado nas últimas inovações. Fascinado por investimentos e networking, ele busca produtos de alta performance e inovação, investindo sem muita preocupação com o preço, desde que o custo esteja justificado pela qualidade e exclusividade. Com uma personalidade visionária e pragmática, Ricardo mantém um estilo de vida moderno e dinâmico, pautado pela ética profissional, responsabilidade social e ambiental.
 
-### 3º Luana Andrade
-Luana é uma mulher de 31 anos, de classe média e brasileira, que mora em Salvador, Bahia. Pós-graduada em Comunicação Social, trabalha como jornalista e comunicadora digital, sempre engajada em questões sociais. Apaixonada pela cultura local, música, debates sobre justiça e literatura, ela valoriza produtos que ofereçam um bom custo-benefício sem abrir mão da qualidade. Luana busca produtos duráveis com bom suporte pós-compra, refletindo seu estilo de vida culturalmente rico e socialmente ativo. Empática, articulada e crítica, ela defende valores como justiça, igualdade, ética e o compromisso com a verdade.
+### 5º Eduardo Santana:
+Eduardo é um homem de 42 anos, de classe média, brasileiro, que mora em São Paulo. Formado em Administração, ele gerencia uma pequena loja especializada em eletrônicos usados, onde preza pela qualidade e durabilidade dos produtos que revende. Apaixonado por tecnologia, Eduardo busca constantemente dispositivos que ofereçam o melhor custo-benefício, equilibrando preços competitivos e garantias sólidas para seus clientes. Determinado e ético, ele valoriza a transparência nas transações e investe em um atendimento personalizado, refletindo um estilo de vida voltado para o empreendedorismo e a inovação.
 
-### 4º Larissa Bransão
+### 6º Marcelo Gonzaga:
+Marcelo é um homem de 50 anos, de classe média, brasileiro, que vive em Belo Horizonte. Formado em Administração com especialização em Logística, ele coordena uma rede de lojas de eletrônicos usados, focado na eficiência dos processos de venda e reposição de estoque. Apaixonado por tecnologia, Marcelo se dedica a oferecer produtos confiáveis e duráveis, sempre com preços justos e uma política de garantias que reforça a confiança dos clientes. Sua personalidade prática e ética se traduz em um estilo de vida comprometido com resultados e com a satisfação do consumidor.
+
+### 7º Larissa Trindade:
 Larissa é uma mulher de 28 anos, de classe média, brasileira, que mora em Curitiba. Com formação em Comunicação e Marketing, ela empreendeu no ramo dos eletrônicos usados, lançando uma plataforma digital para a venda desses produtos. Apaixonada por design e inovação, Larissa seleciona dispositivos que combinam funcionalidade com estética moderna, sem abrir mão do equilíbrio entre qualidade e preço. Sempre antenada nas tendências do mercado, ela investe em estratégias digitais para promover seus produtos e fidelizar clientes, mantendo uma postura transparente e ética em todas as negociações.
 
-
-> **Links Úteis**:
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Hotmart](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
-> - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
+### 8º Thiago Dias:
+Thiago é um homem de 33 anos, de classe média, brasileiro, residente em Porto Alegre. Formado em Engenharia Eletrônica, ele fundou uma startup que se dedica à revenda de dispositivos eletrônicos recondicionados, unindo tecnologia e sustentabilidade. Com um olhar inovador, Thiago é criterioso na seleção dos produtos, priorizando dispositivos que entreguem alto desempenho e garantia de qualidade. Sua personalidade empreendedora e visionária o impulsiona a buscar soluções que agreguem valor para os consumidores, sempre pautado por valores éticos, transparência e compromisso com práticas sustentáveis.
 
 ## Histórias de Usuários
 
@@ -37,21 +40,16 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Vendedor | Quero cadastrar os produtos no sistema | Para disponibilizá-los para potenciais clientes que desejam comprá-los |
-|Vendedor | Quero conseguir analisar os meus produtos cadastrados | Para acompanhar a quantidade de acessos e feedbacks |
-|Comprador | Quero ver e filtrar uma listagem de produtos a venda | Para conseguir achar aquele que me interessa e poder comprá-lo |
-|Comprador | Quero adicionar produtos a uma lista de desejos | Para poder acessá-los posteriormente sem muito esforço |
+| Mariana | Visualizar e filtrar a listagem de produtos disponíveis para venda | Encontrar com mais facilidade o item que me interessa e efetuar a compra. |  
+| Fernanda | Enviar mensagens diretas ao vendedor | Esclarecer dúvidas sobre o produto antes de concluir a compra. |  
+| João | Adicionar produtos a uma lista de desejos | Acessá-los posteriormente de maneira rápida e prática. |  
+| Ricardo | Definir meus principais interesses dentro da plataforma | Receber ofertas personalizadas e relevantes para minhas necessidades. |  
+| Marcelo | Cadastrar meus produtos no sistema de forma simples e eficiente | Disponibilizá-los para potenciais compradores e aumentar minhas vendas. |  
+| Eduardo | Acompanhar o desempenho dos meus produtos cadastrados – quantidade de acessos e feedbacks | Otimizar minhas estratégias de venda. |  
+| Larissa | Notificar clientes interessados nos meus produtos | Aumentar o engajamento e potencializar as chances de venda. |  
+| Thiago | Aceitar ou recusar propostas de alteração de preço feitas pelos usuários | Negociar melhor os valores e aumentar as chances de venda. | 
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
-
-> **Links Úteis**:
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-> - [User Stories: requisitos que humanos entendem](https://www.luiztools.com.br/post/user-stories-descricao-de-requisitos-que-humanos-entendem/)
-> - [Histórias de Usuários: mais exemplos](https://www.reqview.com/doc/user-stories-example.html)
-> - [9 Common User Story Mistakes](https://airfocus.com/blog/user-story-mistakes/)
-
-
 
 ## Requisitos
 
@@ -63,8 +61,14 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| | ALTA | 
-|RF-002| | MÉDIA |
+|RF-001| Disponibilizar uma vitrine de produtos com filtragem | ALTA | 
+|RF-002| Permitir o comprador enviar mensagens ao vendedor | BAIXA |
+|RF-003| Permitir o comprador adicionar produtos a sua lista de desejos | MÉDIA | 
+|RF-004| Permitir o comprador definir seus principais interesses de compra | MÉDIA |
+|RF-005| Permitir vendedor cadastrar produtos | ALTA | 
+|RF-006| Disponibilizar ao vendedor seus produtos cadastrados com seus respectivos números de acesso e comentários | BAIXA |
+|RF-007| Permitir vendedor enviar notificações para clientes que possuam interesse no tipo de produto que ele esteja vendendo | MÉDIA | 
+|RF-008| Permitir vendedor aceitar a alteração do processo do seu produto solicitada pelo cliente | MÉDIA |
 
 ### Requisitos não Funcionais
 
