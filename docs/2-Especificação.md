@@ -1,6 +1,6 @@
 # Especificações do Projeto
 
-<span style="color:red">Pré-requisitos: <a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
+<span style="color:red">Pré-requisitos: <a href="1-Contexto.md"> Documentação de Contexto</a></span>
 
 Esta seção tem como objetivo apresentar algumas especificações do projeto. A abordagem será centrada na experiência do usuário, com o intuito de entender as necessidades e expectativas de cada perfil que utilizará o site, incluindo compradores e vendedores.
 
