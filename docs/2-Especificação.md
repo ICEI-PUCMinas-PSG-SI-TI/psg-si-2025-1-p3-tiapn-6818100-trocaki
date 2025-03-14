@@ -2,9 +2,11 @@
 
 <span style="color:red">Pré-requisitos: <a href="01-Documentação de Contexto.md"> Documentação de Contexto</a></span>
 
-Definição do problema e ideia de solução a partir da perspectiva do usuário. É composta pela definição do  diagrama de personas, histórias de usuários, requisitos funcionais e não funcionais além das restrições do projeto.
+Esta seção tem como objetivo apresentar algumas especificações do projeto. A abordagem será centrada na experiência do usuário, com o intuito de entender as necessidades e expectativas de cada perfil que utilizará o site, incluindo compradores e vendedores.
 
-Apresente uma visão geral do que será abordado nesta parte do documento, enumerando as técnicas e/ou ferramentas utilizadas para realizar a especificações do projeto
+Utilizaremos o BPMN (Business Process Model and Notation) para mapear e documentar os processos de negócios envolvidos na plataforma, como o cadastro de usuários, a negociação de telefones e a realização de pagamentos. O uso do BPMN ajudará a criar um fluxo visual claro e bem estruturado, facilitando a compreensão dos processos do ponto de vista tanto técnico quanto do usuário, garantindo que todas as etapas da plataforma sejam abordadas de maneira eficiente e fluida.
+
+A análise de personas também desempenha um papel fundamental nesta parte do documento. A criação de personas, ou perfis fictícios de usuários, ajudará a representar as diversas necessidades e comportamentos dos usuários que interagem com o site. Cada persona tem seus objetivos e desafios específicos, e entender esses aspectos permitirá que a plataforma seja desenvolvida de forma a oferecer uma experiência mais personalizada e eficiente.
 
 ## Personas
 
@@ -44,14 +46,16 @@ Apresente aqui as histórias de usuário que são relevantes para o projeto de s
 
 ## Requisitos
 
-As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplicar uma técnica de priorização de requisitos e detalhar como a técnica foi aplicada.
+Requisitos de uma aplicação são as condições, características ou funcionalidades que uma aplicação deve possuir para atender às necessidades dos usuários e às expectativas do negócio. Eles são essenciais para o desenvolvimento do software e são geralmente classificados em requisitos funcionais e requisitos não funcionais. Ambos os tipos de requisitos têm papel crucial no sucesso do projeto, mas abordam aspectos diferentes da aplicação.
+
+As tabelas que se seguem apresentam os requisitos funcionais e não funcionais que detalham o escopo do projeto. Para determinar a prioridade de requisitos, aplica-se uma técnica de priorização de requisitos também detalhando como a técnica foi aplicada.
 
 ### Requisitos Funcionais
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Permitir que o usuário cadastre tarefas | ALTA | 
-|RF-002| Emitir um relatório de tarefas no mês   | MÉDIA |
+|RF-001| | ALTA | 
+|RF-002| | MÉDIA |
 
 ### Requisitos não Funcionais
 
@@ -60,6 +64,7 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 |RNF-001| O site deverá ser responsivo permitindo a visualização em um celular de forma adequada | ALTA | 
 |RNF-002| O site deve ter bom nível de contraste entre os elementos da tela em conformidade |  MÉDIA | 
 |RNF-003| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge) |  ALTA | 
+|RNF-004| O site deve seguir as melhores práticas de UX/UI, com foco na simplicidade e clareza das informações. |  ALTA | 
 
 
 Com base nas Histórias de Usuário, enumere os requisitos da sua solução. Classifique esses requisitos em dois grupos:
@@ -84,7 +89,9 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Não pode ser desenvolvido um módulo de backend        |
+|02| Sem integração com redes sociais para login ou cadastro |
+|04| Sem comunicação ao vivo entre comprador e vendedor 
+|03| Sem integração com sistemas de pagamento, sendo susbtituídos apenas por simulações |
 
 Enumere as restrições à sua solução. Lembre-se de que as restrições geralmente limitam a solução candidata.
 
