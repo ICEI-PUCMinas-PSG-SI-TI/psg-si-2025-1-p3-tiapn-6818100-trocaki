@@ -10,9 +10,18 @@ A análise de personas também desempenha um papel fundamental nesta parte do do
 
 ## Personas
 
-Pedro Paulo tem 26 anos, é arquiteto recém-formado e autônomo. Pensa em se desenvolver profissionalmente através de um mestrado fora do país, pois adora viajar, é solteiro e sempre quis fazer um intercâmbio. Está buscando uma agência que o ajude a encontrar universidades na Europa que aceitem alunos estrangeiros.
+1º FERNANDA LACERDA
+Fernanda é uma mulher de 27 anos, de classe média e brasileira, que vive em Curitiba, Paraná. Graduada em Design Gráfico, atua como designer freelance, o que lhe permite explorar sua criatividade em diversos projetos. Apaixonada por arte, música, design e cultura pop, ela procura sempre um equilíbrio entre preço e qualidade, optando por produtos que ofereçam um design inovador, durabilidade e versatilidade. Criativa e comunicativa, seu estilo de vida é alternativo e conectado às tendências, sempre guiado por valores de autenticidade, respeito à diversidade e sustentabilidade.
 
-Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos documentos disponibilizados na disciplina e/ou nos seguintes links:
+2º RICARDO AMARAL
+Ricardo é um homem de 38 anos, de classe média alta e brasileiro, que reside em Porto Alegre, RS. Formado em Engenharia, é empresário no setor de tecnologia e está sempre antenado nas últimas inovações. Fascinado por investimentos e networking, ele busca produtos de alta performance e inovação, investindo sem muita preocupação com o preço, desde que o custo esteja justificado pela qualidade e exclusividade. Com uma personalidade visionária e pragmática, Ricardo mantém um estilo de vida moderno e dinâmico, pautado pela ética profissional, responsabilidade social e ambiental.
+
+3º LUANA ANDRADE
+Luana é uma mulher de 31 anos, de classe média e brasileira, que mora em Salvador, Bahia. Pós-graduada em Comunicação Social, trabalha como jornalista e comunicadora digital, sempre engajada em questões sociais. Apaixonada pela cultura local, música, debates sobre justiça e literatura, ela valoriza produtos que ofereçam um bom custo-benefício sem abrir mão da qualidade. Luana busca produtos duráveis com bom suporte pós-compra, refletindo seu estilo de vida culturalmente rico e socialmente ativo. Empática, articulada e crítica, ela defende valores como justiça, igualdade, ética e o compromisso com a verdade.
+
+4º LARISSA BRANDÃO
+Larissa é uma mulher de 28 anos, de classe média, brasileira, que mora em Curitiba. Com formação em Comunicação e Marketing, ela empreendeu no ramo dos eletrônicos usados, lançando uma plataforma digital para a venda desses produtos. Apaixonada por design e inovação, Larissa seleciona dispositivos que combinam funcionalidade com estética moderna, sem abrir mão do equilíbrio entre qualidade e preço. Sempre antenada nas tendências do mercado, ela investe em estratégias digitais para promover seus produtos e fidelizar clientes, mantendo uma postura transparente e ética em todas as negociações.
+
 
 > **Links Úteis**:
 > - [Rock Content](https://rockcontent.com/blog/personas/)
@@ -21,8 +30,6 @@ Enumere e detalhe as personas da sua solução. Para tanto, baseie-se tanto nos 
 > - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
 > - [Mapa de Empatia](https://resultadosdigitais.com.br/blog/mapa-da-empatia/)
 > - [Mapa de Stalkeholders](https://www.racecomunicacao.com.br/blog/como-fazer-o-mapeamento-de-stakeholders/)
->
-Lembre-se que você deve ser enumerar e descrever precisamente e personalizada todos os clientes ideais que sua solução almeja.
 
 ## Histórias de Usuários
 
@@ -30,10 +37,10 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Sophia - Vendedor  | Quero cadastrar os produtos no sistema | Para disponibilizá-los para potenciais clientes que desejam comprá-los |
-|Eduardo - Vendedor | Quero conseguir analisar os meus produtos cadastrados | Para acompanhar a quantidade de acessos e feedbacks |
-|Mariana - Comprador | Quero ver e filtrar uma listagem de produtos a venda | Para conseguir achar aquele que me interessa e poder comprá-lo |
-|João - Comprador | Quero adicionar produtos a uma lista de desejos | Para poder acessá-los posteriormente sem muito esforço |
+|Vendedor | Quero cadastrar os produtos no sistema | Para disponibilizá-los para potenciais clientes que desejam comprá-los |
+|Vendedor | Quero conseguir analisar os meus produtos cadastrados | Para acompanhar a quantidade de acessos e feedbacks |
+|Comprador | Quero ver e filtrar uma listagem de produtos a venda | Para conseguir achar aquele que me interessa e poder comprá-lo |
+|Comprador | Quero adicionar produtos a uma lista de desejos | Para poder acessá-los posteriormente sem muito esforço |
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
