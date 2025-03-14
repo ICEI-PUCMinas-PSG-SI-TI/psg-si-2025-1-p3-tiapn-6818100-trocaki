@@ -30,9 +30,10 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-|Sophia - Usuário do sistema  | Cadastrar os produtos no sistema | Para disponibilizá-los para potenciais clientes que desejam comprá-los |
-|Eduardo - Usuário do Sistema | Conseguir analisar os meus produtos cadastrados | Para acompanhar a quantidade de acessos e feedbacks |
-|Mariana - Usuário do Sistema | Ver e filtrar uma listagem de produtos a venda |Conseguir achar aquele que me interessa e poder comprá-lo |
+|Sophia - Vendedor  | Quero cadastrar os produtos no sistema | Para disponibilizá-los para potenciais clientes que desejam comprá-los |
+|Eduardo - Vendedor | Quero conseguir analisar os meus produtos cadastrados | Para acompanhar a quantidade de acessos e feedbacks |
+|Mariana - Comprador | Quero ver e filtrar uma listagem de produtos a venda | Para conseguir achar aquele que me interessa e poder comprá-lo |
+|João - Comprador | Quero adicionar produtos a uma lista de desejos | Para poder acessá-los posteriormente sem muito esforço |
 
 Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
 
