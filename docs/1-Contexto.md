@@ -23,37 +23,10 @@ Com o avanço contínuo da tecnologia, os dispositivos móveis tornaram-se quase
 O desenvolvimento deste sistema é justificado por vários fatores relevantes para o mercado e para a sociedade, além da crescente demanda por plataformas seguras para a comercialização de eletrônicos usados, dado o aumento da compra de dispositivos recondicionados como uma alternativa mais econômica. Esse sistema está alinhado com a <a href="https://brasil.un.org/pt-br/sdgs/12">ODS 12</a> - Consumo e Produção responsável (ONU, 2025), que incentiva a redução do impacto ambiental por meio de práticas sustentáveis. A criação de um sistema que comercializa eletrônicos usados contribui diretamente para a economia circular prolongando o ciclo de vida desses dispositivos, além de garantir mais transparência e segurança nessa transação. A reutilização de aparelhos reforça o compromisso com um consumo mais consciente e responsável.
 
 ## Público-Alvo
-**Persona 1: João Silva (Comprador Casual)**
-* **Idade:** 28 anos
-* **Profissão:** Analista de Suporte Técnico
-* **Hobbies:** Jogos online, tecnologia, assistir séries
-* **Necessidades:**
-    * Adquirir eletrônicos usados em bom estado com preços acessíveis
-    * Ter segurança na compra, evitando fraudes
-    * Comparar preços e condições de diferentes vendedores
-* **Frustrações:**
-    * Dificuldade em confiar nos vendedores
-    * Falta de garantia nos produtos usados
-    * Preços pouco transparentes ou negociáveis
-* **Comportamento:**
-    * Pesquisa bastante antes de comprar
-    * Prefere plataformas com avaliações e históricos de vendedores
-    * Dá prioridade para pagamentos seguros
+O público-alvo deste sistema é composto tanto por compradores e vendedores de dispositivos eletrônicos usados quem buscam uma plataforma segura, transparente e eficiente para realizar suas transações.
 
-**Persona 2: Mariana Costa (Vendedora Empreendedora)**
-* **Idade: 34 anos**
-* **Profissão:** Pequena empresária, dona de loja de eletrônicos usados
-* **Hobbies:** Empreendedorismo, e-commerce, tecnologia
-* **Necessidades:**
-    * Ampliar sua clientela e vender mais rápido
-    * Ter um sistema prático para gerenciar seu estoque
-    * Receber pagamentos de forma segura e evitar golpes
-* **Frustrações:**
-    * Dificuldade em alcançar novos clientes online
-    * Processos manuais para organizar estoque e preços
-    * Risco de calote ou compradores indecisos
-* **Comportamento:**
-    * Usa redes sociais e marketplaces para vender
-    * Gosta de plataformas com funcionalidades automatizadas
-    * Busca sempre formas de otimizar o tempo e vender mais
+Os compradores incluem estudantes, profissionais em início de carreira, consumidores de classe média e entusiastas de tecnologia que buscam eletrônicos acessíveis e de qualidade. Além disso, atrai pessoas preocupadas com sustentabilidade, interessadas em reutilizar dispositivos em vez de descartá-los. Esses usuários valorizam segurança, transparência e garantias na compra.
 
+Os vendedores abrangem pequenos comerciantes, empreendedores digitais, usuários comuns e empresas que desejam revender dispositivos de forma confiável. Eles buscam visibilidade para seus produtos e ferramentas para gestão de vendas.
+
+Com isso, a plataforma conecta compradores e vendedores de forma eficiente, promovendo um mercado mais acessível, confiável e sustentável.
