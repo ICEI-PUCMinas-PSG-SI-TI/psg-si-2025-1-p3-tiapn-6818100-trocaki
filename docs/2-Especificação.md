@@ -60,14 +60,17 @@ A prioridade dos requisitos foi determinado de acordo com seu nível de importâ
 
 |ID    | Descrição do Requisito  | Prioridade |
 |------|-----------------------------------------|----|
-|RF-001| Disponibilizar uma vitrine de produtos com filtragem | ALTA | 
-|RF-002| Permitir o comprador enviar mensagens ao vendedor | BAIXA |
-|RF-003| Permitir o comprador adicionar produtos a sua lista de desejos | MÉDIA | 
-|RF-004| Permitir o comprador definir seus principais interesses de compra | MÉDIA |
-|RF-005| Permitir vendedor cadastrar produtos | ALTA | 
-|RF-006| Disponibilizar ao vendedor seus produtos cadastrados com seus respectivos números de acesso e comentários | BAIXA |
-|RF-007| Permitir vendedor enviar notificações para clientes que possuam interesse no tipo de produto que ele esteja vendendo | MÉDIA | 
-|RF-008| Permitir vendedor aceitar a alteração do processo do seu produto solicitada pelo cliente | MÉDIA |
+|RF-001| Permitir usuário realizarem cadastro e login | ALTA | 
+|RF-002| Permitir vendedor cadastrar produtos | ALTA | 
+|RF-003| Disponibilizar ao vendedor seus produtos cadastrados com seus respectivos números de acesso e comentários | ALTA |
+|RF-004| Disponibilizar uma vitrine de produtos com filtragem | ALTA | 
+|RF-005| Permitir o comprador definir seus principais interesses de compra | ALTA |
+|RF-006| Permitir usuário editarem seu perfil | MEDIA | 
+|RF-007| Permitir o comprador enviar mensagens ao vendedor | MEDIA |
+|RF-008| Permitir vendedor enviar notificações para clientes que possuam interesse no tipo de produto que ele esteja vendendo | MÉDIA | 
+|RF-009| Permitir usuário visualizar as notificações recebidas | MEDIA |
+|RF-010| Permitir vendedor aceitar a alteração do processo do seu produto solicitada pelo cliente | MÉDIA |
+|RF-011| Permitir o comprador adicionar produtos a sua lista de desejos | MÉDIA | 
 
 ### Requisitos não Funcionais
 
@@ -85,6 +88,6 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 |ID| Restrição                                             |
 |--|-------------------------------------------------------|
 |01| O projeto deverá ser entregue até o final do semestre |
-|02| Sem integração com redes sociais para login ou cadastro |
-|04| Sem comunicação ao vivo entre comprador e vendedor 
-|03| Sem integração com sistemas de pagamento, sendo susbtituídos apenas por simulações |
+|02| Não possuirá integração com redes sociais para login ou cadastro |
+|04| Não possuirá comunicação ao vivo entre comprador e vendedor, apenas notificações | 
+|03| Não possuirá integração com sistemas de pagamento |
