@@ -76,10 +76,10 @@ A prioridade dos requisitos foi determinado de acordo com seu nível de importâ
 
 |ID     | Descrição do Requisito  |Prioridade |
 |-------|-------------------------|----|
-|RNF-001| O site deverá ser responsivo permitindo a visualização em um celular de forma adequada | ALTA | 
-|RNF-002| O site deve ter bom nível de contraste entre os elementos da tela em conformidade |  MÉDIA | 
-|RNF-003| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge) |  ALTA | 
-|RNF-004| O site deve seguir as melhores práticas de UX/UI, com foco na simplicidade e clareza das informações. |  ALTA | 
+|RNF-001| O site deve ser compatível com os principais navegadores do mercado (Google Chrome, Firefox, Microsoft Edge) |  ALTA | 
+|RNF-002| O site deverá ser responsivo permitindo a visualização em um celular de forma adequada | MEDIA | 
+|RNF-003| O site deve seguir as melhores práticas de UX/UI, com foco na simplicidade e clareza das informações. |  MEDIA | 
+|RNF-004| O site deve ter bom nível de contraste entre os elementos da tela em conformidade |  BAIXA | 
 
 ## Restrições
 
