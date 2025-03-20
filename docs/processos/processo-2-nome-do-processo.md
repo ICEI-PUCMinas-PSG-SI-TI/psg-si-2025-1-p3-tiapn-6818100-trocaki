@@ -1,4 +1,4 @@
-### 3.3.2 Processo 2 – NOME DO PROCESSO
+### 3.3.2 Processo 2 – Processo de Compra de Eletrônicos usados
 
 _Apresente aqui o nome e as oportunidades de melhoria para o processo 2. 
 Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
@@ -37,31 +37,25 @@ _* **Link** - campo que armazena uma URL_
 
 _* **Tabela** - campo formado por uma matriz de valores_
 
-**Nome da atividade 1**
+**Selecionar item**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
-
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
-| cadastrar            | Início do proceso de cadastro  |                   |
-
-
-**Nome da atividade 2**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| Item | String  |        item disponível        |         Nemhum          |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| Comprar | Tela de Pagamento  | default |
+|          adicionar ao carrinho            |                (mantém na tela de catálago)                |          default         |
+
+**Pagamento**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Forma de Pagamento | Botão  |        PIX        |          PIX         |
+|       Cancelar Compra          |        Botão          |                |         Cancelado          |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Pagar | Sistema de pagamento externo  | default |
+|     cancelar                 |               home                 |          cancel         |
