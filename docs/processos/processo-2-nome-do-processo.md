@@ -2,7 +2,7 @@
 
 O **Processo de Compra de Eletrônicos usados** está atualmente idealizado assim, mas pode sofrer mudanças no decorrer do projeto.
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](../images/process.png "Modelo BPMN do Processo 2.")
+![Exemplo de um Modelo BPMN do PROCESSO 2](../images/process2.png "Modelo BPMN do Processo 2.")
 
 
 #### Detalhamento das atividades
