@@ -7,21 +7,51 @@
 
 ### 3.1. Modelagem da situação atual (Modelagem AS IS)
 
-_Apresente uma descrição textual de como os sistemas atuais resolvem o problema que se propõe a resolver.  Caso sua proposta seja inovadora e não existam processos claramente definidos, **apresente como as tarefas que o seu sistema pretende implementar são executadas atualmente**, mesmo que não se utilize tecnologia computacional._
+Atualmente, a compra e venda de eletrônicos usados acontece de forma descentralizada, sem um processo padronizado e sem garantias para compradores e vendedores. A negociação ocorre principalmente por meio de redes sociais, marketplaces genéricos e grupos de mensagens, onde as partes interessadas precisam lidar diretamente entre si, sem a intermediação de uma plataforma confiável.
 
-Com o tema do projeto definido, escolham alguns processos neste contexto de negócios. Para ilustrar potenciais ganhos com a automatização, imaginem processos manuais, ineficientes e/ou com muitas idas e vindas, gerando, assim, retrabalho.
-Colem aqui os modelos dos processos atuais (modelo AS-IS), elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
+Esse modelo apresenta diversos desafios, como a dificuldade em encontrar produtos de qualidade, o risco de golpes e a ausência de um sistema eficiente para organizar a entrega os. 
+
+Abaixo, detalhamos alguns passos de como esse processo ocorre na prática. 
+
+  - O vendedor decide vender um eletrônico usado.
+  - Ele publica o anúncio em redes sociais, grupos de mensagens ou marketplaces genéricos.
+  - O comprador interessado encontra o anúncio e entra em contato com o vendedor (via chat ou comentários).
+  - O comprador e o vendedor negociam o preço e condições de entrega.
+  - O pagamento é feito diretamente entre as partes sem ligação da plataforma (transferência bancária, PIX, dinheiro).
+  - O vendedor entrega o produto ao comprador de forma combinada (ponto de encontro, envio por correios).
+  - Se houver problemas, não há suporte ou garantia formal da plataforma.
+
+**Principais Problemas do Modelo AS-IS**
+
+  - Falta de segurança: Não há garantia de que o vendedor ou comprador são confiáveis, aumentando o risco de golpes.
+  - Anúncios sem padronização: Muitas vezes, as descrições dos produtos são incompletas, dificultando a decisão de compra.
+  - Negociação manual e ineficiente: As trocas de mensagens são demoradas, e o vendedor pode perder tempo respondendo diversas perguntas antes de concluir uma venda.
+  - Dificuldade na logística: Não há um sistema claro para envio do produto.
+
 
 ### 3.2. Descrição geral da proposta (Modelagem TO BE)
 
-Tendo identificado os gargalos dos modelos AS IS, apresentem uma descrição da proposta de solução, buscando maior eficiência com a introdução da tecnologia. Abordem também os limites dessa solução e o seu alinhamento com as estratégias e objetivos do contexto de negócio escolhido. 
-Colem aqui os modelos da solução proposta (modelo TO BE) elaborados com o apoio da ferramenta baseada em BPMN utilizada na disciplina.
-Cada processo identificado deve ter seu modelo TO-BE específico. Descrevam as oportunidades de melhoria de cada processo da solução proposta.
+Para resolver os problemas do modelo atual, a nova plataforma de compra e venda de eletrônicos usados propõe um sistema mais seguro, eficiente e intuitivo. O objetivo é centralizar as transações em um ambiente confiável, garantindo proteção tanto para vendedores quanto para compradores. A solução utiliza tecnologia para facilitar cada etapa do processo.
 
-_Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias._
+  - O vendedor cria uma conta na plataforma e faz login.
+  - Ele cadastra o produto, incluindo nome, descrição, preço, fotos e as condições.
+  - A plataforma disponibiliza filtros para que compradores encontrem os produtos mais facilmente.
+  - O comprador interessado acessa o anúncio e pode fazer uma oferta de preço ao vendedor dentro da plataforma.
+  - O vendedor pode escolher qual das ofertas feitas pelo produto ele aceitará.
+  - Sendo aceita uma oferta, o sistema gera o pedido com dados e informações do cliente e vendedor.
+  - Com o pedido gerado, o cliente é notificado que a oferta foi acieta e que seja feito o pagamento.
+  - Assim que o vendedor confirma o pagamento, ele faz o envio do produto e retira a oferta do site manualmente.
+  - O comprador e o vendedor avaliam a transação.
+
+**Benefícios do Modelo TO-BE**
+  - Ambiente seguro: A identidade dos usuários é verificada, reduzindo o risco de fraudes.
+  - Facilidade na busca por produtos: Filtros e categorias ajudam os compradores a encontrarem rapidamente os itens desejados.
+  - Avaliações: Compradores podem avaliar vendedores e vice-versa, promovendo confiança dentro da comunidade.
+  - Suporte a negociações seguras: Em vez de negociações diretas via mensagens, a plataforma pode permitir ofertas de forma estruturada, evitando perda de tempo em negociações que não levam a vendas.
+
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Processo de Venda de Eletrônicos Usados](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+[PROCESSO 1 - Processo de Cadastro de Produtos](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
 
 [PROCESSO 2 - Processo de Compra de Eletrônicos usados](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
