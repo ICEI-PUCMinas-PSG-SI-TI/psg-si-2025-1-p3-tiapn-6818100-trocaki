@@ -12,31 +12,39 @@ O processo de **Cadastro de Produtos** está idealizado na forma descrita abaixo
    - Anuncia produto na plataforma, com as descrições e especificações.
 
 
-**Nome da atividade 1**
+**Realizar Cadastro**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-| ***Exemplo:***  |                  |                |                   |
-| login           | Caixa de Texto   | formato de e-mail |                |
-| senha           | Caixa de Texto   | mínimo de 8 caracteres |           |
+| Nome            | string           |Obrigatório     |                   |
+| E-mail          | Caixa de Texto   |Formato de Email|                   |
+| senha           | Caixa de Texto   |mínimo de 8 caracteres |            |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-| ***Exemplo:***       |                                |                   |
-| entrar               | Fim do Processo 1              | default           |
 | cadastrar            | Início do proceso de cadastro  |                   |
 
 
-**Nome da atividade 2**
+**Realizar Login**
 
 | **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
 | ---             | ---              | ---            | ---               |
-| [Nome do campo] | [tipo de dados]  |                |                   |
-|                 |                  |                |                   |
+| Email           | Caixa de Texto   |Formato de Email |                  |
+| Senha           | Caixa de Texto   |Mínimo de 8 caracteres |            |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
-| [Nome do botão/link] | Atividade/processo de destino  | (default/cancel/  ) |
-|                      |                                |                   |
+| Entrar               | Tela Inicial                   | (default/cancel/  ) |
+
+
+**Anunciar Produto**
+
+| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
+| ---             | ---              | ---            | ---               |
+| Nome do Produto | String           |Obrigatório     |                   |
+| Preço           | Double           |Apenas Valores Positivos |          |
+| Descrição       | Caixa de Texto   |Obrigatório     |              |    |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Publicar             | Página Inicial - Processo Finalizado | (default/cancel/  ) |
