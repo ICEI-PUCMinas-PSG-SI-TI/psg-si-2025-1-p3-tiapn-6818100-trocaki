@@ -1,61 +1,48 @@
 ### 3.3.2 Processo 2 – Processo de Compra de Eletrônicos usados
 
-_Apresente aqui o nome e as oportunidades de melhoria para o processo 2. 
-Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN._
+O **Processo de Compra de Eletrônicos usados** está atualmente idealizado assim, mas pode sofrer mudanças no decorrer do projeto.
 
 ![Exemplo de um Modelo BPMN do PROCESSO 2](../images/process.png "Modelo BPMN do Processo 2.")
 
 
 #### Detalhamento das atividades
 
-_Descreva aqui cada uma das propriedades das atividades do processo 2. 
-Devem estar relacionadas com o modelo de processo apresentado anteriormente._
+**Comprador**:
+   - Caso não tenha cadastro, realiza o registro.
+   - Se já tiver cadastro, faz login, seleciona o produto desejado e realiza uma oferta.
 
-_Os tipos de dados a serem utilizados são:_
+**Sistema**:
+   - Recebe a oferta do comprador.
+   - Notifica o vendedor sobre oferta.
+   - Se aceita pelo vendedor, cria um pedido baseado na oferta e notifica o cliente.
 
-_* **Área de texto** - campo texto de múltiplas linhas_
+**Vendedor**:
+   - Envia o produto e fecha o pedido caso o pagamento seja confirmado .
+   - Cancela o pedido se o pagamento não for realizado.
 
-_* **Caixa de texto** - campo texto de uma linha_
+**Registro do Comprador**
 
-_* **Número** - campo numérico_
+| Campo          | Tipo              | Restrições                     | Valor default     |
+|----------------|-------------------|--------------------------------|-------------------|
+| nome           | Caixa de Texto    | mínimo de 3 caracteres         |                   |
+| email          | Caixa de Texto    | formato de e-mail válido       |                   |
+| senha          | Caixa de Texto    | mínimo de 8 caracteres         |                   |
 
-_* **Data** - campo do tipo data (dd-mm-aaaa)_
+| Comandos       | Destino                         | Tipo              |
+|----------------|---------------------------------|-------------------|
+| registrar      | Validação do registro           | default           |
+| cancelar       | Retorna à página inicial         | cancel            |
 
-_* **Hora** - campo do tipo hora (hh:mm:ss)_
+**Atividade: Seleção do Item e Envio de Oferta**
 
-_* **Data e Hora** - campo do tipo data e hora (dd-mm-aaaa, hh:mm:ss)_
+| Campo           | Tipo              | Restrições                             | Valor default     |
+|-----------------|-------------------|----------------------------------------|-------------------|
+| nome do produto | string    | mínimo de 3 caracteres                 |                   |
+| quantidade      | Caixa de Seleção  | apenas números positivos               | 1                 |
+| valor da oferta | Caixa de Texto    | formato numérico com 2 casas decimais  |                   |
 
-_* **Imagem** - campo contendo uma imagem_
+| Comandos        | Destino                         | Tipo              |
+|-----------------|---------------------------------|-------------------|
+| enviar         | Envia a proposta ao sistema     | default           |
+| cancelar        | Retorna à página inicial        | cancel            |
 
-_* **Seleção única** - campo com várias opções de valores que são mutuamente exclusivas (tradicional radio button ou combobox)_
-
-_* **Seleção múltipla** - campo com várias opções que podem ser selecionadas mutuamente (tradicional checkbox ou listbox)_
-
-_* **Arquivo** - campo de upload de documento_
-
-_* **Link** - campo que armazena uma URL_
-
-_* **Tabela** - campo formado por uma matriz de valores_
-
-**Selecionar item**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Item | String  |        item disponível        |         Nemhum          |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Comprar | Tela de Pagamento  | default |
-|          adicionar ao carrinho            |                (mantém na tela de catálago)                |          default         |
-
-**Pagamento**
-
-| **Campo**       | **Tipo**         | **Restrições** | **Valor default** |
-| ---             | ---              | ---            | ---               |
-| Forma de Pagamento | Botão  |        PIX        |          PIX         |
-|       Cancelar Compra          |        Botão          |                |         Cancelado          |
-
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Pagar | Sistema de pagamento externo  | default |
-|     cancelar                 |               home                 |          cancel         |
