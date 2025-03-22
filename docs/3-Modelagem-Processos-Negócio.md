@@ -65,7 +65,7 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
     - Participantes: Compradores e vendedores
     - Produtos de informação: Produto, proposta do comprador e pedido
    
-  - Gerenciar de produto
+- Gerenciar de produto
     - Classificação: Gerencial
     - Descrição: O vendedor acessa a página de produtos cadastrados e lá ele consegue editá-los, inativá-los e apagá-los. Além disso, ele consegue ver as propostas de comprar para cada um e analisar os comentários.
     - Entradas: Produtos cadastrados
@@ -73,6 +73,15 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
     - Onde acontecem: Página de produtos cadastrados
     - Participantes: Vendedores
     - Produtos de informação: Produto, proposta do comprador e comentário
+ 
+- Realizar comentário
+    - Classificação: Suporte
+    - Descrição: O comprador poderá cadastrar um comentário publico no anúncio de um produto. O vendedor poderá responder esse comentário.
+    - Entradas: Produtos cadastrados, texto do comentário
+    - Saídas: Comentário criado
+    - Onde acontecem: Página do produto
+    - Participantes: Compradores e vendedores
+    - Produtos de informação: Produto e comentário
 
 **Benefícios do Modelo TO-BE**
   - Ambiente seguro: A identidade dos usuários é verificada, reduzindo o risco de fraudes.
