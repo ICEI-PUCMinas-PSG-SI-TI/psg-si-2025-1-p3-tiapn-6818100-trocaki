@@ -29,12 +29,6 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
 
 **Principais processos**
 
-| Funcionalidade | Classificação | Descrição | Entradas | Saídas | Onde acontecem | Participantes | Produtos de informação |
-|-----------------------|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------|--------------------|-------------------------------------------------|------------------------|----------------------------------|
-| Cadastro/login de usuários | Primário | Usuário acessa a página de login do sistema e, se não tiver cadastro, informa seus dados pessoais para se cadastrar. Após isso, realiza login para utilizar todas as funções. | Dados cadastrais do usuário (nome, e-mail, senha, telefone, endereço, CPF, CNPJ, interesses) | Cadastro de usuário | Página de cadastro/login | Compradores e vendedores | Cadastro de usuário  |
-| Cadastro de produto  | Primário      | Vendedor insere todos os dados de um produto e o disponibiliza para os compradores.  | Dados cadastrais do produto (preço, descrição, fotos, modelo, marca) | Cadastro do produto | Página de cadastro de produto | Vendedores | Cadastro de produto |
-| Compra de produto    | Primário      | O comprador faz uma oferta ao vendedor. O vendedor escolhe qual oferta aceitar. Com a oferta aceita, um pedido é gerado, e o comprador faz o pagamento. Após a confirmação do pagamento, o vendedor envia o produto e retira o anúncio. | Produto escolhido, proposta do comprador | Pedido finalizado  | Vitrine de produtos e página de produtos cadastrados | Compradores e vendedores | Produto, proposta do comprador, pedido |
-
   - Cadastro/login de usuários
     - Classificação: Primário
     - Descrição: Usuário acessa a página de login do sistema e, se não tiver cadastro, informa seus dados pessoais para que isso seja feito. Após isso, realiza login para conseguir utilizar todas as funções do sistema.
@@ -53,14 +47,32 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
     - Participantes: Vendedores
     - Produtos de informação: Cadastro de produto
 
-  - Compra de produto
+  - Fazer proposta de compra
     - Classificação: Primário
-    - Descrição: O comprador interessado acessa o anúncio e pode fazer uma oferta de preço ao vendedor dentro da plataforma. O vendedor pode escolher qual das ofertas feitas pelo produto ele aceitará. Sendo aceita uma oferta, o sistema gera o pedido com dados e informações do cliente e vendedor. Com o pedido gerado, o cliente é notificado que a oferta foi acieta e que seja feito o pagamento. Assim que o vendedor confirma o pagamento, ele faz o envio do produto e retira a oferta do site manualmente.
-    - Entradas: Produto escolhido, proposta do comprador
+    - Descrição: O comprador interessado acessa o anúncio e pode fazer uma oferta de preço ao vendedor dentro da plataforma informando interesse no produto e um valor igual ou menor que ele pode pagar.
+    - Entradas: Produto escolhido
+    - Saídas: proposta do comprador
+    - Onde acontecem: Vitrine de produtos do sistema e página de produto
+    - Participantes: Compradores
+    - Produtos de informação: Produto, proposta do comprador
+
+- Fechar compra
+    - Classificação: Primário
+    - Descrição: O vendedor pode escolher qual das ofertas feitas pelo produto ele aceitará. Sendo aceita uma oferta, o sistema gera o pedido com dados e informações do cliente e vendedor. Com o pedido gerado, o cliente é notificado que a oferta foi acieta e que seja feito o pagamento. Assim que o vendedor confirma o pagamento, ele faz o envio do produto e retira a oferta do site manualmente.
+    - Entradas: Proposta do comprador
     - Saídas: Pedido finalizado
-    - Onde acontecem: Vitrine de produtos do sistema e página de produtos cadastros
+    - Onde acontecem: Página de produtos cadastros
     - Participantes: Compradores e vendedores
     - Produtos de informação: Produto, proposta do comprador e pedido
+   
+  - Gerenciar de produto
+    - Classificação: Gerencial
+    - Descrição: O vendedor acessa a página de produtos cadastrados e lá ele consegue editá-los, inativá-los e apagá-los. Além disso, ele consegue ver as propostas de comprar para cada um e analisar os comentários.
+    - Entradas: Produtos cadastrados
+    - Saídas: Produtos cadastrados, propostas de compras, comentários
+    - Onde acontecem: Página de produtos cadastrados
+    - Participantes: Vendedores
+    - Produtos de informação: Produto, proposta do comprador e comentário
 
 **Benefícios do Modelo TO-BE**
   - Ambiente seguro: A identidade dos usuários é verificada, reduzindo o risco de fraudes.
