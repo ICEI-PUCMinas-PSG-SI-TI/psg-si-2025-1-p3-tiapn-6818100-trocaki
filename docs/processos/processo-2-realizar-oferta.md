@@ -4,7 +4,6 @@ O **Processo de Compra de Eletrônicos usados** está atualmente idealizado assi
 
 ![Exemplo de um Modelo BPMN do PROCESSO 2](../images/Process_RealizarOferta.png "Modelo BPMN do Processo 2.")
 
-
 #### Detalhamento das atividades
 
 **Comprador**:
