@@ -2,7 +2,7 @@
 
 O processo de **Cadastro de Produtos** está idealizado na forma descrita abaixo, no diagrama BPMN. Este processo exemplifica o cadastro de um produto na plataforma **Trocaki** por parte de um vendedor e suas etapas.
 
-![Exemplo de um Modelo BPMN do PROCESSO 1](../images/process1.png "Modelo BPMN do Processo 1.")
+![Exemplo de um Modelo BPMN do PROCESSO 1](../images/Process_Cadastro de produto.png "Modelo BPMN do Processo 1.")
 
 #### Detalhamento das atividades
 
