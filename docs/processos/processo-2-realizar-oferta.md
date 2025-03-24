@@ -2,7 +2,7 @@
 
 O **Processo de Compra de Eletrônicos usados** está atualmente idealizado assim, mas pode sofrer mudanças no decorrer do projeto. Nele é descrito como o comprador poderá mostrar interesse sobre um produto ao vendedor e também, sugerir um valor diferente.
 
-![Exemplo de um Modelo BPMN do PROCESSO 2](../images/Process_RealizarOferta.png "Modelo BPMN do Processo 2.")
+![Processo de realizar oferta](../images/Process_RealizarOferta.png "Modelo BPMN do Processo 2.")
 
 #### Detalhamento das atividades
 
