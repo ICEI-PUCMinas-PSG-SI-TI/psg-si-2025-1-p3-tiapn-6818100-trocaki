@@ -91,10 +91,10 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Processo de Cadastro de Produtos](./processos/processo-1-nome-do-processo.md "Detalhamento do Processo 1.")
+[PROCESSO 1 - Processo de Cadastro de Produtos](./processos/processo-1-cadastro-de-produtos.md "Detalhamento do Processo 1.")
 
-[PROCESSO 2 - Processo de Compra de Eletrônicos usados](./processos/processo-2-nome-do-processo.md "Detalhamento do Processo 2.")
+[PROCESSO 2 - Processo de Realização de oferta](./processos/processo-2-realizar-oferta.md "Detalhamento do Processo 2.")
 
-[PROCESSO 3 - Processo de Cadastro de Produtos](./processos/processo-3-nome-do-processo.md "Detalhamento do Processo 3.")
+[PROCESSO 3 - Processo de Fechar compra](./processos/processo-3-fechar-compra.md "Detalhamento do Processo 3.")
 
-[PROCESSO 4 - Processo de Compra de Eletrônicos usados](./processos/processo-4-nome-do-processo.md "Detalhamento do Processo 4.")
+[PROCESSO 4 - Processo de Criar e responder comentário](./processos/processo-4-criar-responder-comentario "Detalhamento do Processo 4.")
