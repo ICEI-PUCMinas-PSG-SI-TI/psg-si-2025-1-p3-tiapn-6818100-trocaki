@@ -2,7 +2,7 @@
 
 O processo de **Realizar Oferta** está idealizado na forma descrita abaixo, no diagrama BPMN. Esse processo descreve como um comprador pode demonstrar interesse em um produto e sugerir um valor ao vendedor.
 
-![Processo de Realizar Oferta](../images/processo04_realizar-oferta.png "Modelo BPMN do Processo 4.")
+![Processo de Realizar Oferta](../images/processo04-realizar-oferta.png "Modelo BPMN do Processo 4.")
 
 ---
 
