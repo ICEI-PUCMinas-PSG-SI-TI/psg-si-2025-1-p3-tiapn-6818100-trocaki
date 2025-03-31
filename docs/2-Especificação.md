@@ -36,19 +36,21 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-| Mariana | Visualizar e filtrar a listagem de produtos disponíveis para venda | Encontrar com mais facilidade o item que me interessa e efetuar a compra. |  
-| Fernanda | Enviar mensagens diretas ao vendedor | Esclarecer dúvidas sobre o produto antes de concluir a compra. |  
-| João | Adicionar produtos a uma lista de desejos | Acessá-los posteriormente de maneira rápida e prática. |  
-| Ricardo | Definir meus principais interesses dentro da plataforma | Receber ofertas personalizadas e relevantes para minhas necessidades. |  
+| Mariana | Visualizar e filtrar a listagem de produtos disponíveis para venda | Encontrar com mais facilidade produtos que me interessam. |  
+| Fernanda | Cadastrar comentários em um produto | Esclarecer dúvidas sobre o produto antes de concluir a compra. |  
+| João | Fazer proposta a um vendedor sobre o valor de um produto | Conseguir comprar o produto por um valor menor. |  
+| Ricardo | Definir meus principais interesses dentro da plataforma | Receber ofertas personalizadas e relevantes para minhas necessidades. | 
+| Ricardo | Adicionar produtos a uma lista de desejos | Conseguir encontrá-los mais facilmente depois. | 
 
 ### Vendedores
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE` |PARA ... `MOTIVO/VALOR`                 |
 |--------------------|------------------------------------|----------------------------------------|
-| Marcelo | Cadastrar meus produtos no sistema de forma simples e eficiente | Disponibilizá-los para potenciais compradores e aumentar minhas vendas. |  
-| Eduardo | Acompanhar o desempenho dos meus produtos cadastrados – quantidade de acessos e feedbacks | Otimizar minhas estratégias de venda. |  
-| Larissa | Notificar clientes interessados nos meus produtos | Aumentar o engajamento e potencializar as chances de venda. |  
-| Thiago | Aceitar ou recusar propostas de alteração de preço feitas pelos usuários | Negociar melhor os valores e aumentar as chances de venda. | 
+| Larissa | Criar uma conta no sistema | Conseguir cadastrar produtos e acessá-los posteriormente em outros dispositivos |  
+| Marcelo | Cadastrar meus produtos na plataforma | Disponibilizá-los para potenciais compradores e aumentar minhas vendas. |  
+| Eduardo | Acompanhar o desempenho dos meus produtos cadastrados – quantidade de acessos e comentários | Otimizar minhas estratégias de venda. |  
+| Eduardo | Responder comentários cadastrados nos meus produtos | Tirar dúvidas sobre o produto e aumentar a chance de venda. |  
+| Thiago | Aceitar ou recusar propostas de compra feitas pelos clientes | Negociar melhor os valores e aumentar as chances de venda. | 
 
 ## Requisitos
 
@@ -62,15 +64,14 @@ A prioridade dos requisitos foi determinado de acordo com seu nível de importâ
 |------|-----------------------------------------|----|
 |RF-001| Permitir usuário realizarem cadastro e login | ALTA | 
 |RF-002| Permitir vendedor cadastrar produtos | ALTA | 
-|RF-003| Disponibilizar ao vendedor seus produtos cadastrados com seus respectivos números de acesso e comentários | ALTA |
-|RF-004| Disponibilizar uma vitrine de produtos com filtragem | ALTA | 
-|RF-005| Permitir o comprador definir seus principais interesses de compra | ALTA |
-|RF-006| Permitir usuário editarem seu perfil | MEDIA | 
-|RF-007| Permitir o comprador enviar mensagens ao vendedor | MEDIA |
-|RF-008| Permitir vendedor enviar notificações para clientes que possuam interesse no tipo de produto que ele esteja vendendo | MÉDIA | 
-|RF-009| Permitir usuário visualizar as notificações recebidas | MEDIA |
-|RF-010| Permitir vendedor aceitar a alteração do processo do seu produto solicitada pelo cliente | MÉDIA |
-|RF-011| Permitir o comprador adicionar produtos a sua lista de desejos | MÉDIA | 
+|RF-003| Permitir vendedor visualizar seus produtos cadastrados com seus respectivos números de acesso e comentários | ALTA |
+|RF-004| Disponibilizar uma vitrine de produtos com filtragem e busca | ALTA | 
+|RF-005| Permitir cliente realizar uma proposta de compra | ALTA |
+|RF-006| Permitir vendedor aceitar aceitar e rejeitar propostas de compra | MÉDIA |
+|RF-007| Permitir o comprador definir seus principais interesses de compra | MEDIA |
+|RF-008| Permitir o comprador adicionar produtos a uma lista de desejos | MEDIA |
+|RF-009| Permitir o comprador cadastrar comentários em produtos | MEDIA |
+|RF-010| Permitir vendedor responder comentários nos seus produtos | MÉDIA |
 
 ### Requisitos não Funcionais
 
