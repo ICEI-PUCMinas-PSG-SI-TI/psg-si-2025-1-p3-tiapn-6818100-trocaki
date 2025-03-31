@@ -82,6 +82,15 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
     - Onde acontecem: Página do produto
     - Participantes: Compradores e vendedores
     - Produtos de informação: Produto e comentário
+ 
+- Adicionar produto na lista de desejos
+    - Classificação: Suporte
+    - Descrição: O comprador poderá adicionar produtos a uma lista de desejos para poder localizá-los mais facilmente depois
+    - Entradas: Produto
+    - Saídas: Produto
+    - Onde acontecem: Página do produto
+    - Participantes: Compradores
+    - Produtos de informação: Produto e usuário
 
 **Benefícios do Modelo TO-BE**
   - Ambiente seguro: A identidade dos usuários é verificada, reduzindo o risco de fraudes.
@@ -91,10 +100,20 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
 
 ### 3.3. Modelagem dos processos
 
-[PROCESSO 1 - Processo de Cadastro de Produtos](./processos/processo-1-cadastro-de-produtos.md "Detalhamento do Processo 1.")
+[PROCESSO 1 - Processo de Realizar cadastro e login](./processos/processo01-realizar-cadastro-login.md "Detalhamento do Processo 1.")
 
-[PROCESSO 2 - Processo de Realização de oferta](./processos/processo-2-realizar-oferta.md "Detalhamento do Processo 2.")
+[PROCESSO 2 - Processo de Cadastrar produto](./processos/processo02-cadastrar-produto.md "Detalhamento do Processo 2.")
 
-[PROCESSO 3 - Processo de Fechar compra](./processos/processo-3-fechar-compra.md "Detalhamento do Processo 3.")
+[PROCESSO 3 - Processo de Exibir produto na home page](./processos/processo03-exibir-produto-na-home-page.md "Detalhamento do Processo 3.")
 
-[PROCESSO 4 - Processo de Criar e responder comentário](./processos/processo-4-criar-responder-comentario "Detalhamento do Processo 4.")
+[PROCESSO 4 - Processo de Realizar oferta](./processos/processo04-realizar-oferta.md "Detalhamento do Processo 4.")
+
+[PROCESSO 5 - Processo de Selecionar produtos cadastrados](./processos/processo05-selecionar-produto-cadastrado.md "Detalhamento do Processo 5.")
+
+[PROCESSO 6 - Processo de Selecionar oferta de produto cadastrado](./processos/processo-6-realizar-oferta.md "Detalhamento do Processo 6.")
+
+[PROCESSO 7 - Processo de Fechar compra](./processos/processo-7-fechar-compra.md "Detalhamento do Processo 7.")
+
+[PROCESSO 8 - Processo de Criar e responder comentário](./processos/processo-8-criar-responder-comentario "Detalhamento do Processo 8.")
+
+[PROCESSO 9 - Processo de Adicionar produto na lista de compra](./processos/processo-9-criar-responder-comentario "Detalhamento do Processo 9.")
