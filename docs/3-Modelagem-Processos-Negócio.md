@@ -110,10 +110,10 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
 
 [PROCESSO 5 - Processo de Selecionar produtos cadastrados](./processos/processo05-selecionar-produto-cadastrado.md "Detalhamento do Processo 5.")
 
-[PROCESSO 6 - Processo de Selecionar oferta de produto cadastrado](./processos/processo-6-realizar-oferta.md "Detalhamento do Processo 6.")
+[PROCESSO 6 - Processo de Selecionar oferta de produto cadastrado](./processos/processo06-selecionar-oferta-de-produto-cadastrado.md "Detalhamento do Processo 6.")
 
-[PROCESSO 7 - Processo de Fechar compra](./processos/processo-7-fechar-compra.md "Detalhamento do Processo 7.")
+[PROCESSO 7 - Processo de Fechar compra](./processos/processo07-fechar-compra.md "Detalhamento do Processo 7.")
 
-[PROCESSO 8 - Processo de Criar e responder comentário](./processos/processo-8-criar-responder-comentario "Detalhamento do Processo 8.")
+[PROCESSO 8 - Processo de Criar e responder comentário](./processos/processo08-criar-responder-comentario.md "Detalhamento do Processo 8.")
 
-[PROCESSO 9 - Processo de Adicionar produto na lista de compra](./processos/processo-9-criar-responder-comentario "Detalhamento do Processo 9.")
+[PROCESSO 9 - Processo de Adicionar produto na lista de compra](./processos/processo09-adicionar-produto-lista-de-desejo.md "Detalhamento do Processo 9.")
