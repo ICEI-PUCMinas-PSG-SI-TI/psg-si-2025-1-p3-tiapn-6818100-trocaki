@@ -1,8 +1,8 @@
 ### 3.3.4 Processo 4 – Processo de Realizar Oferta
 
-O processo modelado na imagem a seguir representa o fluxo de realização de uma oferta pelo comprador. Ele inicia quando o comprador acessa o sistema e realiza login ou cadastro. Se o usuário não estiver logado, o fluxo é interrompido. Caso esteja, a página inicial do sistema exibe os produtos disponíveis.
+O processo modelado na imagem a seguir representa o fluxo de realização de uma oferta pelo comprador. Ele inicia quando o comprador acessa o sistema e realiza login ou cadastro. Se o usuário não estiver logado, o fluxo é interrompido. Caso esteja, o usuário deve selecionar algum produto que tenha sido exibido na home page. Caso isso não ocorra, o processo é encerrado.
 
-O comprador seleciona um produto de interesse e clica no botão "Eu quero". Em seguida, preenche um formulário de oferta, podendo indicar se deseja propor outro valor, informar o valor sugerido e adicionar comentários ao vendedor.
+Após selecionar um produto, o comprador clica no botão "Eu quero". Em seguida, preenche um formulário de oferta, podendo indicar se deseja propor outro valor, informar o valor sugerido e adicionar comentários ao vendedor.
 
 Após o envio, o sistema registra a oferta no banco de dados e notifica o vendedor sobre a proposta recebida.
 
