@@ -6,7 +6,7 @@ Se optar por não filtrar, o sistema busca todos os produtos cadastrados no banc
 
 Caso o comprador escolha utilizar filtros, ele pode optar por uma busca textual, digitando características do produto no campo de pesquisa, ou preencher um formulário de filtragem com critérios opcionais, como preço máximo, preço mínimo, categoria e cidade de venda. Com base nos critérios definidos pelo comprador, o sistema consulta o banco de dados para encontrar os produtos que atendam à filtragem selecionada. 
 
-Por fim, os resultados obtidos são apresentados ao comprador caso existam. Em caso positivo, o comprador selecionar o produto que deseja.
+Por fim, os resultados obtidos são apresentados ao comprador caso existam. Em caso positivo, o comprador selecionar o produto que deseja e em seguida o sistema o redireciona para a página do produto, busca suas informações no banco de dados e as exibe na tela para o usuário.
 
 ![Processo de Selecionar produto exibido na home page](../images/processo03-selecionar-produto-exibido-na-home-page.png "Modelo BPMN do Processo 3.")
 
