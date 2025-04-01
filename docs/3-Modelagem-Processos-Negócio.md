@@ -104,7 +104,7 @@ Para resolver os problemas do modelo atual, a nova plataforma de compra e venda 
 
 [PROCESSO 2 - Processo de Cadastrar produto](./processos/processo02-cadastrar-produto.md "Detalhamento do Processo 2.")
 
-[PROCESSO 3 - Processo de Exibir produto na home page](./processos/processo03-exibir-produto-na-home-page.md "Detalhamento do Processo 3.")
+[PROCESSO 3 - Processo de Selecionar produto exibido na home page](./processos/processo03-selecionar-produto-exibido-na-home-page.md "Detalhamento do Processo 3.")
 
 [PROCESSO 4 - Processo de Realizar oferta](./processos/processo04-realizar-oferta.md "Detalhamento do Processo 4.")
 
