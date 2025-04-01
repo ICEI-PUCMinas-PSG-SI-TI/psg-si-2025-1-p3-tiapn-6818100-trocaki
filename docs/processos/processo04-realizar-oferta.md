@@ -1,6 +1,10 @@
 ### 3.3.4 Processo 4 – Processo de Realizar Oferta
 
-O processo de **Realizar Oferta** está idealizado na forma descrita abaixo, no diagrama BPMN. Esse processo descreve como um comprador pode demonstrar interesse em um produto e sugerir um valor ao vendedor.
+O processo modelado na imagem a seguir representa o fluxo de realização de uma oferta pelo comprador. Ele inicia quando o comprador acessa o sistema e realiza login ou cadastro. Se o usuário não estiver logado, o fluxo é interrompido. Caso esteja, a página inicial do sistema exibe os produtos disponíveis.
+
+O comprador seleciona um produto de interesse e clica no botão "Eu quero". Em seguida, preenche um formulário de oferta, podendo indicar se deseja propor outro valor, informar o valor sugerido e adicionar comentários ao vendedor.
+
+Após o envio, o sistema registra a oferta no banco de dados e notifica o vendedor sobre a proposta recebida.
 
 ![Processo de Realizar Oferta](../images/processo04-realizar-oferta.png "Modelo BPMN do Processo 4.")
 
