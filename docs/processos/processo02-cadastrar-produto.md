@@ -1,6 +1,6 @@
 ### 3.3.2 Processo 2 – Processo de Cadastro de Produtos 
 
-O processo modelado na imagem a seguir representa o fluxo de cadastro de produtos. Ele inicia com a verificação se o usuário está logado. Se não estiver, ele deve realizar o login antes de prosseguir. Caso já esteja autenticado, ele acessa a página de produtos cadastrados e seleciona a opção de cadastrar um novo produto.
+O processo modelado na imagem a seguir representa o fluxo de cadastro de produtos. Ele inicia com a verificação se o usuário está logado. Se não estiver, ele deve realizar o login antes de prosseguir. Caso esteja autenticado, ele acessa a página de produtos cadastrados e seleciona a opção de cadastrar um novo produto.
 
 O usuário preenche um formulário com informações como nome, descrição, fotos, valor de venda e categoria do produto. Após o envio, o sistema valida os dados. Se houver erros, o usuário é informado para corrigir as informações. Caso os dados estejam corretos, o produto é cadastrado no banco de dados.
 
