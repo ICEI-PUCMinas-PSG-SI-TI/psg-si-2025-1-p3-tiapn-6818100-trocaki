@@ -1,6 +1,6 @@
 ### 3.3.8 Processo 8 – Processo de Criar e responder comentário
 
-O processo modelado na imagem a seguir representa o fluxo de criação e resposta de um comentário na plataforma. Ele inicia com o comprador realizando o cadastro ou login no sistema através da página de log-in/sig-in. Após isso, caso ele não esteja autenticado, o processo se encerra. Caso contrário, o comprador seleciona um produto exibido na home page da plataforma. Caso nenhum produto seja selecionado, o processo também se encerra.
+O processo modelado na imagem a seguir representa o fluxo de criação e resposta de um comentário na plataforma. Ele inicia com o comprador realizando o cadastro ou login no sistema através da página de log-in/cadastro. Após isso, caso ele não esteja autenticado, o processo se encerra. Caso contrário, o comprador seleciona um produto exibido na home page da plataforma. Caso nenhum produto seja selecionado, o processo também se encerra.
 
 Após a seleção, o comprador clica na opção "Criar comentário", preenche o formulário de comentário com o texto desejado e em seguida clicar em "Enviar". O sistema, então, cadastra esse comentário no banco de dados e em seguida envia uma notificação para o vendedor, informando sobre o novo comentário. A notificação também é armazenada no banco de dados.
 
