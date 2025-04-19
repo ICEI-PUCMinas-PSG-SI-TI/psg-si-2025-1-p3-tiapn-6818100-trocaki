@@ -73,9 +73,9 @@ Atualizado em: 16/03/2025
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 |  Anael Ferreira de Oliveira       | Modelagem da situação atual (AS IS) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Abel Rodrigues Louback Filho       | Diagrama de Entidade-Relacionamento | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Gabrielle Maia de Andrade Souza       | Diagrama de Entidade-Relacionamento | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Miguel Oliveira Faria       | Diagrama de Entidade-Relacionamento | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Abel Rodrigues Louback Filho       | Modelagem da situação atual (AS IS) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Gabrielle Maia de Andrade Souza       | Modelagem da situação atual (AS IS) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Miguel Oliveira Faria       | Desenho dos processos (TO BE) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
 |  Pedro Ivo Barroso Garrido       | Desenho dos processos (TO BE) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
 |  Wagner Alexsander de Carvalho Viana       | Desenho dos processos (TO BE) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
 
@@ -86,9 +86,9 @@ Atualizado em: 16/03/2025
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 |  Anael Ferreira de Oliveira       | Protótipo de telas | 11/04/2025     | 09/05/2025 | 📝    |      |
-|  Abel Rodrigues Louback Filho       | Documentação | 11/04/2025     | 09/05/2025 | 📝    |       |
-|  Gabrielle Maia de Andrade Souza       | Documentação | 11/04/2025     | 09/05/2025 | 📝    |       |
-|  Miguel Oliveira Faria       | Documentação | 11/04/2025     | 09/05/2025 | 📝    |      |
+|  Abel Rodrigues Louback Filho       | Diagrama de Entidade-Relacionamento | 11/04/2025     | 09/05/2025 | 📝    |       |
+|  Gabrielle Maia de Andrade Souza       | Diagrama de Entidade-Relacionamento | 11/04/2025     | 09/05/2025 | 📝    |       |
+|  Miguel Oliveira Faria       | Diagrama de Entidade-Relacionamento | 11/04/2025     | 09/05/2025 | 📝    |      |
 |  Pedro Ivo Barroso Garrido       | Protótipo de telas | 11/04/2025     | 09/05/2025 | 📝    |       |
 |  Wagner Alexsander de Carvalho Viana       | Definição de relatório de tecnologias e arquitetura da aplicação | 11/04/2025     | 09/05/2025 | 📝    |       |
 
