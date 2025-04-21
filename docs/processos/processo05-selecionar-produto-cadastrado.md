@@ -35,10 +35,6 @@ Descricao
 
 **3. Selecionar produto**
 
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| ---                  | ---                            | ---               | ---               |
-| Produto | Link  |  |  |
-
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Selecionar produto | Fim do processo | default |
