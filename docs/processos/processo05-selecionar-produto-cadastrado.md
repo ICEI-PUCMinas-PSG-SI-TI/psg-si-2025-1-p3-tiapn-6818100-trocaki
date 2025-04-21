@@ -17,11 +17,28 @@ Descricao
 
 ## **Tarefas Detalhadas**
 
-### **1. Tarefa**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+**1. Acessar home page do site**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Acessar home page do site | Acessar página "Meus produtos" | default           |
 
 ---
+
+**2. Acessar página "Meus produtos"**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Acessar página "Meus produtos" | Selecionar produto | default           |
+
+---
+
+**3. Selecionar produto**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| ---                  | ---                            | ---               | ---               |
+| Produto | Link  |  |  |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Selecionar produto | Fim do processo | default |
