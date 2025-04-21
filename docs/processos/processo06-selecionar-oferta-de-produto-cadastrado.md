@@ -19,10 +19,6 @@ Descricao
 
 **1. Selecionar oferta que deseja fechar**
 
-| **Campo** | **Tipo** | **Restrições** | **Valor default** |
-| ---                  | ---                            | ---               | ---               |
-| Oferta | Link  |  |  |
-
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
 | Selecionar oferta | Fim do processo | default |
