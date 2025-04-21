@@ -12,18 +12,21 @@ O sistema, então, atualiza a lista de desejos do comprador no banco de dados e 
 
 ## **Usuário Envolvido**
 
-### **Usuário**
-Descricao
+### **Comprador**
+Usário que irá acessar o sistema, buscar os produtos que o interessam e foram cadastrados pelos vendedores, e adicioná-los em sua lista de desejos para poder acessá-los depois mais facilmente.
 
 ---
 
 ## **Tarefas Detalhadas**
 
-### **1. Tarefa**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+**1. Clicar em "Adicionar na lista de desejo"**
 
----
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Adicionar na lista de desejo | Adiciona produto na lista de desejo | default           |
+
+**2. Acessar página de lista de desejo"**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Acessar lista de desejos | Obtem produto da lista de desejo | default           |
