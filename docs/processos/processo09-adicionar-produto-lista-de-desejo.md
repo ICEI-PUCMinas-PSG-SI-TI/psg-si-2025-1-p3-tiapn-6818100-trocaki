@@ -23,10 +23,10 @@ Usário que irá acessar o sistema, buscar os produtos que o interessam e foram 
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Adicionar na lista de desejo | Adiciona produto na lista de desejo | default           |
+| Adicionar na lista de desejo | Acessar página de lista de desejo" | default           |
 
 **2. Acessar página de lista de desejo"**
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Acessar lista de desejos | Obtem produto da lista de desejo | default           |
+| Acessar lista de desejos | Fim do processo | default           |
