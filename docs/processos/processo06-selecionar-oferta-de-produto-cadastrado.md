@@ -17,11 +17,10 @@ Descricao
 
 ## **Tarefas Detalhadas**
 
-### **1. Tarefa**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+**1. Selecionar oferta que deseja fechar**
 
----
+| **Campo** | **Tipo** | **Restrições** | **Valor default** |
+| Oferta | Link  |  |  |
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| Selecionar oferta | Fim do processo | default |
