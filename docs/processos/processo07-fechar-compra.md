@@ -50,7 +50,7 @@ O vendedor é responsável por gerenciar as ofertas dos produtos cadastrados e c
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Conferir pagamento do comprador | fechar pedido | default           |
+| Conferir pagamento do comprador | Fechar pedido | default           |
 
 ---
 
