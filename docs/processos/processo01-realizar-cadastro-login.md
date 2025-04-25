@@ -12,18 +12,72 @@ Se o usuário não possuir cadastro, ele seleciona a opção de cadastro e preen
 
 ## **Usuário Envolvido**
 
-### **Usuário**
-Descricao
+### **Compradores e Vendedores**
+
+O usuário é o indivíduo que ainda não possui cadastro na plataforma e deseja criar uma conta para utilizar os serviços disponíveis. Durante o processo de cadastro, ele informa seus dados pessoais, cria credenciais de acesso e concorda com os termos da plataforma. Após concluir o cadastro, o novo usuário pode realizar o login utilizando suas credenciais e acessar as funcionalidades disponibilizadas para usuários registrados.
 
 ---
 
 ## **Tarefas Detalhadas**
 
-### **1. Tarefa**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+### **1. Acessar Home Page do Site**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Acessar URL do site | Ação | Navegador aberto | - |
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Acessar login/cadastro | Página de login/cadastro | default |
+
+---
+
+### **3. Preencher e Enviar Formulário de Cadastro**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Nome completo	 | Texto | Obrigatório, 100 caracteres | - |
+| E-mail | E-mail	 | Obrigatório, formato válido | - |
+| Telefone | Texto | Obrigatório | - |
+| CPF | Texto | Obrigatório | - |
+| Data de nascimento | Data | Obrigatório | - |
+| Senha | Texto | Obrigatório | - |
+| Confirmar senha	 | Texto | Obrigatório, e igual ao campo "Senha" | - |
+
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Enviar formulário	 | Validação de dados | default |
+| Cancelar envio | Fim do processo | default |
+
+---
+
+### **4. Preencher e Enviar Formulário de Login**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Usuário (e-mail) | Texto | Obrigatório | - |
+| Senha | Texto | Obrigatório | - |
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Enviar formulário | Validação de login | default | 
+| Cancelar envio | Fim do processo | cancel |
+
+---
+
+### **5. Validação**
+## **Cadastro**
+
+| **Ação** | **Restrições** |
+|-----------|---------|---------------|------------------|
+| Validar dados do formulário | Todos os campos obrigatórios preenchidos e corretos |
+| Verificar cadastro existente | E-mail já cadastrado |
+
+## **Login**
+
+| **Ação** | **Restrições** |
+|-----------|---------|---------------|------------------|
+| Validar dados de login | Usuário e senha corretos no banco de dados |
 
 ---
