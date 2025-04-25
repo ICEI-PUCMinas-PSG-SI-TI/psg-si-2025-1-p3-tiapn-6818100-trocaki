@@ -15,94 +15,45 @@ Após o envio, o sistema registra a oferta no banco de dados e notifica o vended
 ### **Comprador**
 O comprador é o usuário responsável por realizar ofertas em produtos disponíveis na plataforma. Caso não possua cadastro, ele deve realizá-lo antes de efetuar uma oferta. Uma vez logado, o comprador pode navegar pelos produtos, selecionar um item de interesse e enviar uma proposta ao vendedor.
 
-### **Sistema**
-O sistema recebe a oferta do comprador e a encaminha ao vendedor, registrando a transação e notificando ambas as partes.
-
-### **Vendedor**
-O vendedor recebe a notificação da oferta e pode aceitá-la ou recusá-la. Caso aceite, um pedido é gerado e o comprador é notificado.
-
 ---
 
 ## **Tarefas Detalhadas**
 
-### **1. Verificação de Cadastro**
-- **Descrição**: O sistema verifica se o comprador já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
-
----
-
-### **2. Realizar Cadastro**
+### **1. Acessar Home Page do Site**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor Default** |
 |-----------|---------|---------------|------------------|
-| Nome | Caixa de Texto | Mínimo de 3 caracteres | - |
-| E-mail | Caixa de Texto | Formato de e-mail válido | - |
-| Senha | Caixa de Texto | Mínimo de 8 caracteres | - |
+| Acessar URL do site | Ação | Navegador aberto | - |
 
-| **Comandos** | **Destino** | **Tipo** |
-|-------------|------------|---------|
-| Registrar | Validação do Registro | default |
-| Cancelar | Retorna à Página Inicial | cancel |
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Acessar site | Página inicial do sistema | Default |
 
 ---
 
-### **3. Realizar Login**
+### **2. Clicar em "Eu quero"**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor Default** |
 |-----------|---------|---------------|------------------|
-| E-mail | Caixa de Texto | Formato de e-mail válido | - |
-| Senha | Caixa de Texto | Mínimo de 8 caracteres | - |
+| Botão "Eu Quero" | Botão de ação | Usuário logado | - |
 
 | **Comandos** | **Destino** | **Tipo** |
 |-------------|------------|---------|
-| Entrar | Tela Inicial | default/cancel |
+| Clicar em "Eu Quero" | Abrir formulário de oferta | default |
 
 ---
 
-### **4. Selecionar Produto e Enviar Oferta**
-- **Descrição**: Após o login, o comprador pode visualizar a lista de produtos e selecionar aquele que deseja fazer uma oferta.
+### **3. Preencher Formulário e Realizar Oferta**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor Default** |
-|----------------|---------|--------------------|------------------|
-| Nome do Produto | String | Mínimo de 3 caracteres | - |
-| Quantidade | Caixa de Seleção | Apenas números positivos | 1 |
-| Valor da Oferta | Caixa de Texto | Formato numérico com 2 casas decimais | - |
+|-----------|---------|---------------|------------------|
+| Deseja propor outro valor? | Booleano (Sim/Não) | Obrigatório | Não |
+| Valor Proposto | Numérico | Obrigatório se "Sim" | - |
+| Comentários ao vendedor | Texto livre | Opcional | - |
 
 | **Comandos** | **Destino** | **Tipo** |
-|-------------|------------------------|---------|
-| Enviar | Envia a Proposta ao Sistema | default |
-| Cancelar | Retorna à Página Inicial | cancel |
-
----
-
-### **5. Criar Registro de Oferta e Notificar Vendedor**
-- **Descrição**: O sistema recebe a oferta, registra a transação e envia uma notificação ao vendedor.
-- **Campos**: Não há campos de entrada.
-
-| **Comandos** | **Destino** | **Tipo** |
-|-------------|---------------------|---------|
-| Notificar | Envia notificação ao vendedor | automático |
-
----
-
-### **6. Decisão do Vendedor**
-- **Descrição**: O vendedor recebe a notificação e pode aceitar ou recusar a oferta.
-
-| **Opção** | **Ação** |
-|----------|--------|
-| Aceitar | Gera um pedido e notifica o comprador |
-| Recusar | Cancela a oferta |
-
----
-
-### **7. Conclusão do Pedido**
-- **Descrição**: Caso o vendedor aceite a oferta e o pagamento seja confirmado, o pedido é finalizado.
-- **Condições**:
-  - **Pagamento confirmado** → Envio do produto e fechamento do pedido.
-  - **Pagamento não realizado** → Cancelamento do pedido.
+|-------------|------------|---------|
+| Enviar formulário | Criar registro de oferta | default |
 
 ---
 
