@@ -27,10 +27,10 @@ O comprador é responsável por intergir diretamente com o sistema de busca e se
 | ---                  | ---                            | ---               |
 | Acessar home page do sistema | Selecionar produto | default           |
 
-| **Campo** |  **Tipo** | **Restrições** | **Valor Default** |
-| ---    | ---  | --- | --- |
-| Filtro | Caixa de seleção | "Sim" ou "Não" | Não |
-| Tipo de filtro | Caixa de seleção | "Busca textual" ou "Formulário de filtragem" | -- |
+| **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
+| ---    | ---  | ---      | --- |
+| Filtro | Caixa de seleção   | "Sim" ou "Não" | Não |
+| Tipo de filtro | Caixa de seleção    | "Busca textual" ou "Formulário de filtragem" | -- |
 | Filtro Busca textual | Caixa de texto | Texto livre | -- |
 | Filtro Formulário de filtragem | Caixa de texto | Preço máximo e mínimo: Numérico / Categorias e Cidade de venda: Texto | -- |
 
