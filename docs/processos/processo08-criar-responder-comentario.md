@@ -14,18 +14,140 @@ O comprador então clica na notificação e em seguida o sistema redireciona a p
 
 ## **Usuário Envolvido**
 
-### **Usuário**
-Descricao
+### **Comprador**
+Usuário responsável por selecionar produtos, comentar e visualizar respostas.
+
+### **Vendedor**
+Usuário responsável por responder comentários deixados em seus produtos.
 
 ---
 
 ## **Tarefas Detalhadas**
 
-### **1. Tarefa**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+### **Atividade: Realizar cadastro/login (Comprador)**
+
+#### Campos
+
+| Campo  | Tipo           | Restrições              | Valor default |
+|--------|----------------|--------------------------|----------------|
+| login  | Caixa de Texto | formato de e-mail        | —              |
+| senha  | Caixa de Texto | mínimo de 8 caracteres   | —              |
+
+#### Comandos
+
+| Comando   | Destino                        | Tipo    |
+|-----------|--------------------------------|---------|
+| entrar    | Fim do Processo 1              | default |
+| cadastrar | Início do processo de cadastro | default |
 
 ---
+
+### **Atividade: Selecionar produto exibido na homepage (Comprador)**
+
+#### Campos
+
+| Campo      | Tipo    | Restrições   | Valor default |
+|------------|---------|--------------|----------------|
+| produto_id | Seleção | obrigatório  | —              |
+
+#### Comandos
+
+| Comando    | Destino                        | Tipo    |
+|------------|--------------------------------|---------|
+| selecionar | Verificação de autenticação    | default |
+
+---
+
+### **Atividade: Clicar em "Adicionar comentário" (Comprador)**
+
+#### Campos
+
+| Campo | Tipo | Restrições | Valor default |
+|-------|------|------------|----------------|
+| —     | —    | —          | —              |
+
+#### Comandos
+
+| Comando              | Destino                          | Tipo    |
+|----------------------|----------------------------------|---------|
+| adicionar comentário | Exibição do formulário de comentário | default |
+
+---
+
+### **Atividade: Preencher e enviar formulário de comentário (Comprador)**
+
+#### Campos
+
+| Campo      | Tipo           | Restrições                       | Valor default |
+|------------|----------------|----------------------------------|----------------|
+| comentário | Caixa de Texto | texto de no máximo 500 caracteres | —              |
+
+#### Comandos
+
+| Comando | Destino             | Tipo    |
+|---------|---------------------|---------|
+| enviar  | Armazenar comentário | default |
+
+---
+
+### **Atividade: Selecionar produto cadastrado (Vendedor)**
+
+#### Campos
+
+| Campo      | Tipo    | Restrições  | Valor default |
+|------------|---------|-------------|----------------|
+| produto_id | Seleção | obrigatório | —              |
+
+#### Comandos
+
+| Comando    | Destino                            | Tipo    |
+|------------|-------------------------------------|---------|
+| selecionar | Exibir botão "Responder comentário" | default |
+
+---
+
+### **Atividade: Responder comentário (Vendedor)**
+
+#### Campos
+
+| Campo    | Tipo           | Restrições                       | Valor default |
+|----------|----------------|----------------------------------|----------------|
+| resposta | Caixa de Texto | texto de no máximo 500 caracteres | —              |
+
+#### Comandos
+
+| Comando | Destino            | Tipo    |
+|---------|--------------------|---------|
+| enviar  | Armazenar resposta | default |
+
+---
+
+### **Atividade: Clicar na notificação (Comprador)**
+
+#### Campos
+
+| Campo | Tipo | Restrições | Valor default |
+|-------|------|------------|----------------|
+| —     | —    | —          | —              |
+
+#### Comandos
+
+| Comando     | Destino                          | Tipo    |
+|-------------|----------------------------------|---------|
+| visualizar  | Direcionar para página do produto | default |
+
+---
+
+### **Atividade: Visualizar resposta (Comprador)**
+
+#### Campos
+
+| Campo | Tipo | Restrições | Valor default |
+|-------|------|------------|----------------|
+| —     | —    | —          | —              |
+
+#### Comandos
+
+| Comando | Destino | Tipo    |
+|---------|---------|---------|
+| —       | Fim     | default |
