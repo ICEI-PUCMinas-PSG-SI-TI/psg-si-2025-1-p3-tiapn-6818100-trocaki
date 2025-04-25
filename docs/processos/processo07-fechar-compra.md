@@ -14,18 +14,41 @@ Se o vendedor decidir cancelar o pedido antes que o comprador informe o pagament
 
 ## **Usuário Envolvido**
 
-### **Usuário**
-Descricao
+### **Vendedor**
+O vendedor é responsável por gerenciar as ofertas dos produtos cadastrados e conduzir o processo de fechamento de compra. O vendedor inicia selecionando uma oferta e decidindo se deseja aceitar ou recusar ela. Caso aceite, ele acompanha a criação do pedido e aguarda pagamento do comprador, podendo cancelar o pedido a qualquer momento antes do pagamento. Caso rejeite, a oferta é finalizada e o comprador notificado.
 
 ---
 
 ## **Tarefas Detalhadas**
 
-### **1. Tarefa**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+**1. Selecionar ação na oferta**
+
+| **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
+| ---    | ---  | ---      | --- |
+| Selecionar ação na oferta | Caixa de seleção   | "Aceitar oferta" ou "Recusar oferta" | - |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Aceitar oferta | Criar pedido | default           |
+| Recusar oferta | Fim do processo | default           |
+---
+
+**2. Criar pedido**
+
+| **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
+| ---    | ---  | ---      | --- |
+| Cancelar pedido | Botão de ação| Confirmação obrigatória | - |
+
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Criar pedido | Conferir pagamento do comprador | default           |
+| Cancelar pedido | Fim do processo | default           |
 
 ---
+**3. Conferir pagamento do comprador**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Conferir pagamento do comprador | Fim do processo | default           |
+
