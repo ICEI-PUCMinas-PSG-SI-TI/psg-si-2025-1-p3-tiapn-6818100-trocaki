@@ -14,18 +14,31 @@ Por fim, os resultados obtidos são apresentados ao comprador caso existam. Em c
 
 ## **Usuário Envolvido**
 
-### **Usuário**
-Descricao
+### **Comprador**
+O comprador é responsável por intergir diretamente com o sistema de busca e seleção de produtos. Suas funções no processo incluem acessar a página inicial do sistema, decidir se deseja utilizar filtros de busca e, em caso afirmativo, escolher entre realizar uma busca textual com descrição do produto ou preencher um formulário de filtragem com critérios como preço, categoria e cidade.
 
 ---
 
 ## **Tarefas Detalhadas**
 
-### **1. Tarefa**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+### **1. Acessar home page do sistema**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Acessar home page do sistema | Selecionar produto | default           |
+
+| **Campo** |  **Tipo** | **Restrições** | **Valor Default** |
+| ---    | ---  | --- | --- |
+| Filtro | Caixa de seleção | "Sim" ou "Não" | Não |
+| Tipo de filtro | Caixa de seleção | "Busca textual" ou "Formulário de filtragem" | -- |
+| Filtro Busca textual | Caixa de texto | Texto livre | -- |
+| Filtro Formulário de filtragem | Caixa de texto | Preço máximo e mínimo: Numérico / Categorias e Cidade de venda: Texto | -- |
+
 
 ---
+
+  **2. Selecionar Produto**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Selecionar Produto | Fim do processo | default           |
