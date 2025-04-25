@@ -19,13 +19,26 @@ O vendedor é o usuário responsável por cadastrar novos produtos na plataforma
 
 ## **Tarefas Detalhadas**
 
-### **1. Verificação de Cadastro**
-- **Descrição**: O sistema pergunta se o usuário já possui cadastro.
-- **Tipo**: Decisão lógica (gate exclusivo)
-- **Condições**:  
-  - **Sim** → Redireciona para "Realizar login"  
-  - **Não** → Redireciona para "Realizar cadastro"  
+### **1. Acessar página de produtos cadastrados**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Acessar página de produtos cadastrados | Acessar página "Produtos cadastrados" | default           |
 
 ---
+
+**2. Acessar página "Produtos cadastrados"**
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Acessar página "Produtos cadastrados" | Preecher formulário de novo produto | default           |
+
+---
+
+**3. Preecher formulário de novo produto**
+
+| **Comandos**         |  **Destino**                   | **Tipo**          |
+| ---                  | ---                            | ---               |
+| Preecher formulário de novo produto | Fim do processo | default |
 
 
