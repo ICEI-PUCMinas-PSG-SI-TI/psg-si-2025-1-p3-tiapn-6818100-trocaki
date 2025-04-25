@@ -30,7 +30,7 @@ O vendedor é responsável por gerenciar as ofertas dos produtos cadastrados e c
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Aceitar oferta | Criar pedido | default           |
-| Recusar oferta | Fim do processo | default           |
+| Recusar oferta | Fim do processo | cancel           |
 ---
 
 **2. Criar pedido**
@@ -43,7 +43,7 @@ O vendedor é responsável por gerenciar as ofertas dos produtos cadastrados e c
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Criar pedido | Conferir pagamento do comprador | default           |
-| Cancelar pedido | Fim do processo | default           |
+| Cancelar pedido | Fim do processo | cancel           |
 
 ---
 **3. Conferir pagamento do comprador**
