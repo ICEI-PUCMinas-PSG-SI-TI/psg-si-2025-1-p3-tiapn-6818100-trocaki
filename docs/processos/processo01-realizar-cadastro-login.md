@@ -70,14 +70,14 @@ O usuário é o indivíduo que ainda não possui cadastro na plataforma e deseja
 **Cadastro**
 
 | **Ação** | **Restrições** |
-|-----------|---------|---------------|------------------|
+|-----------|---------|
 | Validar dados do formulário | Todos os campos obrigatórios preenchidos e corretos |
 | Verificar cadastro existente | E-mail já cadastrado |
 
 **Login**
 
 | **Ação** | **Restrições** |
-|-----------|---------|---------------|------------------|
+|-----------|---------|
 | Validar dados de login | Usuário e senha corretos no banco de dados |
 
 ---
