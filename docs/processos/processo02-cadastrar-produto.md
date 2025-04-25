@@ -19,7 +19,7 @@ O vendedor é o usuário responsável por cadastrar novos produtos na plataforma
 
 ## **Tarefas Detalhadas**
 
-### **1. Acessar página de produtos cadastrados**
+**1. Acessar página de produtos cadastrados**
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
