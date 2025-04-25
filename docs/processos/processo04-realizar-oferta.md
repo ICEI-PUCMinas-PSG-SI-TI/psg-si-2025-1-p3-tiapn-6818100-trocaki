@@ -10,7 +10,7 @@ Após o envio, o sistema registra a oferta no banco de dados e notifica o vended
 
 ---
 
-## **Usuários Envolvidos**
+## **Usuário Envolvido**
 
 ### **Comprador**
 O comprador é o usuário responsável por realizar ofertas em produtos disponíveis na plataforma. Caso não possua cadastro, ele deve realizá-lo antes de efetuar uma oferta. Uma vez logado, o comprador pode navegar pelos produtos, selecionar um item de interesse e enviar uma proposta ao vendedor.
@@ -27,7 +27,7 @@ O comprador é o usuário responsável por realizar ofertas em produtos disponí
 
 | **Comando** | **Destino** | **Tipo** | 
 |-----------|---------|---------------|
-| Acessar site | Página inicial do sistema | Default |
+| Acessar site | Página inicial do sistema | default |
 
 ---
 
@@ -54,6 +54,7 @@ O comprador é o usuário responsável por realizar ofertas em produtos disponí
 | **Comandos** | **Destino** | **Tipo** |
 |-------------|------------|---------|
 | Enviar formulário | Criar registro de oferta | default |
+| Cancelar envio | Fim do processo | cancel |
 
 ---
 
