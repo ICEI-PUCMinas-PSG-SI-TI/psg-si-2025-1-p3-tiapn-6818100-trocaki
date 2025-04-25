@@ -21,7 +21,7 @@ O comprador é responsável por intergir diretamente com o sistema de busca e se
 
 ## **Tarefas Detalhadas**
 
-### **1. Acessar home page do sistema**
+**1. Acessar home page do sistema**
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
