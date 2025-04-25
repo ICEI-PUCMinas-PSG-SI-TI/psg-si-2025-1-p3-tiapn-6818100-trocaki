@@ -67,14 +67,14 @@ O usuário é o indivíduo que ainda não possui cadastro na plataforma e deseja
 ---
 
 ### **5. Validação**
-## **Cadastro**
+**Cadastro**
 
 | **Ação** | **Restrições** |
 |-----------|---------|---------------|------------------|
 | Validar dados do formulário | Todos os campos obrigatórios preenchidos e corretos |
 | Verificar cadastro existente | E-mail já cadastrado |
 
-## **Login**
+**Login**
 
 | **Ação** | **Restrições** |
 |-----------|---------|---------------|------------------|
