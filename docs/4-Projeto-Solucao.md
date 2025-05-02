@@ -273,15 +273,27 @@ SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
 ### 4.4. Tecnologias
 
-_Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
+O sistema é composto por um front-end desenvolvido com **HTML**, **CSS** e **JavaScript**, um back-end construído em **C#**, e um banco de dados implementado com o SGBD **MySQL**. Ele está hospedado utilizando a ferramenta **GitHub Pages**.
 
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+Durante o desenvolvimento, a comunicação entre os membros da equipe foi realizada pelas plataformas **Discord** e **WhatsApp**. O código foi desenvolvido na IDE **Visual Studio Code**, e as tarefas foram organizadas e acompanhadas por meio do **Trello**. A modelagem dos processos de negócios foi feita utilizando a plataforma **Camunda**, o Modelo Entidade-Relacionamento (MER), no **Miro**, e o Diagrama de Classes, no **DIA**.
 
+O armazenamento e o versionamento do código foram gerenciados utilizando a tecnologia **Git**, integrada à plataforma **GitHub**.
 
 | **Dimensão**   | **Tecnologia**  |
 | ---            | ---             |
 | SGBD           | MySQL           |
-| Front end      | HTML+CSS+JS     |
-| Back end       | Java SpringBoot |
+| Front end      | HTML + CSS + JS     |
+| Back end       | C# |
 | Deploy         | Github Pages    |
+| Comunicação do time         | Discord e WhatsApp    |
+| IDE de desenvolvimento         | Visual Studio Code    |
+| Ferramenta de versionamento         | Git e Github    |
+| Controle de tarefas         | Trello    |
+| Criação do MER         | Miro    |
+| Modelagem dos processos de negócio         | Camunda    |
 
+![Relacionamento das tecnologias utilizadas](images/Tecnologias_utilizadas.png "Relacionamento das tecnologias utilizadas")
+
+_Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
+
+Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
