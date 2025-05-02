@@ -49,7 +49,7 @@ A partir das atividades de usuário identificadas na seção anterior, elabore o
 
 ## Diagrama de Classes
 
-![Diagrama de Classes](images/Diagrama_de_Classes)
+![Diagrama de Classes](images/Diagrama_de_classes.png)
 
 ## Modelo ER
 
