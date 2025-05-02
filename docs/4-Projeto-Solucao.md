@@ -73,13 +73,12 @@ _Apresente o modelo de dados por meio de um modelo relacional que contemple todo
 
 #### 4.3.1 Modelo ER
 
-![Modelo ER](images/Esquema_Relacional.png "Modelo ER.")
+![Modelo ER](images/Modelo_Entidade_Relacionamento.jpg "Modelo ER.")
 
 #### 4.3.2 Esquema Relacional
 
-![Esquema Relacional](images/Modelo_Entidade_Relacionamento.png "Esquema Relacional.")
+![Esquema Relacional](images/Esquema_Relacional.png "Esquema Relacional.")
 ---
-
 
 #### 4.3.3 Modelo Físico
 
@@ -94,19 +93,15 @@ SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
 
--- -----------------------------------------------------
 -- Schema mydb
--- -----------------------------------------------------
 
--- -----------------------------------------------------
 -- Schema mydb
--- -----------------------------------------------------
+
 CREATE SCHEMA IF NOT EXISTS `mydb` DEFAULT CHARACTER SET utf8 ;
 USE `mydb` ;
 
--- -----------------------------------------------------
 -- Table `mydb`.`Usuário`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Usuário` (
   `id` VARCHAR(36) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
@@ -122,10 +117,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Usuário` (
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Produto`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Produto` (
   `id` VARCHAR(36) NOT NULL,
   `valor` DOUBLE NOT NULL,
@@ -143,10 +136,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Produto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Oferta`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Oferta` (
   `id` VARCHAR(36) NOT NULL,
   `valor_proposto` DOUBLE NOT NULL,
@@ -170,10 +161,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Oferta` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Pedido`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Pedido` (
   `id` VARCHAR(36) NOT NULL,
   `status` VARCHAR(45) NOT NULL,
@@ -188,10 +177,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Pedido` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Comentário`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Comentário` (
   `id` VARCHAR(36) NOT NULL,
   `texto` VARCHAR(200) NOT NULL,
@@ -214,10 +201,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Comentário` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Lista de desejos`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Lista de desejos` (
   `Comprador_id` VARCHAR(36) NOT NULL,
   `Produto_id` VARCHAR(36) NOT NULL,
@@ -236,10 +221,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Lista de desejos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Fotos`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Fotos` (
   `id` VARCHAR(36) NOT NULL,
   `base` LONGTEXT NOT NULL,
@@ -253,10 +236,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Fotos` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Categoria`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Categoria` (
   `id` VARCHAR(36) NOT NULL,
   `nome` VARCHAR(45) NOT NULL,
@@ -264,10 +245,8 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Categoria` (
   UNIQUE INDEX `id_UNIQUE` (`id` ASC) VISIBLE)
 ENGINE = InnoDB;
 
-
--- -----------------------------------------------------
 -- Table `mydb`.`Categoria do produto`
--- -----------------------------------------------------
+
 CREATE TABLE IF NOT EXISTS `mydb`.`Categoria do produto` (
   `Categoria_id` VARCHAR(36) NOT NULL,
   `Produto_id` VARCHAR(36) NOT NULL,
@@ -286,18 +265,11 @@ CREATE TABLE IF NOT EXISTS `mydb`.`Categoria do produto` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
 
-
 </code>
-
-Este script deverá ser incluído em um arquivo .sql na pasta src\bd.
-
-
-
 
 ### 4.4. Tecnologias
 
