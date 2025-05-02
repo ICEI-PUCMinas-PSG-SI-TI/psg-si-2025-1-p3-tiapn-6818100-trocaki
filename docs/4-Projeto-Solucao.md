@@ -5,14 +5,11 @@
 ## 4.1. Arquitetura da solução
 
 
-......  COLOQUE AQUI O SEU TEXTO E O DIAGRAMA DE ARQUITETURA .......
-
- Inclua um diagrama da solução e descreva os módulos e as tecnologias
- que fazem parte da solução. Discorra sobre o diagrama.
+O usuário acessará a página web, desenvolvida em HTML, CSS e JavaScript, por meio do navegador. A página armazenará as informações do usuário no Local Storage e utilizará a internet para realizar requisições que dependem do login salvo. O sistema será hospedado no GitHub Pages.
  
- **Exemplo do diagrama de Arquitetura**:
+ **diagrama**:
  
- ![Exemplo de Arquitetura](./images/arquitetura-exemplo.png)
+ ![](./images/Diagrama-Solucao.png)
  
 
 ### 4.2. Protótipos de telas
