@@ -18,34 +18,49 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a>.
 A partir das atividades de usuário identificadas na seção anterior, elabore o protótipo de tela de cada uma delas.
 #### Cadastro 1:
-![Cadastro 1](/CADASTRO%201.png)
+![Cadastro 1](/docs/images/CADASTRO%201.png)
 
 #### Cadastro 2:
-![Cadastro 2](/CADASTRO%202.png)
+![Cadastro 2](/docs/images/CADASTRO%202.png)
 
 #### Cadastro 3:
-![Cadastro 3](/CADASTRO%203.png)
+![Cadastro 3](/docs/images/CADASTRO%203.png)
 
 #### Login:
-![Login](/LOGIN.png)
+![Login](/docs/images/LOGIN.png)
 
 #### Home:
-![Home](/HOME.png)
+![Home](/docs/images/HOME.png)
 
 #### Menu Lateral:
-![Menu Lateral](/MENU%20LATERAL.png)
+![Menu Lateral](/docs/images/MENU%20LATERAL.png)
 
 #### Produto:
-![Produto](/PRODUTO.png)
+![Produto](/docs/images/PRODUTO.png)
+
+#### Oferta:
+![Oferta](/docs/images/OFERTA.png)
+
+#### Comentário:
+![Comentário](/docs/images/COMENT%C3%81RIO.png)
+
+#### Responder Comentário:
+![Responder Comentário](/docs/images/RESPONDER%20COMENT%C3%81RIO.png)
 
 #### Perfil:
-![Perfil](/PERFIL.png)
+![Perfil](/docs/images/PERFIL.png)
+
+#### Cadastro de Produto:
+![Cadastro de Produto](/docs/images/CADASTRO%20DE%20PRODUTO%201.png)
+
+#### Cadastro de Produto 2:
+![Cadastro de Produto 2](/docs/images/CADASTRO%20DE%20PRODUTO%202.png)
 
 #### Oferta Comprador:
-![Oferta Comprador](/OFERTA%20COMPRADOR.png)
+![Oferta Comprador](/docs/images/OFERTA%20COMPRADOR.png)
 
 #### Oferta Vendedor:
-![Oferta Vendedor](/OFERTA%20VENDEDOR.png)
+![Oferta Vendedor](/docs/images/OFERTA%20VENDEDOR.png)
 
 ## Diagrama de Classes
 
