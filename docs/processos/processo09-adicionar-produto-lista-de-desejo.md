@@ -21,11 +21,19 @@ Usário que irá acessar o sistema, buscar os produtos que o interessam e foram 
 
 **1. Clicar em "Adicionar na lista de desejo"**
 
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Adicionar na lista de desejo | Ação | Navegador aberto | - |
+
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Adicionar na lista de desejo | Acessar página de lista de desejo" | default           |
 
 **2. Acessar página de lista de desejo"**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Lista de desejo | Ação | Navegador aberto | - |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |

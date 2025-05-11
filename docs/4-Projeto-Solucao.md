@@ -18,43 +18,53 @@ Visão geral da interação do usuário pelas telas do sistema e protótipo inte
 Apresente as principais interfaces da plataforma. Discuta como ela foi elaborada de forma a atender os requisitos funcionais, não funcionais e histórias de usuário abordados nas <a href="02-Especificação do Projeto.md"> Especificação do Projeto</a>.
 A partir das atividades de usuário identificadas na seção anterior, elabore o protótipo de tela de cada uma delas.
 #### Cadastro 1:
-![Cadastro 1](/CADASTRO%201.png)
+![Cadastro 1](/docs/images/CADASTRO%201.png)
 
 #### Cadastro 2:
-![Cadastro 2](/CADASTRO%202.png)
+![Cadastro 2](/docs/images/CADASTRO%202.png)
 
 #### Cadastro 3:
-![Cadastro 3](/CADASTRO%203.png)
+![Cadastro 3](/docs/images/CADASTRO%203.png)
 
 #### Login:
-![Login](/LOGIN.png)
+![Login](/docs/images/LOGIN.png)
 
 #### Home:
-![Home](/HOME.png)
+![Home](/docs/images/HOME.png)
 
 #### Menu Lateral:
-![Menu Lateral](/MENU%20LATERAL.png)
+![Menu Lateral](/docs/images/MENU%20LATERAL.png)
 
 #### Produto:
-![Produto](/PRODUTO.png)
+![Produto](/docs/images/PRODUTO.png)
+
+#### Oferta:
+![Oferta](/docs/images/OFERTA.png)
+
+#### Comentário:
+![Comentário](/docs/images/COMENT%C3%81RIO.png)
+
+#### Responder Comentário:
+![Responder Comentário](/docs/images/RESPONDER%20COMENT%C3%81RIO.png)
 
 #### Perfil:
-![Perfil](/PERFIL.png)
+![Perfil](/docs/images/PERFIL.png)
+
+#### Cadastro de Produto:
+![Cadastro de Produto](/docs/images/CADASTRO%20DE%20PRODUTO%201.png)
+
+#### Cadastro de Produto 2:
+![Cadastro de Produto 2](/docs/images/CADASTRO%20DE%20PRODUTO%202.png)
 
 #### Oferta Comprador:
-![Oferta Comprador](/OFERTA%20COMPRADOR.png)
+![Oferta Comprador](/docs/images/OFERTA%20COMPRADOR.png)
 
 #### Oferta Vendedor:
-![Oferta Vendedor](/OFERTA%20VENDEDOR.png)
+![Oferta Vendedor](/docs/images/OFERTA%20VENDEDOR.png)
 
 ## Diagrama de Classes
 
-O diagrama de classes ilustra graficamente como será a estrutura do software, e como cada uma das classes da sua estrutura estarão interligadas. Essas classes servem de modelo para materializar os objetos que executarão na memória.
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Classes”.
-
-> - [Diagramas de Classes - Documentação da IBM](https://www.ibm.com/docs/pt-br/rational-soft-arch/9.6.1?topic=diagrams-class)
-> - [O que é um diagrama de classe UML? | Lucidchart](https://www.lucidchart.com/pages/pt/o-que-e-diagrama-de-classe-uml)
+![Diagrama de Classes](images/Diagrama_de_classes.png)
 
 ## Modelo ER
 
@@ -280,8 +290,4 @@ O armazenamento e o versionamento do código foram gerenciados utilizando a tecn
 | Criação do MER         | Miro    |
 | Modelagem dos processos de negócio         | Camunda    |
 
-![Relacionamento das tecnologias utilizadas](images/Tecnologias_utilizadas.png "Relacionamento das tecnologias utilizadas")
-
-_Descreva qual(is) tecnologias você vai usar para resolver o seu problema, ou seja, implementar a sua solução. Liste todas as tecnologias envolvidas, linguagens a serem utilizadas, serviços web, frameworks, bibliotecas, IDEs de desenvolvimento, e ferramentas._
-
-Apresente também uma figura explicando como as tecnologias estão relacionadas ou como uma interação do usuário com o sistema vai ser conduzida, por onde ela passa até retornar uma resposta ao usuário.
+![Relacionamento das tecnologias utilizadas](images/Fluxo_Usuario_Ferramentas.png "Relacionamento das tecnologias utilizadas")

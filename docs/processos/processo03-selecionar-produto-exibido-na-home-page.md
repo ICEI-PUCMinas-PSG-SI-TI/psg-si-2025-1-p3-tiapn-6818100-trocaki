@@ -23,12 +23,36 @@ O comprador é responsável por intergir diretamente com o sistema de busca e se
 
 **1. Acessar home page do sistema**
 
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Acessar URL do site | Ação | Navegador aberto | - |
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Acessar página | Home page | default |
+
+---
+
+**2. Digitar caracteristicas do produto no campo busca**
+
 | **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
 | ---    | ---  | ---      | --- |
-| Filtro | Caixa de seleção   | "Sim" ou "Não" | Não |
-| Tipo de filtro | Caixa de seleção    | "Busca textual" ou "Formulário de filtragem" | - |
-| Filtro Busca textual | Caixa de texto | Texto livre | - |
-| Filtro Formulário de filtragem | Caixa de texto | Preço máximo e mínimo: Numérico / Categorias e Cidade de venda: Texto | - |
+| Filtro Busca textual | Caixa de texto | Obrigatório | - |
+
+| **Comandos**         |  **Destino**                   | **Tipo** |
+| ---                  | ---                            | ---               |
+| Filtrar | Selecionar produto | default           |
+
+---
+
+**3. Acessar home page do sistema**
+
+| **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
+| ---    | ---  | ---      | --- |
+| Preço máximo   | numérico | - | - |
+| Preço mínimo   | numérico | - | - |
+| Categorias | Opções de valores | - | - |
+| Cidade de venda | Caixa de texto | - | - |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
@@ -36,8 +60,12 @@ O comprador é responsável por intergir diretamente com o sistema de busca e se
 
 ---
 
-  **2. Selecionar Produto**
+**4. Selecionar Produto**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Produto | Ação | Navegador aberto | - |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Selecionar Produto | Fim do processo | default           |
+| Clicar no produto | Página do produto | default           |

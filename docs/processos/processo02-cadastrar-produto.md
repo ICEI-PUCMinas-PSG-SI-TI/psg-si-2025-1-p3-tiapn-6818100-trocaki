@@ -21,24 +21,42 @@ O vendedor é o usuário responsável por cadastrar novos produtos na plataforma
 
 **1. Acessar página de produtos cadastrados**
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Acessar página de produtos cadastrados | Acessar página "Produtos cadastrados" | default           |
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Acessar URL do site | Ação | Navegador aberto | - |
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Acessar página | Página de produtos cadastrados | default |
 
 ---
 
-**2. Acessar página "Produtos cadastrados"**
+**2. -Clicar em botão "Cadastrar novo produto"**
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Acessar página "Produtos cadastrados" | Preecher formulário de novo produto | default           |
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Cadastrar novo produto | Ação | Navegador aberto | - |
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Cadastrar novo produto	 | Formulário de novo produto | default |
 
 ---
 
 **3. Preecher formulário de novo produto**
 
-| **Comandos**         |  **Destino**                   | **Tipo**          |
-| ---                  | ---                            | ---               |
-| Preecher formulário de novo produto | Fim do processo | default |
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Nome do produto	 | Texto | Obrigatório, 100 caracteres | - |
+| Descricao do produto	 | Texto | Obrigatório, 100 caracteres | - |
+| Fotos do produto	 | Arquivo | Obrigatório | - |
+| Valor de venda | Numérico	 | Obrigatório | - |
+| Categorias | Opções de valores | Obrigatório | - |
+
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Cadastrar produto	 | Validação de dados | default |
+| Cancelar | Fim do processo | default |
 
 

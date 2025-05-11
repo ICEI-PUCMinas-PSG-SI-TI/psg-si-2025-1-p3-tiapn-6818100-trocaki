@@ -33,30 +33,26 @@ O vendedor é responsável por gerenciar as ofertas dos produtos cadastrados e c
 | Recusar oferta | Fim do processo | cancel           |
 ---
 
-**2. Criar pedido**
+**2. Cancelar pedido**
 
 | **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
 | ---    | ---  | ---      | --- |
-| Cancelar pedido | Botão de ação| Confirmação obrigatória | - |
+| Cancelar pedido | Botão de ação | Confirmação obrigatória | - |
 
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
-| Criar pedido | Conferir pagamento do comprador | default           |
 | Cancelar pedido | Fim do processo | cancel           |
 
 ---
-**3. Conferir pagamento do comprador**
+**3. Clicar em fechar pedido e confirmar ação**
 
-| **Comandos**         |  **Destino**                   | **Tipo** |
-| ---                  | ---                            | ---               |
-| Conferir pagamento do comprador | Fechar pedido | default           |
-
----
-
-**4. Fechar pedido**
+| **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
+| ---    | ---  | ---      | --- |
+| Fechar pedido | Botão de ação | Confirmação obrigatória | - |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Fechar pedido | Fim do processo | default           |
+
 

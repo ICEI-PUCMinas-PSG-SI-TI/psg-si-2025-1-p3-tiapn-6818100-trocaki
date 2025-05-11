@@ -19,6 +19,10 @@ Descricao
 
 **1. Acessar home page do site**
 
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Logo do site | Ação | Navegador aberto | - |
+
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Acessar home page do site | Acessar página "Meus produtos" | default           |
@@ -27,6 +31,10 @@ Descricao
 
 **2. Acessar página "Meus produtos"**
 
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Meus produtos | Ação | Navegador aberto | - |
+
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
 | Acessar página "Meus produtos" | Selecionar produto | default           |
@@ -34,6 +42,10 @@ Descricao
 ---
 
 **3. Selecionar produto**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Produto | Ação | Navegador aberto | - |
 
 | **Comandos**         |  **Destino**                   | **Tipo**          |
 | ---                  | ---                            | ---               |
