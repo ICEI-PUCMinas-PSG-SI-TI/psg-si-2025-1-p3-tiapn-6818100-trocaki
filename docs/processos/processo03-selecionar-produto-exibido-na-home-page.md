@@ -49,10 +49,10 @@ O comprador é responsável por intergir diretamente com o sistema de busca e se
 
 | **Campo** |  **Tipo**       | **Restrições** | **Valor Default** |
 | ---    | ---  | ---      | --- |
-| Preço máximo   | numérico |  |
-| Preço mínimo   | numérico |  |
-| Categorias | Opções de valores |  |  |
-| Cidade de venda | Caixa de texto |  | - |
+| Preço máximo   | numérico | - | - |
+| Preço mínimo   | numérico | - | - |
+| Categorias | Opções de valores | - | - |
+| Cidade de venda | Caixa de texto | - | - |
 
 | **Comandos**         |  **Destino**                   | **Tipo** |
 | ---                  | ---                            | ---               |
