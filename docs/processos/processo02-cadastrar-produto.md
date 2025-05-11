@@ -51,7 +51,7 @@ O vendedor é o usuário responsável por cadastrar novos produtos na plataforma
 | Descricao do produto	 | Texto | Obrigatório, 100 caracteres | - |
 | Fotos do produto	 | Arquivo | Obrigatório | - |
 | Valor de venda | Numérico	 | Obrigatório | - |
-| Categorias | Texto | Obrigatório, 100 caracteres | - |
+| Categorias | Opções de valores | Obrigatório | - |
 
 
 | **Comando** | **Destino** | **Tipo** | 
