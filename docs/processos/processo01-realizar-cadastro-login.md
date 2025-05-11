@@ -32,23 +32,27 @@ O usuário é o indivíduo que ainda não possui cadastro na plataforma e deseja
 
 ---
 
-### **3. Preencher e Enviar Formulário de Cadastro**
+### **2. Selecionar opção de login**
 
 | **Campo** | **Tipo** | **Restrições** | **Valor Default** |
 |-----------|---------|---------------|------------------|
-| Nome completo	 | Texto | Obrigatório, 100 caracteres | - |
-| E-mail | E-mail	 | Obrigatório, formato válido | - |
-| Telefone | Texto | Obrigatório | - |
-| CPF | Texto | Obrigatório | - |
-| Data de nascimento | Data | Obrigatório | - |
-| Senha | Texto | Obrigatório | - |
-| Confirmar senha	 | Texto | Obrigatório, e igual ao campo "Senha" | - |
-
+| Login | Ação | Navegador aberto | - |
 
 | **Comando** | **Destino** | **Tipo** | 
 |-----------|---------|---------------|
-| Enviar formulário	 | Validação de dados | default |
-| Cancelar envio | Fim do processo | default |
+| Realizar login | Preencher e enviar formulário de login | default |
+
+---
+
+### **3. Selecionar opção de cadastro**
+
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Cadastro | Ação | Navegador aberto | - |
+
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Realizar cadastro | Preencher e enviar formulário de cadastro | default |
 
 ---
 
@@ -66,18 +70,21 @@ O usuário é o indivíduo que ainda não possui cadastro na plataforma e deseja
 
 ---
 
-### **5. Validação**
-**Cadastro**
+### **5. Preencher e Enviar Formulário de Cadastro**
 
-| **Ação** | **Restrições** |
-|-----------|---------|
-| Validar dados do formulário | Todos os campos obrigatórios preenchidos e corretos |
-| Verificar cadastro existente | E-mail já cadastrado |
+| **Campo** | **Tipo** | **Restrições** | **Valor Default** |
+|-----------|---------|---------------|------------------|
+| Nome completo	 | Texto | Obrigatório, 100 caracteres | - |
+| E-mail | E-mail	 | Obrigatório, formato válido | - |
+| Telefone | Texto | Obrigatório | - |
+| CPF | Texto | Obrigatório | - |
+| Data de nascimento | Data | Obrigatório | - |
+| Senha | Texto | Obrigatório | - |
+| Confirmar senha	 | Texto | Obrigatório, e igual ao campo "Senha" | - |
 
-**Login**
 
-| **Ação** | **Restrições** |
-|-----------|---------|
-| Validar dados de login | Usuário e senha corretos no banco de dados |
+| **Comando** | **Destino** | **Tipo** | 
+|-----------|---------|---------------|
+| Enviar formulário	 | Validação de dados | default |
+| Cancelar envio | Fim do processo | default |
 
----
