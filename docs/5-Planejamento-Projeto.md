@@ -19,15 +19,12 @@
 
 ### Sprint 4
 - _Scrum master_: Wagner Alexsander de Carvalho Viana
-- Desenvolvimento front-end dos processos 1 e 2: Abel Rodrigues Louback Filho
-- Desenvolvimento front-end dos processos 3: Anael Ferreira de Oliveira
-- Desenvolvimento front-end dos processos 4 e 5: Pedro Ivo Barroso Garrido
-- Desenvolvimento back-end dos processos 6 e 7: Gabrielle Maia de Andrade Souza
-- Desenvolvimento back-end dos processos 8: Miguel Oliveira Faria
-- Desenvolvimento back-end dos processos 9: Wagner Alexsander de Carvalho Viana
-- Desenvolvimento banco de dados dos processos 6 e 7: Gabrielle Maia de Andrade Souza, Miguel Oliveira Faria
-- Desenvolvimento banco de dados dos processos 8: Gabrielle Maia de Andrade Souza, Miguel Oliveira Faria
-- Desenvolvimento banco de dados dos processos 9: Wagner Alexsander de Carvalho Viana
+- Desenvolvimento back-end dos processos 1, 2, 3 e 4: Abel Rodrigues Louback Filho
+- Desenvolvimento front-end dos processos 1, 2, 3 e 4: Anael Ferreira de Oliveira
+- Desenvolvimento front-end e back-end dos processos 5 e 6: Gabrielle Maia de Andrade Souza
+- Desenvolvimento frond-end dos processos 7 e 8 e back-end do processo 9: Miguel Oliveira Faria
+- Desenvolvimento frond-end do processo 9 e back-end dos processos 7 e 8: Pedro Ivo Barroso Garrido
+- Desenvolvimento dos indicadores integrado com banco de dados; Gráficos e validação final geral: Wagner Alexsander de Carvalho Viana
 
 ## 5.1. Quadro de tarefas
 
@@ -80,7 +77,7 @@ Atualizado em: 23/05/2025
 |  Anael Ferreira de Oliveira       | Telas dos processos 1 e 2; Telas dos processos 3 e 4 | 23/05/2025     | 30/05/2025 | 📝    |      |
 |  Gabrielle Maia de Andrade Souza       | Telas dos processos 5 e 6; Banco de dados dos processos 5 e 6 com registros | 23/05/2025     | 30/06/2025 | 📝    |      |
 |  Miguel Oliveira Faria       | Telas do processo 7 e 8; Banco de dados do processo 9 com registros | 23/05/2025      | 06/06/2025 | 📝    |      |
-|  Pedro Ivo Barroso Garrido       | Tela do processo 9; Banco de dados dos processos 7 e 8 com registros  | 11/04/2025     | 06/06/2025  | 📝    |       |
+|  Pedro Ivo Barroso Garrido       | Tela do processo 9; Banco de dados dos processos 7 e 8 com registros  | 23/05/2025     | 06/06/2025  | 📝    |       |
 |  Wagner Alexsander de Carvalho Viana       | Desenvolvimento dos indicadores integrado com banco de dados; Gráficos e validação final | 23/05/2025      | 06/06/2025 | 📝    |       |
 
 Legenda:
