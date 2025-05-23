@@ -17,7 +17,7 @@
 - Diagrama de Entidade-Relacionamento: Gabrielle Maia de Andrade Souza, Miguel Oliveira Faria
 - Protótipo de telas: Pedro Ivo Barroso Garrido
 
-### Sprint 3
+### Sprint 4
 - _Scrum master_: Wagner Alexsander de Carvalho Viana
 - Desenvolvimento front-end dos processos 1 e 2: Abel Rodrigues Louback Filho
 - Desenvolvimento front-end dos processos 3: Anael Ferreira de Oliveira
