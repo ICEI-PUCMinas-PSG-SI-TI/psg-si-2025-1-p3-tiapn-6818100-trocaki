@@ -50,12 +50,12 @@ Atualizado em: 16/03/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-|  Abel Rodrigues Louback Filho       | Modelagem da situação atual (AS IS) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Anael Ferreira de Oliveira       | Modelagem da situação atual (AS IS) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Gabrielle Maia de Andrade Souza       | Modelagem da situação atual (AS IS) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Miguel Oliveira Faria       | Desenho dos processos (TO BE) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Pedro Ivo Barroso Garrido       | Desenho dos processos (TO BE) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
-|  Wagner Alexsander de Carvalho Viana       | Desenho dos processos (TO BE) | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Abel Rodrigues Louback Filho       | Enumeração das restrições; Desenho dos processos (TO BE)  | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Anael Ferreira de Oliveira       | Requisitos Funcionais (RF); Modelagem do processo de negócio | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Gabrielle Maia de Andrade Souza       | Requisitos Funcionais (RNF); Modelagem do processo de negócios | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Miguel Oliveira Faria       | Desenho dos processos (TO BE); Análise da situação atual | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Pedro Ivo Barroso Garrido       | Desenho dos processos (TO BE); Análise da situação atual  | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
+|  Wagner Alexsander de Carvalho Viana       | Criação de Personas; Histórias de usuários e validação final | 07/02/2025     | 14/03/2025 | ✔️    | 14/03/2025      |
 
 ## Sprint 3
 
