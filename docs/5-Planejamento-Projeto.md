@@ -63,12 +63,12 @@ Atualizado em: 23/05/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-|  Abel Rodrigues Louback Filho       | Diagrama de Entidade-Relacionamento | 11/04/2025     | 09/05/2025 | ✔️    |    16/05/2025   |
+|  Abel Rodrigues Louback Filho       | Diagrama de Entidade-Relacionamento; Modelo de dados - Esquema Relacional | 11/04/2025     | 09/05/2025 | ✔️    |    16/05/2025   |
 |  Anael Ferreira de Oliveira       | Protótipo de telas | 11/04/2025     | 09/05/2025 | ✔️    |   16/05/2025   |
-|  Gabrielle Maia de Andrade Souza       | Diagrama de Entidade-Relacionamento | 11/04/2025     | 09/05/2025 | ✔️    |   16/05/2025    |
-|  Miguel Oliveira Faria       | Diagrama de Entidade-Relacionamento | 11/04/2025     | 09/05/2025 | ✔️    |   16/05/2025   |
+|  Gabrielle Maia de Andrade Souza       | Diagrama de Entidade-Relacionamento; Modelo de dados - Modelo ER | 11/04/2025     | 09/05/2025 | ✔️    |   16/05/2025    |
+|  Miguel Oliveira Faria       | Diagrama de Entidade-Relacionamento; Modelo de dados - Modelo Físico | 11/04/2025     | 09/05/2025 | ✔️    |   16/05/2025   |
 |  Pedro Ivo Barroso Garrido       | Protótipo de telas | 11/04/2025     | 09/05/2025 | ✔️    |   16/05/2025    |
-|  Wagner Alexsander de Carvalho Viana       | Definição de relatório de tecnologias e arquitetura da aplicação | 11/04/2025     | 09/05/2025 | ✔️    |    16/05/2025   |
+|  Wagner Alexsander de Carvalho Viana       | Projeto da Solução; Definição de relatório de tecnologias e arquitetura da aplicação e validação final | 11/04/2025     | 09/05/2025 | ✔️    |    16/05/2025   |
 
 ## Sprint 4
 
