@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\",
+  "WorkspaceRootPath": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\source\\repos\\trocaki\\trocaki\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\models\\usuariomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\pictures\\trocaki\\trocaki\\models\\cadastromodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\models\\cadastromodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\source\\repos\\trocaki\\trocaki\\views\\login\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\views\\login\\cadastrar.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\pictures\\trocaki\\trocaki\\controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\controllers\\contacontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\source\\repos\\trocaki\\trocaki\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\controllers\\logincontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\pictures\\trocaki\\trocaki\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\views\\login\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\source\\repos\\trocaki\\trocaki\\models\\pedidomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\models\\pedidomodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|c:\\users\\wagner viana\\pictures\\trocaki\\trocaki\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{6B98EA32-72A1-4B4A-9178-11B420860328}|TROCAKI\\TROCAKI.csproj|solutionrelative:trocaki\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -31,53 +31,52 @@
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "PedidoModel.cs",
-              "DocumentMoniker": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Models\\PedidoModel.cs",
-              "RelativeDocumentMoniker": "TROCAKI\\Models\\PedidoModel.cs",
-              "ToolTip": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Models\\PedidoModel.cs",
-              "RelativeToolTip": "TROCAKI\\Models\\PedidoModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:37:31.003Z",
-              "EditorCaption": ""
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "TROCAKI\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "TROCAKI\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADsAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T19:22:14.846Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginController.cs",
-              "DocumentMoniker": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Controllers\\LoginController.cs",
-              "RelativeDocumentMoniker": "TROCAKI\\Controllers\\LoginController.cs",
-              "ToolTip": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Controllers\\LoginController.cs",
-              "RelativeToolTip": "TROCAKI\\Controllers\\LoginController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAYwBsAAAAtAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:02:52.098Z",
-              "EditorCaption": ""
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Views\\Login\\Index.cshtml",
+              "RelativeDocumentMoniker": "TROCAKI\\Views\\Login\\Index.cshtml",
+              "ToolTip": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Views\\Login\\Index.cshtml",
+              "RelativeToolTip": "TROCAKI\\Views\\Login\\Index.cshtml",
+              "ViewState": "AgIAAJgAAAAAAAAAAAAUwK4AAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-06-14T19:47:26.319Z",
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "Cadastrar.cshtml",
-              "DocumentMoniker": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Views\\Login\\Cadastrar.cshtml",
-              "RelativeDocumentMoniker": "TROCAKI\\Views\\Login\\Cadastrar.cshtml",
-              "ToolTip": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Views\\Login\\Cadastrar.cshtml",
-              "RelativeToolTip": "TROCAKI\\Views\\Login\\Cadastrar.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-06-08T19:38:48.071Z",
-              "EditorCaption": ""
+              "Title": "ContaController.cs",
+              "DocumentMoniker": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Controllers\\ContaController.cs",
+              "RelativeDocumentMoniker": "TROCAKI\\Controllers\\ContaController.cs",
+              "ToolTip": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Controllers\\ContaController.cs",
+              "RelativeToolTip": "TROCAKI\\Controllers\\ContaController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-14T20:14:49.927Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsuarioModel.cs",
-              "DocumentMoniker": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Models\\UsuarioModel.cs",
-              "RelativeDocumentMoniker": "TROCAKI\\Models\\UsuarioModel.cs",
-              "ToolTip": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\Models\\UsuarioModel.cs",
-              "RelativeToolTip": "TROCAKI\\Models\\UsuarioModel.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAmwDAAAAAAAAAAAAAAAA==",
+              "Title": "CadastroModel.cs",
+              "DocumentMoniker": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Models\\CadastroModel.cs",
+              "RelativeDocumentMoniker": "TROCAKI\\Models\\CadastroModel.cs",
+              "ToolTip": "C:\\Users\\Wagner Viana\\Pictures\\TROCAKI\\TROCAKI\\Models\\CadastroModel.cs",
+              "RelativeToolTip": "TROCAKI\\Models\\CadastroModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAC8AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-08T21:00:05.783Z",
+              "WhenOpened": "2025-06-14T20:37:16.648Z",
               "EditorCaption": ""
             }
           ]

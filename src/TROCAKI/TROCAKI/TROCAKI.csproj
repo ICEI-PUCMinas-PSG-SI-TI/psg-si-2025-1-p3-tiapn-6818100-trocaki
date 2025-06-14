@@ -7,6 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Privacy.cshtml" />
+    <Content Remove="Views\Login\Cadastrar.cshtml" />
+    <Content Remove="Views\Login\Entrar.cshtml" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="MySql.Data" Version="9.3.0" />
   </ItemGroup>
 

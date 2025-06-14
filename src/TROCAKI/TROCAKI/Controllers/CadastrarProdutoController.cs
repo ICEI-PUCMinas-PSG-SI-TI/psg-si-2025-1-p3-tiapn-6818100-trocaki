@@ -2,7 +2,7 @@
 
 namespace TROCAKI.Controllers
 {
-    public class LoginController : Controller
+    public class CadastrarProdutoController : Controller
     {
         public IActionResult Index()
         {

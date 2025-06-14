@@ -1,0 +1,151 @@
+﻿@{
+	ViewData["Title"] = "Cadastrar produto";
+}
+
+<div class="container py-5">
+    <h3 class="text-center mb-4">Cadastrar novo produto</h3>
+
+    <div class="card mx-auto shadow-sm" style="max-width: 500px;">
+        <div class="card-body p-4">
+            <form id="produtoForm" novalidate>
+                <div class="mb-3">
+                    <label for="nomeProduto" class="form-label">Nome do produto</label>
+                    <input type="text" class="form-control rounded" id="nomeProduto" placeholder="Nome do produto" required>
+                    <div class="invalid-feedback">Por favor, informe o nome do produto.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea class="form-control rounded" id="descricao" rows="3" placeholder="Descrição do produto" required></textarea>
+                    <div class="invalid-feedback">Por favor, informe a descrição do produto.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="valor" class="form-label">Valor (R$)</label>
+                    <input type="number" class="form-control rounded" id="valor" placeholder="Valor" min="0.01" step="0.01" required>
+                    <div class="invalid-feedback">Informe um valor maior que zero.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoria(s)</label>
+                    <select class="form-select rounded" id="categoria" multiple required>
+                        <option value="celular">Celular</option>
+                        <option value="manete">Manete</option>
+                        <option value="jogo">Jogo</option>
+                        <option value="video_game">Video Game</option>
+                        <option value="peca_pc">Peça de Computador</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                    <div class="form-text">Segure Ctrl (ou Cmd) para selecionar múltiplas categorias.</div>
+                    <div class="invalid-feedback">Selecione pelo menos uma categoria.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fotos" class="form-label">Fotos do Produto</label>
+                    <div class="border border-2 border-secondary-subtle rounded text-center p-4 bg-light" onclick="document.getElementById('fotos').click()" style="cursor: pointer;">
+                        <div class="mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="#6c757d" class="bi bi-upload" viewBox="0 0 16 16">
+                                <path d="M.5 9.9A.5.5 0 0 1 1 9h1v3a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V9h1a.5.5 0 0 1 0 1h-1v3a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V10H0a.5.5 0 0 1-.5-.1z" />
+                                <path d="M7.646 1.146a.5.5 0 0 1 .708 0L11.5 4.293a.5.5 0 0 1-.708.708L8.5 2.707V10a.5.5 0 0 1-1 0V2.707L5.207 5.001a.5.5 0 1 1-.708-.708l3.147-3.147z" />
+                            </svg>
+                        </div>
+                        <div>Upload de arquivos</div>
+                        <input type="file" id="fotos" class="d-none" multiple accept="image/*" required>
+                        <div class="invalid-feedback">Por favor, envie pelo menos uma foto do produto.</div>
+                    </div>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary rounded">Registrar Produto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('produtoForm');
+    const nomeProduto = document.getElementById('nomeProduto');
+    const descricao = document.getElementById('descricao');
+    const valor = document.getElementById('valor');
+    const categoria = document.getElementById('categoria');
+    const fotos = document.getElementById('fotos');
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      let formIsValid = true;
+
+      // Nome Produto
+      if (!nomeProduto.value.trim()) {
+        nomeProduto.classList.add('is-invalid');
+        nomeProduto.classList.remove('is-valid');
+        formIsValid = false;
+      } else {
+        nomeProduto.classList.remove('is-invalid');
+        nomeProduto.classList.add('is-valid');
+      }
+
+      // Descrição
+      if (!descricao.value.trim()) {
+        descricao.classList.add('is-invalid');
+        descricao.classList.remove('is-valid');
+        formIsValid = false;
+      } else {
+        descricao.classList.remove('is-invalid');
+        descricao.classList.add('is-valid');
+      }
+
+      // Valor (deve ser > 0)
+      const valorNum = parseFloat(valor.value);
+      if (isNaN(valorNum) || valorNum <= 0) {
+        valor.classList.add('is-invalid');
+        valor.classList.remove('is-valid');
+        formIsValid = false;
+      } else {
+        valor.classList.remove('is-invalid');
+        valor.classList.add('is-valid');
+      }
+
+      // Categoria (pelo menos 1 selecionada)
+      if ([...categoria.options].filter(option => option.selected).length === 0) {
+        categoria.classList.add('is-invalid');
+        categoria.classList.remove('is-valid');
+        formIsValid = false;
+      } else {
+        categoria.classList.remove('is-invalid');
+        categoria.classList.add('is-valid');
+      }
+
+      // Fotos (pelo menos 1 arquivo)
+      if (fotos.files.length === 0) {
+        fotos.classList.add('is-invalid');
+        fotos.classList.remove('is-valid');
+        // Também aplicar o estilo inválido na div pai para sinalizar o upload
+        fotos.parentElement.classList.add('is-invalid');
+        formIsValid = false;
+      } else {
+        fotos.classList.remove('is-invalid');
+        fotos.classList.add('is-valid');
+        fotos.parentElement.classList.remove('is-invalid');
+      }
+
+      if (formIsValid) {
+        // Pode enviar o formulário, fazer fetch ou o que precisar
+        alert('Formulário válido e pronto para envio!');
+        // form.submit(); // se quiser submeter normalmente
+      }
+    });
+
+    // Remover feedback de erro ao digitar/mudar valor
+    [nomeProduto, descricao, valor, categoria, fotos].forEach(el => {
+      el.addEventListener('input', () => {
+        el.classList.remove('is-invalid');
+        el.classList.remove('is-valid');
+        if (el === fotos) {
+          el.parentElement.classList.remove('is-invalid');
+        }
+      });
+    });
+</script>

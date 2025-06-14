@@ -9,53 +9,61 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = TROCAKI
 build_property.RootNamespace = TROCAKI
-build_property.ProjectDir = C:\Users\Wagner Viana\source\repos\TROCAKI\TROCAKI\
+build_property.ProjectDir = C:\Users\Wagner Viana\Documents\PUC\TROCAKI\psg-si-2025-1-p3-tiapn-6818100-trocaki\psg-si-2025-1-p3-tiapn-6818100-trocaki\src\TROCAKI\TROCAKI\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 9.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\Wagner Viana\source\repos\TROCAKI\TROCAKI
+build_property.MSBuildProjectDirectory = C:\Users\Wagner Viana\Documents\PUC\TROCAKI\psg-si-2025-1-p3-tiapn-6818100-trocaki\psg-si-2025-1-p3-tiapn-6818100-trocaki\src\TROCAKI\TROCAKI
 build_property._RazorSourceGeneratorDebug = 
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Home/Index.cshtml]
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/CadastrarProduto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FkYXN0cmFyUHJvZHV0b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Home/Privacy.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxQcml2YWN5LmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Login/Cadastrar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cQ2FkYXN0cmFyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Login/Entrar.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cRW50cmFyLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Login/Index.cshtml]
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/Login/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Shared/Error.cshtml]
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/MinhasPropostas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWluaGFzUHJvcG9zdGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/Perfil/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUGVyZmlsXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/Produto/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvZHV0b1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/PropostasRecebidas/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvcG9zdGFzUmVjZWJpZGFzXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/_ViewImports.cshtml]
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/_ViewStart.cshtml]
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Wagner Viana/source/repos/TROCAKI/TROCAKI/Views/Shared/_Layout.cshtml]
+[C:/Users/Wagner Viana/Documents/PUC/TROCAKI/psg-si-2025-1-p3-tiapn-6818100-trocaki/psg-si-2025-1-p3-tiapn-6818100-trocaki/src/TROCAKI/TROCAKI/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-masoggw1eo

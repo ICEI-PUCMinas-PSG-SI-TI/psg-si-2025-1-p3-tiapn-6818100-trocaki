@@ -1554,11 +1554,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\TROCAKI.csproj",
+      "projectUniqueName": "C:\\Users\\Wagner Viana\\Documents\\PUC\\TROCAKI\\psg-si-2025-1-p3-tiapn-6818100-trocaki\\psg-si-2025-1-p3-tiapn-6818100-trocaki\\src\\TROCAKI\\TROCAKI\\TROCAKI.csproj",
       "projectName": "TROCAKI",
-      "projectPath": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\TROCAKI.csproj",
+      "projectPath": "C:\\Users\\Wagner Viana\\Documents\\PUC\\TROCAKI\\psg-si-2025-1-p3-tiapn-6818100-trocaki\\psg-si-2025-1-p3-tiapn-6818100-trocaki\\src\\TROCAKI\\TROCAKI\\TROCAKI.csproj",
       "packagesPath": "C:\\Users\\Wagner Viana\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Wagner Viana\\source\\repos\\TROCAKI\\TROCAKI\\obj\\",
+      "outputPath": "C:\\Users\\Wagner Viana\\Documents\\PUC\\TROCAKI\\psg-si-2025-1-p3-tiapn-6818100-trocaki\\psg-si-2025-1-p3-tiapn-6818100-trocaki\\src\\TROCAKI\\TROCAKI\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1621,7 +1621,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.300/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.301/PortableRuntimeIdentifierGraph.json"
       }
     }
   }

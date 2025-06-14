@@ -20,10 +20,19 @@
                 </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                        <li class="nav-item" id="cadastrarProdutoHeader">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="CadastrarProduto" asp-action="index">Cadastrar produto</a>
                         </li>
-                        <li class="nav-item">
+                        <li class="nav-item" id="minhasPropostasHeader">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="MinhasPropostas" asp-action="index">Minhas propostas</a>
+                        </li>
+                        <li class="nav-item" id="propostasRecebidasHeader">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PropostasRecebidas" asp-action="index">Propostas recebidas</a>
+                        </li>
+                        <li class="nav-item" id="perfilHeader">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Perfil" asp-action="index">Perfil</a>
+                        </li>
+                        <li class="nav-item" id="loginHeader">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="index">Entrar/Cadastrar</a>
                         </li>
                     </ul>
@@ -42,9 +51,30 @@
             &copy; 2025 - TROCAKI
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
+
+    <script>
+        const user_id = localStorage.getItem("user_id");
+
+        const cadastrarProdutoHeader = document.getElementById('cadastrarProdutoHeader');
+        if (!user_id) cadastrarProdutoHeader.style.display = "none";
+
+        const minhasPropostasHeader = document.getElementById('minhasPropostasHeader');
+        if (!user_id) minhasPropostasHeader.style.display = "none";
+
+        const propostasRecebidasHeader = document.getElementById('propostasRecebidasHeader');
+        if (!user_id) propostasRecebidasHeader.style.display = "none";
+
+        const perfilHeader = document.getElementById('perfilHeader');
+        if (!user_id) perfilHeader.style.display = "none";
+
+        const loginHeader = document.getElementById('loginHeader');
+        if (user_id) loginHeader.style.display = "none";
+    </script>
+
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
