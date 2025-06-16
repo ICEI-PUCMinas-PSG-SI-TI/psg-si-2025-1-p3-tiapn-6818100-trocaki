@@ -35,6 +35,9 @@
                         <li class="nav-item" id="loginHeader">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Login" asp-action="index">Entrar/Cadastrar</a>
                         </li>
+                        <li class="nav-item" id="sairHeader">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" onclick="localStorage.removeItem('user_id')">Sair</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -59,20 +62,20 @@
     <script>
         const user_id = localStorage.getItem("user_id");
 
-        const cadastrarProdutoHeader = document.getElementById('cadastrarProdutoHeader');
-        if (!user_id) cadastrarProdutoHeader.style.display = "none";
+        if (user_id) {
+            const loginHeader = document.getElementById('loginHeader');
+            loginHeader.style.display = "none";
+        } else {
+            const cadastrarProdutoHeader = document.getElementById('cadastrarProdutoHeader');
+            const minhasPropostasHeader = document.getElementById('minhasPropostasHeader');
+            const propostasRecebidasHeader = document.getElementById('propostasRecebidasHeader');
+            const perfilHeader = document.getElementById('perfilHeader');
+            const sairHeader = document.getElementById('sairHeader');
 
-        const minhasPropostasHeader = document.getElementById('minhasPropostasHeader');
-        if (!user_id) minhasPropostasHeader.style.display = "none";
-
-        const propostasRecebidasHeader = document.getElementById('propostasRecebidasHeader');
-        if (!user_id) propostasRecebidasHeader.style.display = "none";
-
-        const perfilHeader = document.getElementById('perfilHeader');
-        if (!user_id) perfilHeader.style.display = "none";
-
-        const loginHeader = document.getElementById('loginHeader');
-        if (user_id) loginHeader.style.display = "none";
+            [cadastrarProdutoHeader, minhasPropostasHeader, propostasRecebidasHeader, perfilHeader, sairHeader].forEach(element =>
+                element.style.display = "none"
+            )
+        }
     </script>
 
     @await RenderSectionAsync("Scripts", required: false)
