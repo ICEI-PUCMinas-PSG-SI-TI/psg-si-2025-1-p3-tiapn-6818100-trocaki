@@ -36,7 +36,7 @@ namespace TROCAKI.Repositorio
             return lista;
         }
 
-        public string CadastrarProduto(ProdutoModel produto)
+        public string CadastrarProduto(CriarProdutoModel produto)
         {
             MySqlConnection conexao = new MySqlConnection(_strindeDeConexao);
             conexao.Open();
@@ -49,23 +49,25 @@ namespace TROCAKI.Repositorio
             {
                 // Inserir produto
                 MySqlCommand cmdProduto = new MySqlCommand(
-                    @"INSERT INTO produtos (id, valor, nome, descricao, status, vendedor_id)
+                    @"INSERT INTO produtos (id, valor, nome, descricao, status, Vendedor_id)
                     VALUES (@id, @valor, @nome, @descricao, @status, @vendedor_id)",
                     conexao, transacao
                 );
 
                 cmdProduto.Parameters.AddWithValue("@id", idProduto);
-                cmdProduto.Parameters.AddWithValue("@nome", produto.Valor);
-                cmdProduto.Parameters.AddWithValue("@email", produto.Nome);
-                cmdProduto.Parameters.AddWithValue("@cpf", produto.Descricao);
-                cmdProduto.Parameters.AddWithValue("@telefone", produto.Status);
-                cmdProduto.Parameters.AddWithValue("@dataNascimento", produto.IdVendedor);
+                cmdProduto.Parameters.AddWithValue("@valor", produto.Valor);
+                cmdProduto.Parameters.AddWithValue("@nome", produto.Nome);
+                cmdProduto.Parameters.AddWithValue("@descricao", produto.Descricao);
+                cmdProduto.Parameters.AddWithValue("@status", "aberto");
+                cmdProduto.Parameters.AddWithValue("@vendedor_id", produto.IdVendedor);
+
+                cmdProduto.ExecuteNonQuery();
 
                 // Inserir categorias
                 foreach (CategoriaModel categoria in produto.Categorias)
                 {
                     var cmdCategoria = new MySqlCommand(
-                        @"INSERT INTO `categorias_dos_produtos` (Categoria_Id, Produto_Id)
+                        @"INSERT INTO `categorias_dos_produtos` (Categoria_id, Produto_id)
                         VALUES (@CategoriaId, @ProdutoId);", conexao, transacao
                     );
 
@@ -79,8 +81,8 @@ namespace TROCAKI.Repositorio
                 foreach (string fotoBase64 in produto.Fotos)
                 {
                     var cmdFoto = new MySqlCommand(@"
-                        INSERT INTO `fotos_dos_produtos` (Produto_Id, FotoBase64)
-                        VALUES (@ProdutoId, @FotoBase64);", conexao, transacao);
+                        INSERT INTO `fotos_dos_produtos` (Produto_id, foto_base_64)
+                        VALUES (@ProdutoId, @foto_base_64);", conexao, transacao);
 
                     cmdFoto.Parameters.AddWithValue("@ProdutoId", idProduto);
                     cmdFoto.Parameters.AddWithValue("@foto_base_64", fotoBase64);

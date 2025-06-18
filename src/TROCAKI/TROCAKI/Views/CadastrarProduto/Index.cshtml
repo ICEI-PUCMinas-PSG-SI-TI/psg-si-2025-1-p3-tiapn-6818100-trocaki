@@ -97,7 +97,7 @@
       });
     }
 
-    form.addEventListener('submit', function (event) {
+    form.addEventListener('submit', async function (event) {
       event.preventDefault();
       event.stopPropagation();
 
@@ -136,17 +136,17 @@
 
       if (!valido) return;
 
-      const fotosEmBase64 = converterFotosParaBase64(fotos);
+      const fotosEmBase64 = await converterFotosParaBase64(fotos);
 
       const categoriasEscolhidas = [...categoria.options].reduce((acc, option) => {
-          if (option.selected) acc.push({"id": option.value, "nome": option.value});
+          if (option.selected) acc.push({"id": option.value, "nome": option.innerText});
 
           return acc;
       }, []);
 
       const idVendedor = localStorage.getItem("user_id");
 
-      fetch('/api/cadastroProduto/cadastrar', {
+      fetch('/api/CadastrarProduto/cadastrar', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -168,7 +168,7 @@
                 window.location.href = "/Produto?id=" + data.id;
             })
             .catch(err => {
-                alert("Erro no login: " + err.message);
+                alert("Erro ao cadastrar novo produto: " + err.message);
             });
     });
 

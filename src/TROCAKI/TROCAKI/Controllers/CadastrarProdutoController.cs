@@ -26,10 +26,8 @@ namespace TROCAKI.Controllers
         }
 
         [HttpPost("cadastrar")]
-        public IActionResult Cadastrar([FromBody] ProdutoModel produto)
+        public IActionResult Cadastrar([FromBody] CriarProdutoModel produto)
         {
-            produto.Status = "aberto";
-
             string produtoId = _repositorio.CadastrarProduto(produto);
 
             if (produtoId == null)
