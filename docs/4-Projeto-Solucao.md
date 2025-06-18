@@ -236,7 +236,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `trocaki`.`fotos_dos_produtos` (
   `foto_base_64` LONGTEXT NOT NULL,
   `Produto_id` VARCHAR(36) NOT NULL,
-  PRIMARY KEY (`Produto_id`),
   CONSTRAINT `fk_Fotos_Produto1`
     FOREIGN KEY (`Produto_id`)
     REFERENCES `trocaki`.`produtos` (`id`)
@@ -262,7 +261,6 @@ ENGINE = InnoDB;
 CREATE TABLE IF NOT EXISTS `trocaki`.`categorias_dos_produtos` (
   `Categoria_id` VARCHAR(36) NOT NULL,
   `Produto_id` VARCHAR(36) NOT NULL,
-  PRIMARY KEY (`Categoria_id`, `Produto_id`),
   INDEX `fk_Categoria_has_Produto_Produto1_idx` (`Produto_id` ASC),
   INDEX `fk_Categoria_has_Produto_Categoria1_idx` (`Categoria_id` ASC),
   CONSTRAINT `fk_Categoria_has_Produto_Categoria1`
