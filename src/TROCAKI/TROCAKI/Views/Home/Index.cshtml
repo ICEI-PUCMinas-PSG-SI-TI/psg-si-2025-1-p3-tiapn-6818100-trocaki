@@ -1,0 +1,271 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<style>
+    .product-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .badge-state {
+        background-color: #b0f2c2;
+        color: #0f5132;
+    }
+
+    .price-tag {
+        font-weight: bold;
+        color: #1d4ed8;
+    }
+
+    .favorite {
+        color: #e63946;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    .card-price {
+        color: #f97316;
+        font-weight: bold;
+    }
+</style>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg bg-light px-3">
+    <form class="d-flex w-100" role="search">
+        <input class="form-control me-2 w-60" type="search" placeholder="Pesquisar..." aria-label="Search">
+        <button class="btn btn-outline-secondary" type="button">
+            Pesquisar
+        </button>
+    </form>
+</nav>
+
+<!-- Botão de Filtros (visível apenas no mobile) -->
+<div class="d-lg-none px-3 pt-3">
+    <button class="btn btn-outline-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#sidebarMobile">
+        Filtros
+    </button>
+</div>
+
+<!-- Conteúdo Principal -->
+<div class="container-fluid">
+    <div class="row">
+
+        <!-- Sidebar (Desktop) -->
+        <div class="col-lg-2 d-none d-lg-block bg-light vh-100 p-4">
+            <h5 class="mb-4">Filtrar Produtos</h5>
+            <div class="mb-3">
+                <label for="precoMax" class="form-label">Preço Máximo</label>
+                <input type="number" class="form-control" id="precoMax" placeholder="Ex: 1500">
+            </div>
+            <div class="mb-3">
+                <label for="precoMin" class="form-label">Preço Mínimo</label>
+                <input type="number" class="form-control" id="precoMin" placeholder="Ex: 500">
+            </div>
+            <div class="mb-3">
+                <label for="categoria" class="form-label">Categorias</label>
+                <input type="text" class="form-control" id="categoria" placeholder="Ex: Celular">
+            </div>
+            <div class="mb-4">
+                <label for="cidade" class="form-label">Cidade de Venda</label>
+                <input type="text" class="form-control" id="cidade" placeholder="Ex: São Paulo">
+            </div>
+            <button class="btn btn-primary w-100">Filtrar</button>
+        </div>
+
+        <!-- Conteúdo -->
+        <div class="col-lg-10 col-12 p-4">
+            <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+                <!-- Produto Card -->
+                <div class="col">
+                    <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
+                        <div class="card h-100 shadow-sm border-0">
+                            <!-- Imagem em destaque -->
+                            <div class="ratio ratio-1x1">
+                                <img src="caminho/para/produto.png" class="card-img-top object-fit-contain p-3" alt="Nome do Produto">
+                            </div>
+
+                            <!-- Informações do produto -->
+                            <div class="card-body pt-2 px-3">
+                                <h6 class="card-title mb-1 text-truncate">Nome do produto</h6>
+                                <p class="mb-1 text-muted small text-truncate">
+                                    Descrição...
+                                </p>
+                                <p class="card-price fs-5">R$ 48,89</p>
+
+                                <!-- Categorias -->
+                                <div class="d-flex flex-wrap gap-1 mb-2">
+                                    <span class="badge bg-primary">Acessório</span>
+                                    <span class="badge bg-secondary">Piercing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto Card -->
+                <div class="col">
+                    <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
+                        <div class="card h-100 shadow-sm border-0">
+                            <!-- Imagem em destaque -->
+                            <div class="ratio ratio-1x1">
+                                <img src="caminho/para/produto.png" class="card-img-top object-fit-contain p-3" alt="Nome do Produto">
+                            </div>
+
+                            <!-- Informações do produto -->
+                            <div class="card-body pt-2 px-3">
+                                <h6 class="card-title mb-1 text-truncate">Nome do produto</h6>
+                                <p class="mb-1 text-muted small text-truncate">
+                                    Descrição...
+                                </p>
+                                <p class="card-price fs-5">R$ 48,89</p>
+
+                                <!-- Categorias -->
+                                <div class="d-flex flex-wrap gap-1 mb-2">
+                                    <span class="badge bg-primary">Acessório</span>
+                                    <span class="badge bg-secondary">Piercing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto Card -->
+                <div class="col">
+                    <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
+                        <div class="card h-100 shadow-sm border-0">
+                            <!-- Imagem em destaque -->
+                            <div class="ratio ratio-1x1">
+                                <img src="caminho/para/produto.png" class="card-img-top object-fit-contain p-3" alt="Nome do Produto">
+                            </div>
+
+                            <!-- Informações do produto -->
+                            <div class="card-body pt-2 px-3">
+                                <h6 class="card-title mb-1 text-truncate">Nome do produto</h6>
+                                <p class="mb-1 text-muted small text-truncate">
+                                    Descrição...
+                                </p>
+                                <p class="card-price fs-5">R$ 48,89</p>
+
+                                <!-- Categorias -->
+                                <div class="d-flex flex-wrap gap-1 mb-2">
+                                    <span class="badge bg-primary">Acessório</span>
+                                    <span class="badge bg-secondary">Piercing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto Card -->
+                <div class="col">
+                    <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
+                        <div class="card h-100 shadow-sm border-0">
+                            <!-- Imagem em destaque -->
+                            <div class="ratio ratio-1x1">
+                                <img src="caminho/para/produto.png" class="card-img-top object-fit-contain p-3" alt="Nome do Produto">
+                            </div>
+
+                            <!-- Informações do produto -->
+                            <div class="card-body pt-2 px-3">
+                                <h6 class="card-title mb-1 text-truncate">Nome do produto</h6>
+                                <p class="mb-1 text-muted small text-truncate">
+                                    Descrição...
+                                </p>
+                                <p class="card-price fs-5">R$ 48,89</p>
+
+                                <!-- Categorias -->
+                                <div class="d-flex flex-wrap gap-1 mb-2">
+                                    <span class="badge bg-primary">Acessório</span>
+                                    <span class="badge bg-secondary">Piercing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto Card -->
+                <div class="col">
+                    <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
+                        <div class="card h-100 shadow-sm border-0">
+                            <!-- Imagem em destaque -->
+                            <div class="ratio ratio-1x1">
+                                <img src="caminho/para/produto.png" class="card-img-top object-fit-contain p-3" alt="Nome do Produto">
+                            </div>
+
+                            <!-- Informações do produto -->
+                            <div class="card-body pt-2 px-3">
+                                <h6 class="card-title mb-1 text-truncate">Nome do produto</h6>
+                                <p class="mb-1 text-muted small text-truncate">
+                                    Descrição...
+                                </p>
+                                <p class="card-price fs-5">R$ 48,89</p>
+
+                                <!-- Categorias -->
+                                <div class="d-flex flex-wrap gap-1 mb-2">
+                                    <span class="badge bg-primary">Acessório</span>
+                                    <span class="badge bg-secondary">Piercing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Produto Card -->
+                <div class="col">
+                    <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
+                        <div class="card h-100 shadow-sm border-0">
+                            <!-- Imagem em destaque -->
+                            <div class="ratio ratio-1x1">
+                                <img src="caminho/para/produto.png" class="card-img-top object-fit-contain p-3" alt="Nome do Produto">
+                            </div>
+
+                            <!-- Informações do produto -->
+                            <div class="card-body pt-2 px-3">
+                                <h6 class="card-title mb-1 text-truncate">Nome do produto</h6>
+                                <p class="mb-1 text-muted small text-truncate">
+                                    Descrição...
+                                </p>
+                                <p class="card-price fs-5">R$ 48,89</p>
+
+                                <!-- Categorias -->
+                                <div class="d-flex flex-wrap gap-1 mb-2">
+                                    <span class="badge bg-primary">Acessório</span>
+                                    <span class="badge bg-secondary">Piercing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <!-- Replique os cards conforme necessário -->
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Sidebar Mobile (Offcanvas) -->
+<div class="offcanvas offcanvas-start" tabindex="-1" id="sidebarMobile">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title">Filtrar Produtos</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Fechar"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="mb-3">
+            <label for="precoMaxMobile" class="form-label">Preço Máximo</label>
+            <input type="number" class="form-control" id="precoMaxMobile" placeholder="Ex: 1500">
+        </div>
+        <div class="mb-3">
+            <label for="precoMinMobile" class="form-label">Preço Mínimo</label>
+            <input type="number" class="form-control" id="precoMinMobile" placeholder="Ex: 500">
+        </div>
+        <div class="mb-3">
+            <label for="categoriaMobile" class="form-label">Categorias</label>
+            <input type="text" class="form-control" id="categoriaMobile" placeholder="Ex: Celular">
+        </div>
+        <div class="mb-4">
+            <label for="cidadeMobile" class="form-label">Cidade de Venda</label>
+            <input type="text" class="form-control" id="cidadeMobile" placeholder="Ex: São Paulo">
+        </div>
+        <button class="btn btn-primary w-100">Filtrar</button>
+    </div>
+</div>

@@ -1,0 +1,182 @@
+﻿@{
+	ViewData["Title"] = "Cadastrar produto";
+}
+
+@{
+    List<CategoriaModel> categorias = ViewBag.Caracteristicas as List<CategoriaModel>;
+}
+
+<div class="container py-5">
+    <h3 class="text-center mb-4">Cadastrar novo produto</h3>
+
+    <div class="card mx-auto shadow-sm" style="max-width: 500px;">
+        <div class="card-body p-4">
+            <form id="produtoForm" novalidate>
+                <div class="mb-3">
+                    <label for="nomeProduto" class="form-label">Nome do produto</label>
+                    <input type="text" class="form-control rounded" id="nomeProduto" placeholder="Nome do produto" required>
+                    <div class="invalid-feedback">Por favor, informe o nome do produto.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="descricao" class="form-label">Descrição</label>
+                    <textarea class="form-control rounded" id="descricao" rows="3" placeholder="Descrição do produto" required></textarea>
+                    <div class="invalid-feedback">Por favor, informe a descrição do produto.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="valor" class="form-label">Valor (R$)</label>
+                    <input type="number" class="form-control rounded" id="valor" placeholder="Valor" min="0.01" step="0.01" required>
+                    <div class="invalid-feedback">Informe um valor maior que zero.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="categoria" class="form-label">Categoria(s)</label>
+                    <select class="form-select rounded" id="categoria" multiple required>
+                        @foreach (CategoriaModel categoria in categorias)
+                        {
+                            <option value="@categoria.Id">@categoria.Nome</option>
+                        }
+                    </select>
+                    <div class="form-text">Segure Ctrl (ou Cmd) para selecionar múltiplas categorias.</div>
+                    <div class="invalid-feedback">Selecione pelo menos uma categoria.</div>
+                </div>
+
+                <div class="mb-3">
+                    <label for="fotos" class="form-label">Fotos do Produto</label>
+                    <input class="form-control" type="file" id="fotos" name="fotos" accept="image/*" multiple required>
+                    <div class="invalid-feedback">  Selecione pelo menos uma imagem do produto. </div>
+                </div>
+
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary rounded">Registrar Produto</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+    const form = document.getElementById('produtoForm');
+    const nomeProduto = document.getElementById('nomeProduto');
+    const descricao = document.getElementById('descricao');
+    const valor = document.getElementById('valor');
+    const categoria = document.getElementById('categoria');
+    const fotos = document.getElementById('fotos');
+
+    function converterFotosParaBase64(inputFile) {
+      return new Promise((resolve, reject) => {
+        const arquivos = inputFile.files;
+
+        if (!arquivos || arquivos.length === 0) {
+          reject("Nenhum arquivo selecionado.");
+          return;
+        }
+
+        const leitores = [];
+
+        for (let i = 0; i < arquivos.length; i++) {
+          const arquivo = arquivos[i];
+
+          const leitorPromessa = new Promise((res, rej) => {
+            const reader = new FileReader();
+
+            reader.onload = () => res(reader.result); // base64 string
+            reader.onerror = () => rej(`Erro ao ler o arquivo: ${arquivo.name}`);
+
+            reader.readAsDataURL(arquivo);
+          });
+
+          leitores.push(leitorPromessa);
+        }
+
+        // Aguarda todos os arquivos serem lidos
+        Promise.all(leitores)
+          .then(base64Array => resolve(base64Array))
+          .catch(erro => reject(erro));
+      });
+    }
+
+    form.addEventListener('submit', function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+
+      let valido = true;
+
+      // Nome Produto
+      if (!nomeProduto.value.trim()) {
+        nomeProduto.classList.add('is-invalid');
+        valido = false;
+      }
+
+      // Descrição
+      if (!descricao.value.trim()) {
+        descricao.classList.add('is-invalid');
+        valido = false;
+      } 
+
+      // Valor (deve ser > 0)
+      const valorNum = parseFloat(valor.value);
+      if (isNaN(valorNum) || valorNum <= 0) {
+        valor.classList.add('is-invalid');
+        valido = false;
+      } 
+
+      // Categoria (pelo menos 1 selecionada)
+      if ([...categoria.options].filter(option => option.selected).length === 0) {
+        categoria.classList.add('is-invalid');
+        valido = false;
+      }
+
+      // Fotos (pelo menos 1 arquivo)
+      if (fotos.files.length === 0) {
+        fotos.classList.add('is-invalid');
+        valido = false;
+      }
+
+      if (!valido) return;
+
+      const fotosEmBase64 = converterFotosParaBase64(fotos);
+
+      const categoriasEscolhidas = [...categoria.options].reduce((acc, option) => {
+          if (option.selected) acc.push({"id": option.value, "nome": option.value});
+
+          return acc;
+      }, []);
+
+      const idVendedor = localStorage.getItem("user_id");
+
+      fetch('/api/cadastroProduto/cadastrar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                nome: nomeProduto.value,
+                descricao: descricao.value,
+                valor: valor.value,
+                categorias: categoriasEscolhidas,
+                fotos: fotosEmBase64,
+                idVendedor: idVendedor
+            })
+        })
+            .then(response => {
+                if (!response.ok) throw new Error('Não foi possível cadastrar o produto.');
+                return response.json();
+            })
+            .then(data => {
+                window.location.href = "/Produto?id=" + data.id;
+            })
+            .catch(err => {
+                alert("Erro no login: " + err.message);
+            });
+    });
+
+    // Remover feedback de erro ao digitar/mudar valor
+    [nomeProduto, descricao, valor, categoria, fotos].forEach(el => {
+      el.addEventListener('input', () => {
+        el.classList.remove('is-invalid');
+        el.classList.remove('is-valid');
+      });
+    });
+</script>
