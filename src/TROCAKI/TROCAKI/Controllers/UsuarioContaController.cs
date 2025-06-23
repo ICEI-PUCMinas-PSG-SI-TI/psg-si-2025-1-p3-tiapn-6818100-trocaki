@@ -4,9 +4,6 @@ using TROCAKI.Repositorio;
 
 namespace TROCAKI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
-
     public class UsuarioContaController : Controller
     {
         private readonly UsuarioContaRepositorio _repositorio;
@@ -17,41 +14,29 @@ namespace TROCAKI.Controllers
             _repositorio = new UsuarioContaRepositorio(stringDeConexao);
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
             return View();
         }
 
-        [HttpPost("cadastrar")]
-        public IActionResult Login([FromBody] CadastroUsuarioModel cadastro)
+        [HttpPost]
+        public JsonResult Cadastrar([FromBody] CadastroUsuarioModel cadastro)
         {
-            string userId = _repositorio.CadastrarUsuario(
-                cadastro.Nome,
-                cadastro.Email,
-                cadastro.Cpf,
-                cadastro.Telefone,
-                cadastro.DataNascimento,
-                cadastro.Cidade,
-                cadastro.FotoDocumento,
-                cadastro.Senha
-            );
+            string userId = _repositorio.CadastrarUsuario(cadastro);
 
-            if (userId == null)
-                return Unauthorized(new { mensagem = "Não foi possível cadastrar o usuário." });
+            if (userId == null) return Json(new { sucesso = false });
 
-            return Ok(new { id = userId });
+            return Json(new { sucesso = true, id = userId });
         }
 
-        [HttpPost("login")]
-        public IActionResult Login([FromBody] LoginUsuarioModel login)
+        [HttpPost]
+        public JsonResult Logar([FromBody] LoginUsuarioModel login)
         {
-            string userId = _repositorio.BuscarPorEmailSenha(login.Email, login.Senha);
+            string userId = _repositorio.BuscarPorEmailSenha(login);
 
-            if (userId == null)
-                return Unauthorized(new { mensagem = "E-mail ou senha inválidos." });
+            if (userId == null) return Json(new { sucesso = false });
 
-            return Ok(new { id = userId });
+            return Json(new { sucesso = true, id = userId });
         }
     }
 }

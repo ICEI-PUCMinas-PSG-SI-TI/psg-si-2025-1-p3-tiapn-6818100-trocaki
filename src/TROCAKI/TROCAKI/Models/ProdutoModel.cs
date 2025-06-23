@@ -13,6 +13,10 @@
         public string Status { get; set; }
         public List<string> Fotos { get; set; }
         public List<CategoriaModel> Categorias { get; set; }
-        public string IdVendedor { get; set; }
+        public string VendedorId { get; set; }
+        public string VendedorNome { get; set; }
+        public string VendedorEmail { get; set; }
+        public string VendedorTelefone { get; set; }
+        public string VendedorCidade { get; set; }
     }
 }

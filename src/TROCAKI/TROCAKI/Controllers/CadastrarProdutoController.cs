@@ -8,19 +8,21 @@ namespace TROCAKI.Controllers
     [ApiController]
     public class CadastrarProdutoController : Controller
     {
-        private readonly ProdutoRepositorio _repositorio;
+        private readonly ProdutoRepositorio _produtoRepositorio;
+        private readonly CategoriaRepositorio _categoriaRepositorio;
 
         public CadastrarProdutoController(IConfiguration configuracao)
         {
             string stringDeConexao = configuracao.GetConnectionString("DefaultConnection");
-            _repositorio = new ProdutoRepositorio(stringDeConexao);
+            _produtoRepositorio = new ProdutoRepositorio(stringDeConexao);
+            _categoriaRepositorio = new CategoriaRepositorio(stringDeConexao);
         }
 
         [HttpGet]
         public IActionResult Index()
         {
-            var caracteristicas = _repositorio.ObterCaracteristicas();
-            ViewBag.Caracteristicas = caracteristicas;
+            List<CategoriaModel> categorias = _categoriaRepositorio.ObterCategorias();
+            ViewBag.Caracteristicas = categorias;
 
             return View();
         }
@@ -28,7 +30,7 @@ namespace TROCAKI.Controllers
         [HttpPost("cadastrar")]
         public IActionResult Cadastrar([FromBody] CriarProdutoModel produto)
         {
-            string produtoId = _repositorio.CadastrarProduto(produto);
+            string produtoId = _produtoRepositorio.CadastrarProduto(produto);
 
             if (produtoId == null)
                 return Unauthorized(new { mensagem = "Não foi possível cadastrar o produto." });

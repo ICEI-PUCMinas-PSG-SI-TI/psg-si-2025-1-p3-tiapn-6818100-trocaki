@@ -144,7 +144,7 @@
           return acc;
       }, []);
 
-      const idVendedor = localStorage.getItem("user_id");
+      const VendedorId = localStorage.getItem("user_id");
 
       fetch('/api/CadastrarProduto/cadastrar', {
             method: 'POST',
@@ -157,7 +157,7 @@
                 valor: valor.value,
                 categorias: categoriasEscolhidas,
                 fotos: fotosEmBase64,
-                idVendedor: idVendedor
+                VendedorId: VendedorId
             })
         })
             .then(response => {

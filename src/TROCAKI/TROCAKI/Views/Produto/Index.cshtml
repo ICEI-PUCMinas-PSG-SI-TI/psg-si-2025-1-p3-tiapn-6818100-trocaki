@@ -1,21 +1,22 @@
 ﻿@{
 	ViewData["Title"] = "Produto";
+    ProdutoModel produto = ViewBag.Produto as ProdutoModel;
+    List<ComentarioModel> comentarios = ViewBag.Comentarios as List<ComentarioModel>;
 }
 
-<div class="container py-5">
-
+<div class="container py-5" id="produto-container" data-vendedor-id="@produto.VendedorId">
     <!-- Sessão Principal do Produto -->
     <div class="row g-4">
         <div class="col-md-6">
             <!-- Carrossel -->
             <div id="carouselProduto" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner rounded">
-                    <div class="carousel-item active">
-                        <img src="https://via.placeholder.com/500x300" class="d-block w-100" alt="Imagem 1">
-                    </div>
-                    <div class="carousel-item">
-                        <img src="https://via.placeholder.com/500x300" class="d-block w-100" alt="Imagem 2">
-                    </div>
+                    @for(int i = 0; i < produto.Fotos.Count; i++)
+                    {
+                        <div class='carousel-item @(i == 0 ? "active" : "")'>
+                            <img src="@produto.Fotos[i]" class="d-block w-100" style="height: 400px; object-fit: contain;" alt="Imagem 1">
+                        </div>
+                    }
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduto" data-bs-slide="prev">
                     <span class="carousel-control-prev-icon"></span>
@@ -27,50 +28,102 @@
         </div>
 
         <div class="col-md-6">
-            <h3>Nome do Produto</h3>
-            <p class="text-muted">Descrição curta do produto vai aqui.</p>
-            <h5 class="text-primary">R$ 998,89</h5>
-            <p><strong>Categorias:</strong> Celular, Acessórios</p>
-            <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ofertaModal">
-                Fazer Proposta
-            </button>
-            <button class="btn btn-secondary mt-3" data-bs-toggle="modal" data-bs-target="#ofertaModal">
-                Adicionar a lista de desejos
-            </button>
+            <h3>@produto.Nome</h3>
+            <p class="text-muted">@produto.Descricao</p>
+            <h5 class="text-primary">@produto.Valor.ToString("C2")</h5>
+
+            <div class="mb-2">
+                @foreach (CategoriaModel categoria in produto.Categorias)
+                {
+                    <span class="badge bg-primary">@categoria.Nome</span>
+                }
+            </div>
+
+            <hr />
+            <div class="mt-3">
+                <h6 class="fw-bold">Informações do Vendedor</h6>
+                <p class="mb-1"><strong>Nome:</strong> @produto.VendedorNome</p>
+                <p class="mb-1"><strong>Email:</strong> <a href="mailto:@produto.VendedorEmail">@produto.VendedorEmail</a></p>
+                <p class="mb-1"><strong>Telefone:</strong> <a href="tel:@produto.VendedorTelefone">@produto.VendedorTelefone</a></p>
+                <p class="mb-1"><strong>Cidade:</strong> @produto.VendedorCidade</p>
+            </div>
+
+            <div id="botoes-proposta-container" class="d-flex flex-row flex-wrap align-items-center justify-content-start gap-3">
+                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ofertaModal" id="botao-fazer-proposta">
+                    Fazer Proposta
+                </button>
+
+                <button class="btn btn-secondary mt-3 d-none" id="botao-adicionar-na-lista">
+                    Adicionar na lista de desejos
+                </button>
+
+                <button class="btn btn-secondary mt-3 d-none" id="botao-remover-da-lista">
+                    Remover da lista de desejos
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <div class="card card-product shadow-sm p-4 mt-3 " id="propostaAbertaContainer" style="width: fit-content;">  </div>
+
+    <!-- Minhas propostas -->
+    <div class="profile-section mt-3" id="accordionPropostasContainer">
+        <div class="accordion" id="accordionPropostasRejeitadas">
+            <!-- Accordion: Propostas fechadas -->
+            <div class="accordion-item">
+                <h2 class="accordion-header" id="headingAberto">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAberto" aria-expanded="true" aria-controls="collapseAberto">
+                        Propostas rejeitadas
+                    </button>
+                </h2>
+                <div id="collapseAberto" class="accordion-collapse collapse" aria-labelledby="headingAberto" data-bs-parent="#accordionPropostasRejeitadas">
+                    <div class="accordion-body">
+                        <div class="d-flex flex-wrap gap-3" id="propostas-rejeitadas-container">
+                            <!-- Produto em aberto -->
+
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
     <!-- Botão Comentar -->
     <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
         <h4>Comentários</h4>
-        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#comentarioModal">
+        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#comentarioModal" id="botao-comentar">
             Comentar
         </button>
     </div>
 
     <!-- Sessão Comentários -->
     <div class="list-group">
+        @if (comentarios.Count == 0)
+        {
+            <p class="mb-1" id="comentario1-texto">Esse produto não possui comentários ainda.</p>
+        } else
+        {
+            @foreach (ComentarioModel comentario in comentarios)
+            {
+                <div class="list-group-item">
+                    <h6 class="mb-1">@comentario.CompradorNome</h6>
+                    <p class="mb-1" id="comentario1-texto">@comentario.Texto</p>
 
-        <!-- Comentário 1 -->
-        <div class="list-group-item">
-            <h6 class="mb-1">Johnathan Doe</h6>
-            <p class="mb-1" id="comentario1-texto">Produto excelente, chegou certinho.</p>
-            <div class="ms-3 text-muted small">
-                <strong>Resposta:</strong> Obrigado pelo feedback!
-            </div>
-            <button class="btn btn-outline-secondary btn-sm mt-2" onclick="abrirModalResposta('Johnathan Doe', 'Produto excelente, chegou certinho.')">
-                Responder Comentário
-            </button>
-        </div>
-
-        <!-- Comentário 2 -->
-        <div class="list-group-item">
-            <h6 class="mb-1">Maria Silva</h6>
-            <p class="mb-1">Veio com risco na tela, mas funcional.</p>
-            <button class="btn btn-outline-secondary btn-sm mt-2" onclick="abrirModalResposta('Maria Silva', 'Veio com risco na tela, mas funcional.')">
-                Responder Comentário
-            </button>
-        </div>
+                    @if (comentario.Resposta != null)
+                    {
+                        <div class="ms-3 text-muted small">
+                            <strong>Resposta:</strong> Obrigado pelo feedback!
+                        </div>
+                    }
+                    else
+                    {
+                        <button class="btn btn-outline-secondary btn-sm mt-2 botao-responder-comentario" onclick="abrirModalResposta('Johnathan Doe', 'Produto excelente, chegou certinho.')">
+                            Responder Comentário
+                        </button>
+                    }
+                </div>
+            }
+        }
     </div>
 </div>
 
@@ -128,16 +181,18 @@
             </div>
             <div class="modal-body">
                 <h5 class="modal-title mb-3">Oferta</h5>
-                <form>
+                <form id="formulario-fazer-proposta" novalidate>
                     <div class="mb-3">
                         <label for="valorOferta" class="form-label">Valor</label>
-                        <input type="number" class="form-control" id="valorOferta" placeholder="Digite o valor ofertado">
+                        <input type="number" class="form-control" id="valorOferta" placeholder="Digite o valor ofertado" required>
+                        <div class="invalid-feedback">Informe um valor maior que zero.</div>
                     </div>
                     <div class="mb-3">
                         <label for="comentarioOferta" class="form-label">Comentário</label>
-                        <textarea class="form-control" id="comentarioOferta" rows="3" placeholder="Inclua uma observação (opcional)"></textarea>
+                        <textarea class="form-control" id="comentarioOferta" rows="3" placeholder="Inclua uma observação" required></textarea>
+                        <div class="invalid-feedback">O comentário não pode estar vazio.</div>
                     </div>
-                    <button type="submit" class="btn btn-primary w-100">Fazer Oferta</button>
+                    <button type="submit" class="btn btn-primary w-100" id="botao-fazer-proposta">Fazer Oferta</button>
                 </form>
             </div>
         </div>
@@ -145,10 +200,155 @@
 </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const produtoId = new URLSearchParams(window.location.search).get('id');
+        const vendedorId = document.getElementById('produto-container')?.dataset.vendedorId;
+        const userId = localStorage.getItem('user_id');
+
+        const $ = id => document.getElementById(id);
+        const $$ = classe => document.getElementsByClassName(classe);
+
+        const elementos = {
+            botoesProposta: $('botoes-proposta-container'),
+            botaoComentar: $('botao-comentar'),
+            botoesResponderComentario: $$('botao-responder-comentario'),
+            botaoAdicionar: $('botao-adicionar-na-lista'),
+            botaoRemover: $('botao-remover-da-lista'),
+            formularioProposta: $('formulario-fazer-proposta'),
+            accordionPropostas: $('accordionPropostasContainer'),
+            propostaAbertaContainer: $('propostaAbertaContainer'),
+            propostasRejeitadasContainer: $('propostas-rejeitadas-container'),
+            botaoFazerProposta: $('botao-fazer-proposta')
+        };
+
+        const esconder = el => { el?.classList?.remove("d-flex"); el?.classList?.add("d-none"); };
+        const esconderTodos = col => Array.from(col || []).forEach(el => el.style.display = 'none');
+
+        const formatarValor = valor => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+
+        // Gerenciar visibilidade dos botões com base no usuário
+        if (!vendedorId || !userId || vendedorId === userId) {
+            esconder(elementos.botoesProposta);
+            esconder(elementos.botaoComentar);
+        }
+
+        if (!userId || vendedorId === userId) {
+            esconderTodos(elementos.botoesResponderComentario);
+        }
+
+        // Consultar lista de dejo de propostas
+        try {
+            const response = await fetch('/Produto/ObterInformacoesDoUsuario', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ compradorId: userId, produtoId })
+            });
+
+            const resultado = await response.json();
+            const { estaNaLista, propostas = [] } = resultado;
+
+            // Mostrar botões de lista
+            estaNaLista
+                ? elementos.botaoRemover?.classList.remove('d-none')
+                : elementos.botaoAdicionar?.classList.remove('d-none');
+
+            // Processar propostas
+            if (!propostas.length) {
+                elementos.propostaAbertaContainer?.classList.add('d-none');
+                elementos.accordionPropostas?.classList.add('d-none');
+            } else {
+                const aberta = propostas.find(p => p.statusProposta === "aberta");
+                const rejeitadas = propostas.filter(p => p.statusProposta === "rejeitada");
+
+                if (aberta?.idProposta) {
+                    elementos.botaoFazerProposta.setAttribute("disabled", "");
+
+                    elementos.propostaAbertaContainer.innerHTML = `
+                        <h5>Proposta em aberto</h5>
+                        <a class="text-decoration-none text-dark">
+                            <div class="card-body">
+                                <h6 class="card-title">Valor proposto: ${formatarValor(aberta.valorProposto)}</h6>
+                                <p class="card-title">Descricao: ${aberta.descricao}</p>
+                            </div>
+                        </a>
+                        <span class="badge bg-warning text-dark">Em aberto</span>
+                    `;
+                } else {
+                    elementos.propostaAbertaContainer?.classList.add('d-none');
+                }
+
+                if (rejeitadas.length) {
+                    elementos.propostasRejeitadasContainer.innerHTML = rejeitadas.map(p => `
+                        <h6 class="card-title">Valor proposto: ${formatarValor(p.valorProposto)}</h6>
+                        <p class="card-title">Descricao: ${p.descricao}</p>
+                        <span class="badge bg-danger">Rejeitada</span>
+                    `).join('');
+                } else {
+                    elementos.accordionPropostas?.classList.add('d-none');
+                }
+            }
+        } catch (error) {
+            console.error('Erro ao verificar lista de desejos:', error);
+        }
+
+        // Adicionar/Remover da lista
+        const toggleLista = async (rota) => {
+            if (!userId || !produtoId) return alert("Você precisa estar logado.");
+
+            try {
+                const response = await fetch(`/Produto/${rota}`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ compradorId: userId, produtoId })
+                });
+
+                const res = await response.json();
+                res.sucesso ? location.reload() : alert("Erro: " + res.mensagem);
+            } catch (error) {
+                alert(`Erro ao ${rota.includes("Adicionar") ? "adicionar" : "remover"} o produto da lista.`);
+            }
+        };
+
+        elementos.botaoAdicionar?.addEventListener('click', () => toggleLista('AdicionarProdutoNaListaDeDesejos'));
+        elementos.botaoRemover?.addEventListener('click', () => toggleLista('RemoverProdutoDaListaDeDesejos'));
+
+        // Envio de proposta
+        elementos.formularioProposta?.addEventListener("submit", async (event) => {
+            event.preventDefault();
+
+            const valorInput = $('valorOferta');
+            const comentarioInput = $('comentarioOferta');
+            const valor = parseFloat(valorInput.value.trim());
+            const descricao = comentarioInput.value.trim();
+
+            // Limpar erros anteriores
+            [valorInput, comentarioInput].forEach(input => input.classList.remove("is-invalid"));
+
+            if (isNaN(valor) || valor <= 0) valorInput.classList.add("is-invalid");
+            if (!descricao) comentarioInput.classList.add("is-invalid");
+
+            if (document.querySelector(".is-invalid")) return;
+
+            try {
+                const res = await fetch("/Produto/CriarNovaProposta", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify({ valor, descricao, produtoId, compradorId: userId })
+                });
+
+                const resultado = await res.json();
+                resultado.sucesso ? location.reload() : alert("Erro ao enviar oferta.");
+            } catch (error) {
+                console.error("Erro:", error);
+                alert("Erro na requisição.");
+            }
+        });
+    });
+
+    // Modal de resposta
     function abrirModalResposta(autor, texto) {
-      document.getElementById('autorComentario').innerText = autor;
-      document.getElementById('textoComentario').innerText = texto;
-      const modal = new bootstrap.Modal(document.getElementById('respostaModal'));
-      modal.show();
+        document.getElementById('autorComentario').innerText = autor;
+        document.getElementById('textoComentario').innerText = texto;
+        new bootstrap.Modal(document.getElementById('respostaModal')).show();
     }
 </script>

@@ -7,15 +7,14 @@
     {
         // Atributos
         public string IdProposta { get; set; }
-        public string IdProduto { get; set; }
         public string IdComprador { get; set; }
-        public string Especificar { get; set; }
         public double ValorProposto { get; set; }
+        public string Descricao { get; set; }
         public string StatusProposta { get; set; }
-
-        // Métodos
-        //public override int GetHashCode() { }
-        //public override string ToString() { }
-        //public void MudarStatus() { }
+        public string ProdutoId { get; set; }
+        public string ProdutoNome { get; set; }
+        public double ProdutoValor { get; set; }
+        public List<string> ProdutoFotos { get; set; }
+        public List<CategoriaModel> ProdutoCategorias { get; set; }
     }
 }

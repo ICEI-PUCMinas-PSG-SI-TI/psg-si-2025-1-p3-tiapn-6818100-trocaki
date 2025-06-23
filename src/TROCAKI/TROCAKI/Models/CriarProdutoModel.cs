@@ -7,6 +7,6 @@
         public string Descricao { get; set; }
         public List<string> Fotos { get; set; }
         public List<CategoriaModel> Categorias { get; set; }
-        public string IdVendedor { get; set; }
+        public string VendedorId { get; set; }
     }
 }

@@ -5,43 +5,59 @@
 <div class="container py-5">
     <h3 class="mb-4">Propostas Recebidas</h3>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-
-        <!-- Card de Proposta -->
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto">
-                <div class="card-body">
-                    <h5 class="card-title">Piercing Argola Aço Cirúrgico</h5>
-                    <p class="mb-1 text-muted">Preço original: <strong>R$ 48,89</strong></p>
-                    <p class="mb-1">Proposta de <strong>Ana Bia</strong>: <span class="text-primary">R$ 40,00</span></p>
-                    <span class="badge bg-warning text-dark">Em aberto</span>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <button class="btn btn-success btn-sm w-100 me-1">Aceitar</button>
-                    <button class="btn btn-danger btn-sm w-100 ms-1">Rejeitar</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Outro Card -->
-        <div class="col">
-            <div class="card h-100 shadow-sm">
-                <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto">
-                <div class="card-body">
-                    <h5 class="card-title">Fone de Ouvido Bluetooth</h5>
-                    <p class="mb-1 text-muted">Preço original: <strong>R$ 129,90</strong></p>
-                    <p class="mb-1">Proposta de <strong>Lucas Mendes</strong>: <span class="text-primary">R$ 110,00</span></p>
-                    <span class="badge bg-warning text-dark">Em aberto</span>
-                </div>
-                <div class="card-footer d-flex justify-content-between">
-                    <button class="btn btn-success btn-sm w-100 me-1">Aceitar</button>
-                    <button class="btn btn-danger btn-sm w-100 ms-1">Rejeitar</button>
-                </div>
-            </div>
-        </div>
-
-        <!-- Mais cards podem ser adicionados aqui da mesma forma -->
-
-    </div>
+    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="propostas-recebidas-container"> </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userId = localStorage.getItem('user_id');
+        if (!userId) return location.href = "/";
+
+        const $ = id => document.getElementById(id);
+
+        const elementos = {
+            propostasRecebidasContainer: $('propostas-recebidas-container'),
+        };
+
+        function formatarMoeda(valor) {
+            return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        try {
+            const response = await fetch('/PropostasRecebidas/ObterPropostas', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: userId })
+            });
+
+            const resultado = await response.json();
+            const propostas = resultado?.propostas || [];
+
+            elementos.propostasRecebidasContainer.innerHTML = propostas?.length
+                ? propostas.map(proposta => `
+                    <div class="col">
+                        <div class="card h-100 shadow-sm">
+                            <img src="${proposta.produtoFotos[0]}" class="card-img-top" alt="Produto">
+                            <div class="card-body">
+                                <h5 class="card-title">${proposta.produtoNome}</h5>
+                                <p class="mb-1 text-muted">Preço original: <strong>${formatarMoeda(proposta.produtoValor)}</strong></p>
+                                <div class="p-2 border border-secondary rounded mt-2 mb-2">
+                                    <p class="mb-1">Proposta de <strong>${proposta.CompradorNome}</strong></p>
+                                    <p class="mb-1"><strong>Valor proposto</strong>: <span class="text-primary">${formatarMoeda(proposta.valorProposto)}</span></p>
+                                    <p class="mb-1">Descrição: ${proposta.descricao}</p>
+                                </div>
+                                <span class="badge bg-warning text-dark">Em aberto</span>
+                            </div>
+                            <div class="card-footer d-flex justify-content-between">
+                                <button class="btn btn-success btn-sm w-100 me-1" id="botao-aceitar-proposta">Aceitar</button>
+                                <button class="btn btn-danger btn-sm w-100 ms-1" id="botao-rejeitar-proposta">Rejeitar</button>
+                            </div>
+                        </div>
+                    </div>
+                `).join('')
+                : "<p>Nenhuma proposta recebida.</p>";
+        } catch (error) {
+            console.error('Erro ao buscar propostas:', error);
+        }
+    });
+</script>

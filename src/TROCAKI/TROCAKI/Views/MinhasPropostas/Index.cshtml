@@ -1,43 +1,128 @@
 ﻿@{
-	ViewData["Title"] = "Minhas propostas";
+    ViewData["Title"] = "Minhas propostas";
 }
 
 <div class="container py-5">
     <h3 class="mb-4">Minhas propostas</h3>
 
-    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+    <div class="accordion" id="accordionPropostas">
 
-        <!-- Card de Proposta -->
-        <div class="col">
-            <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto">
-                    <div class="card-body">
-                        <h5 class="card-title">Piercing Argola Aço Cirúrgico</h5>
-                        <p class="mb-1 text-muted">Preço original: <strong>R$ 48,89</strong></p>
-                        <p class="mb-1">Proposta: <span class="text-primary">R$ 40,00</span></p>
-                        <span class="badge bg-warning text-dark">Em aberto</span>
+        <!-- Accordion: Propostas Abertas -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingAberta">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAberta" aria-expanded="true" aria-controls="collapseAberta">
+                    Propostas em aberto
+                </button>
+            </h2>
+            <div id="collapseAberta" class="accordion-collapse collapse show" aria-labelledby="headingAberta" data-bs-parent="#accordionPropostas">
+                <div class="accordion-body">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="propostas-abertas-container">
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
 
-        <!-- Outro Card -->
-        <div class="col">
-            <a class="text-decoration-none text-dark" asp-area="" asp-controller="Produto" asp-action="index">
-                <div class="card h-100 shadow-sm">
-                    <img src="https://via.placeholder.com/300x200" class="card-img-top" alt="Produto">
-                    <div class="card-body">
-                        <h5 class="card-title">Fone de Ouvido Bluetooth</h5>
-                        <p class="mb-1 text-muted">Preço original: <strong>R$ 129,90</strong></p>
-                        <p class="mb-1">Proposta: <span class="text-primary">R$ 110,00</span></p>
-                        <span class="badge bg-warning text-dark">Em aberto</span>
+        <!-- Accordion: Propostas Fechadas -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingFechada">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFechada" aria-expanded="false" aria-controls="collapseFechada">
+                    Propostas fechadas
+                </button>
+            </h2>
+            <div id="collapseFechada" class="accordion-collapse collapse" aria-labelledby="headingFechada" data-bs-parent="#accordionPropostas">
+                <div class="accordion-body">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="propostas-fechadas-container">
                     </div>
                 </div>
-            </a>
+            </div>
         </div>
 
-        <!-- Mais cards podem ser adicionados aqui da mesma forma -->
+        <!-- Accordion: Propostas Rejeitadas -->
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="headingRejeitada">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRejeitada" aria-expanded="false" aria-controls="collapseRejeitada">
+                    Propostas rejeitadas
+                </button>
+            </h2>
+            <div id="collapseRejeitada" class="accordion-collapse collapse" aria-labelledby="headingRejeitada" data-bs-parent="#accordionPropostas">
+                <div class="accordion-body">
+                    <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="propostas-rejeitadas-container">
+                    </div>
+                </div>
+            </div>
+        </div>
 
     </div>
 </div>
+
+<script>
+    document.addEventListener('DOMContentLoaded', async () => {
+        const userId = localStorage.getItem('user_id');
+        if (!userId) return location.href = "/";
+
+        const $ = id => document.getElementById(id);
+
+        const elementos = {
+            propostasAbertasContainer: $('propostas-abertas-container'),
+            propostasFechadasContainer: $('propostas-fechadas-container'),
+            propostasRejeitadasContainer: $('propostas-rejeitadas-container')
+        };
+
+        function formatarMoeda(valor) {
+            return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+        }
+
+        function construirCard(proposta) {
+            const badge = {
+                aberta: '<span class="badge bg-warning text-dark">Em aberto</span>',
+                fechada: '<span class="badge bg-success">Fechada</span>',
+                rejeitada: '<span class="badge bg-danger">Rejeitada</span>'
+            }[proposta.statusProposta] || '';
+
+            return `
+                <div class="col">
+                    <a class="text-decoration-none text-dark" href="Produto?id=${proposta.produtoId}">
+                        <div class="card h-100 shadow-sm">
+                            <img src="${proposta.produtoFotos[0]}" class="card-img-top" alt="Produto">
+                            <div class="card-body">
+                                <h5 class="card-title">${proposta.produtoNome}</h5>
+                                <p class="mb-1 text-muted">Preço original: <strong>${formatarMoeda(proposta.produtoValor)}</strong></p>
+                                <p class="mb-1">Proposta: <span class="text-primary">${formatarMoeda(proposta.valorProposto)}</span></p>
+                                ${badge}
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            `;
+        }
+
+        try {
+            const response = await fetch('/MinhasPropostas/ObterPropostas', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ id: userId })
+            });
+
+            const resultado = await response.json();
+            const propostas = resultado?.propostas || [];
+
+            const propostasAbertas = propostas?.filter(p => p.statusProposta === 'aberta') || [];
+            const propostasFechadas = propostas?.filter(p => p.statusProposta === 'fechada') || [];
+            const propostasRejeitadas = propostas?.filter(p => p.statusProposta === 'rejeitada') || [];
+
+            elementos.propostasAbertasContainer.innerHTML = propostasAbertas?.length
+                ? propostasAbertas.map(construirCard).join('')
+                : "<p>Nenhum proposta aberta.</p>";
+
+            elementos.propostasRejeitadasContainer.innerHTML = propostasRejeitadas?.length
+                ? propostasRejeitadas.map(construirCard).join('')
+                : "<p>Nenhum proposta rejeitada.</p>";
+
+            elementos.propostasFechadasContainer.innerHTML = propostasFechadas?.length
+                ? propostasFechadas.map(construirCard).join('')
+                : "<p>Nenhum proposta fechada.</p>";
+        } catch (error) {
+            console.error('Erro ao buscar propostas:', error);
+        }
+    });
+</script>

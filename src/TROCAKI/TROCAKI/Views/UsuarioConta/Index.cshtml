@@ -9,22 +9,37 @@
 		<!-- Navegação de abas -->
 		<ul class="nav nav-pills mb-3 justify-content-between bg-light rounded-pill p-1" id="pills-tab" role="tablist">
 			<li class="nav-item w-50" role="presentation">
-				<button class="nav-link active" id="cadastro-tab" data-bs-toggle="pill" data-bs-target="#cadastro"
-						type="button" role="tab">
-					Cadastre-se
+				<button class="nav-link active" id="login-tab" data-bs-toggle="pill" data-bs-target="#login" type="button"
+						role="tab">
+					Login
 				</button>
 			</li>
 			<li class="nav-item w-50" role="presentation">
-				<button class="nav-link" id="login-tab" data-bs-toggle="pill" data-bs-target="#login" type="button"
-						role="tab">
-					Login
+				<button class="nav-link" id="cadastro-tab" data-bs-toggle="pill" data-bs-target="#cadastro"
+						type="button" role="tab">
+					Cadastre-se
 				</button>
 			</li>
 		</ul>
 
 		<div class="tab-content" id="pills-tabContent">
+			<!-- Aba Login -->
+			<div class="tab-pane fade show active" id="login" role="tabpanel">
+				<form id="loginForm" novalidate>
+					<div class="mb-3">
+						<input type="email" id="emailLogin" class="form-control" placeholder="E-mail" required>
+						<div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
+					</div>
+					<div class="mb-4">
+						<input type="password" id="senhaLogin" class="form-control" placeholder="Senha" required>
+						<div class="invalid-feedback">Por favor, insira sua senha.</div>
+					</div>
+					<button type="submit" class="btn btn-primary w-100">Realizar Login</button>
+				</form>
+			</div>
+
 			<!-- Aba Cadastro -->
-			<div class="tab-pane fade show active" id="cadastro" role="tabpanel">
+			<div class="tab-pane fade" id="cadastro" role="tabpanel">
 				<form id="formulario" class="needs-validation" novalidate>
 					<div class="mb-2">
 						<input type="text" id="nome" class="form-control" placeholder="Nome Completo" required>
@@ -65,21 +80,6 @@
 						<div class="invalid-feedback">As senhas devem coincidir.</div>
 					</div>
 					<button type="submit" class="btn btn-primary w-100">Próximo</button>
-				</form>
-			</div>
-
-			<!-- Aba Login -->
-			<div class="tab-pane fade" id="login" role="tabpanel">
-				<form id="loginForm" novalidate>
-					<div class="mb-3">
-						<input type="email" id="emailLogin" class="form-control" placeholder="E-mail" required>
-						<div class="invalid-feedback">Por favor, insira um e-mail válido.</div>
-					</div>
-					<div class="mb-4">
-						<input type="password" id="senhaLogin" class="form-control" placeholder="Senha" required>
-						<div class="invalid-feedback">Por favor, insira sua senha.</div>
-					</div>
-					<button type="submit" class="btn btn-primary w-100">Realizar Login</button>
 				</form>
 			</div>
 		</div>
@@ -163,11 +163,9 @@
 			return;
 		}
 
-		fetch('/api/usuarioConta/cadastrar', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
+		const res = await fetch("/UsuarioConta/Cadastrar", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify({
 				nome: nome.value,
 				email: email.value,
@@ -178,21 +176,19 @@
 				fotoDocumento: fotobase64,
 				senha: senha.value
 			})
-		})
-			.then(response => {
-				if (!response.ok) throw new Error('Não foi possível realizar o cadastro.');
-				return response.json();
-			})
-			.then(data => {
-				localStorage.setItem("user_id", data.id);
-				window.location.href = "/";
-			})
-			.catch(err => {
-				alert("Erro no login: " + err.message);
-			});
+		});
+
+		const resultado = await res.json();
+
+		if (resultado.sucesso && resultado.id) {
+			localStorage.setItem("user_id", resultado.id);
+			window.location.href = "/";
+		} else {
+			window.alert("Usuário não encontrado.");
+		}
 	});
 
-	document.getElementById('loginForm').addEventListener('submit', function (event) {
+	document.getElementById('loginForm').addEventListener('submit', async function (event) {
 		event.preventDefault();
 
 		const emailLogin = document.getElementById('emailLogin');
@@ -203,27 +199,22 @@
 
 		if (!emailValido || !senhaValida) return;
 
-		// Buscar usuário no banco de dados via API
-		fetch('/api/usuarioConta/login', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify({
+		const res = await fetch("/UsuarioConta/Logar", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({ 
 				email: emailLogin.value,
 				senha: senhaLogin.value
 			})
-		})
-			.then(response => {
-				if (!response.ok) throw new Error('Login inválido');
-				return response.json();
-			})
-			.then(data => {
-				localStorage.setItem("user_id", data.id);
-				window.location.href = "/";
-			})
-			.catch(err => {
-				alert("Erro no login: " + err.message);
-			});
+		});
+
+		const resultado = await res.json();
+
+		if (resultado.sucesso && resultado.id) {
+			localStorage.setItem("user_id", resultado.id);
+			window.location.href = "/";
+		} else {
+			window.alert("Usuário não encontrado.");
+		}
 	});
 </script>
