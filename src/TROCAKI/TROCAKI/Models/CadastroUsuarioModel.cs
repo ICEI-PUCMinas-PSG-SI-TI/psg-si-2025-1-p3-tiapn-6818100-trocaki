@@ -1,4 +1,4 @@
-﻿namespace TROCAKI.Models
+namespace TROCAKI.Models
 {
     public class CadastroUsuarioModel
     {
