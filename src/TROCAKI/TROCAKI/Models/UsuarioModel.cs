@@ -1,4 +1,4 @@
-﻿namespace TROCAKI.Models
+namespace TROCAKI.Models
 {
     /// <summary>
     /// Representa um usuário do sistema.
