@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using TROCAKI.Models;
 using TROCAKI.Repositorio;
 
@@ -22,21 +22,29 @@ namespace TROCAKI.Controllers
         [HttpPost]
         public JsonResult Cadastrar([FromBody] CadastroUsuarioModel cadastro)
         {
-            string userId = _repositorio.CadastrarUsuario(cadastro);
-
-            if (userId == null) return Json(new { sucesso = false });
-
-            return Json(new { sucesso = true, id = userId });
+            try
+            {
+                string userId = _repositorio.CadastrarUsuario(cadastro);
+                return Json(new { sucesso = true, id = userId });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
         }
 
         [HttpPost]
         public JsonResult Logar([FromBody] LoginUsuarioModel login)
         {
-            string userId = _repositorio.BuscarPorEmailSenha(login);
-
-            if (userId == null) return Json(new { sucesso = false });
-
-            return Json(new { sucesso = true, id = userId });
+            try
+            {
+                string userId = _repositorio.BuscarPorEmailSenha(login);
+                return Json(new { sucesso = true, id = userId });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
         }
     }
 }
