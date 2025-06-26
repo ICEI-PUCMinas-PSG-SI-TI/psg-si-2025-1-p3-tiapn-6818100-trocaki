@@ -1,4 +1,4 @@
-﻿using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient;
 using TROCAKI.Models;
 
 namespace TROCAKI.Repositorio
@@ -16,11 +16,11 @@ namespace TROCAKI.Repositorio
         {
             try
             {
-                MySqlConnection conexao = new MySqlConnection(_strindeDeConexao);
+                using var conexao = new MySqlConnection(_strindeDeConexao);
                 conexao.Open();
 
                 string query = @"INSERT INTO usuarios (id, nome, email, cpf, telefone, data_nascimento, cidade, foto_documento, senha)
-                             VALUES (@id, @nome, @email, @cpf, @telefone, @dataNascimento, @cidade, @fotoDocumento, @senha)";
+                         VALUES (@id, @nome, @email, @cpf, @telefone, @dataNascimento, @cidade, @fotoDocumento, @senha)";
 
                 using var cmd = new MySqlCommand(query, conexao);
 
@@ -36,59 +36,80 @@ namespace TROCAKI.Repositorio
                 cmd.Parameters.AddWithValue("@fotoDocumento", cadastro.FotoDocumento);
                 cmd.Parameters.AddWithValue("@senha", cadastro.Senha);
 
-                int rowsAffected = cmd.ExecuteNonQuery();
+                cmd.ExecuteNonQuery();
 
                 return id;
+            }
+            catch (MySqlException ex) when (ex.Number == 1062)
+            {
+                if (ex.Message.Contains("cpf"))
+                    throw new Exception("CPF já cadastrado.");
+                if (ex.Message.Contains("email"))
+                    throw new Exception("E-mail já cadastrado.");
+                throw new Exception("Dados duplicados.");
             }
             catch (Exception ex)
             {
                 throw new Exception("Erro ao cadastrar usuário: " + ex.Message);
             }
-
         }
 
         public string BuscarPorEmailSenha(LoginUsuarioModel login)
         {
-            MySqlConnection conexao = new MySqlConnection(_strindeDeConexao);
-            conexao.Open();
+            try
+            {
+                using var conexao = new MySqlConnection(_strindeDeConexao);
+                conexao.Open();
 
-            var cmd = new MySqlCommand("SELECT * FROM usuarios WHERE email = @Email AND senha = @Senha", conexao);
-            cmd.Parameters.AddWithValue("@Email", login.Email);
-            cmd.Parameters.AddWithValue("@Senha", login.Senha);
+                var cmd = new MySqlCommand("SELECT * FROM usuarios WHERE email = @Email AND senha = @Senha", conexao);
+                cmd.Parameters.AddWithValue("@Email", login.Email);
+                cmd.Parameters.AddWithValue("@Senha", login.Senha);
 
-            using var reader = cmd.ExecuteReader();
+                using var reader = cmd.ExecuteReader();
 
-            if (reader.Read()) return reader["id"].ToString();
+                if (reader.Read()) return reader["id"].ToString();
 
-            return null;
+                throw new Exception("Email ou senha incorretos.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao buscar usuário: " + ex.Message);
+            }
         }
 
         public UsuarioModel ObterUsuarioPorId(string userId)
         {
-            MySqlConnection conexao = new MySqlConnection(_strindeDeConexao);
-            conexao.Open();
-
-            var sql = "SELECT * FROM usuarios WHERE id = @userId";
-            using var cmd = new MySqlCommand(sql, conexao);
-            cmd.Parameters.AddWithValue("@userId", userId);
-
-            using var reader = cmd.ExecuteReader();
-            if (reader.Read())
+            try
             {
-                return new UsuarioModel
-                {
-                    Id = reader.GetString("id"),
-                    Nome = reader.GetString("nome"),
-                    Cpf = reader.GetString("cpf"),
-                    FotoDocumento = reader.GetString("foto_documento"),
-                    Email = reader.GetString("email"),
-                    Telefone = reader.GetString("telefone"),
-                    Cidade = reader.GetString("cidade"),
-                    DataNascimento = reader.GetDateTime("data_nascimento")
-                };
-            }
+                using var conexao = new MySqlConnection(_strindeDeConexao);
+                conexao.Open();
 
-            return null;
+                var sql = "SELECT * FROM usuarios WHERE id = @userId";
+                using var cmd = new MySqlCommand(sql, conexao);
+                cmd.Parameters.AddWithValue("@userId", userId);
+
+                using var reader = cmd.ExecuteReader();
+                if (reader.Read())
+                {
+                    return new UsuarioModel
+                    {
+                        Id = reader.GetString("id"),
+                        Nome = reader.GetString("nome"),
+                        Cpf = reader.GetString("cpf"),
+                        FotoDocumento = reader.GetString("foto_documento"),
+                        Email = reader.GetString("email"),
+                        Telefone = reader.GetString("telefone"),
+                        Cidade = reader.GetString("cidade"),
+                        DataNascimento = reader.GetDateTime("data_nascimento")
+                    };
+                }
+
+                throw new Exception("Usuário não encontrado.");
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Erro ao obter usuário: " + ex.Message);
+            }
         }
     }
 }
