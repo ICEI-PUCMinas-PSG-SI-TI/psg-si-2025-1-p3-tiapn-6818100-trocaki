@@ -1,11 +1,9 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using TROCAKI.Models;
 using TROCAKI.Repositorio;
 
 namespace TROCAKI.Controllers
 {
-    [Route("api/[controller]")]
-    [ApiController]
     public class CadastrarProdutoController : Controller
     {
         private readonly ProdutoRepositorio _produtoRepositorio;
@@ -18,24 +16,33 @@ namespace TROCAKI.Controllers
             _categoriaRepositorio = new CategoriaRepositorio(stringDeConexao);
         }
 
-        [HttpGet]
         public IActionResult Index()
         {
-            List<CategoriaModel> categorias = _categoriaRepositorio.ObterCategorias();
-            ViewBag.Caracteristicas = categorias;
-
-            return View();
+            try
+            {
+                var categorias = _categoriaRepositorio.ObterCategorias();
+                ViewBag.Caracteristicas = categorias;
+                return View();
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, new { sucesso = false, mensagem = ex.Message });
+            }
         }
 
-        [HttpPost("cadastrar")]
-        public IActionResult Cadastrar([FromBody] CriarProdutoModel produto)
+        [HttpPost]
+        public JsonResult Cadastrar([FromBody] CriarProdutoModel produto)
         {
-            string produtoId = _produtoRepositorio.CadastrarProduto(produto);
+            try
+            {
+                var produtoId = _produtoRepositorio.CadastrarProduto(produto);
 
-            if (produtoId == null)
-                return Unauthorized(new { mensagem = "Não foi possível cadastrar o produto." });
-
-            return Ok(new { id = produtoId });
+                return Json(new { sucesso = true, id = produtoId });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = ex.Message });
+            }
         }
     }
 }
