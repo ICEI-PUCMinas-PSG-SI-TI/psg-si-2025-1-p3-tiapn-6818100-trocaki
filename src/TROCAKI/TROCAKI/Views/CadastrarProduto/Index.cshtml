@@ -1,4 +1,4 @@
-﻿@{
+@{
 	ViewData["Title"] = "Cadastrar produto";
 }
 
@@ -56,127 +56,127 @@
     </div>
 </div>
 
+<!-- Toast container -->
+<div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1100">
+    <div id="toastMensagem" class="toast align-items-center text-white bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+            <div class="toast-body" id="toastTexto">
+                <!-- Mensagem de erro -->
+            </div>
+            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Fechar"></button>
+        </div>
+    </div>
+</div>
+
 <script>
-    const form = document.getElementById('produtoForm');
-    const nomeProduto = document.getElementById('nomeProduto');
-    const descricao = document.getElementById('descricao');
-    const valor = document.getElementById('valor');
-    const categoria = document.getElementById('categoria');
-    const fotos = document.getElementById('fotos');
+	const form = document.getElementById('produtoForm');
 
-    function converterFotosParaBase64(inputFile) {
-      return new Promise((resolve, reject) => {
-        const arquivos = inputFile.files;
+	const campos = {
+		nomeProduto: document.getElementById('nomeProduto'),
+		descricao: document.getElementById('descricao'),
+		valor: document.getElementById('valor'),
+		categoria: document.getElementById('categoria'),
+		fotos: document.getElementById('fotos')
+	};
 
-        if (!arquivos || arquivos.length === 0) {
-          reject("Nenhum arquivo selecionado.");
-          return;
-        }
+	// Função utilitária para validar campo obrigatório
+	function validarCampo(input, condicaoValida) {
+		if (!condicaoValida) {
+			input.classList.add('is-invalid');
+			return false;
+		}
+		input.classList.remove('is-invalid');
+		return true;
+	}
 
-        const leitores = [];
+	// Exibir toast com mensagem e cor
+	function exibirToast(mensagem, cor = 'danger') {
+		const toastElement = document.getElementById('toastMensagem');
+		const toastTexto = document.getElementById('toastTexto');
 
-        for (let i = 0; i < arquivos.length; i++) {
-          const arquivo = arquivos[i];
+		toastElement.className = `toast align-items-center text-white bg-${cor} border-0`;
+		toastTexto.textContent = mensagem;
 
-          const leitorPromessa = new Promise((res, rej) => {
-            const reader = new FileReader();
+		new bootstrap.Toast(toastElement, { delay: 4000 }).show();
+	}
 
-            reader.onload = () => res(reader.result); // base64 string
-            reader.onerror = () => rej(`Erro ao ler o arquivo: ${arquivo.name}`);
+	// Converter várias imagens para base64
+	function converterFotosParaBase64(inputFile) {
+		return new Promise((resolve, reject) => {
+			const arquivos = inputFile.files;
+			if (!arquivos || arquivos.length === 0) {
+				reject("Nenhum arquivo selecionado.");
+				return;
+			}
 
-            reader.readAsDataURL(arquivo);
-          });
+			const leitores = Array.from(arquivos).map(arquivo => {
+				return new Promise((res, rej) => {
+					const reader = new FileReader();
+					reader.onload = () => res(reader.result);
+					reader.onerror = () => rej(`Erro ao ler o arquivo: ${arquivo.name}`);
+					reader.readAsDataURL(arquivo);
+				});
+			});
 
-          leitores.push(leitorPromessa);
-        }
+			Promise.all(leitores)
+				.then(base64Array => resolve(base64Array))
+				.catch(reject);
+		});
+	}
 
-        // Aguarda todos os arquivos serem lidos
-        Promise.all(leitores)
-          .then(base64Array => resolve(base64Array))
-          .catch(erro => reject(erro));
-      });
-    }
+	form.addEventListener('submit', async function (event) {
+		event.preventDefault();
 
-    form.addEventListener('submit', async function (event) {
-      event.preventDefault();
-      event.stopPropagation();
+		let valido = true;
 
-      let valido = true;
+		valido &= validarCampo(campos.nomeProduto, campos.nomeProduto.value.trim() !== '');
+		valido &= validarCampo(campos.descricao, campos.descricao.value.trim() !== '');
+		valido &= validarCampo(campos.valor, parseFloat(campos.valor.value) > 0);
+		valido &= validarCampo(campos.categoria, [...campos.categoria.options].some(opt => opt.selected));
+		valido &= validarCampo(campos.fotos, campos.fotos.files.length > 0);
 
-      // Nome Produto
-      if (!nomeProduto.value.trim()) {
-        nomeProduto.classList.add('is-invalid');
-        valido = false;
-      }
+		if (!valido) return;
 
-      // Descrição
-      if (!descricao.value.trim()) {
-        descricao.classList.add('is-invalid');
-        valido = false;
-      } 
+		let fotosEmBase64;
+		try {
+			fotosEmBase64 = await converterFotosParaBase64(campos.fotos);
+		} catch (erro) {
+			exibirToast(erro);
+			return;
+		}
 
-      // Valor (deve ser > 0)
-      const valorNum = parseFloat(valor.value);
-      if (isNaN(valorNum) || valorNum <= 0) {
-        valor.classList.add('is-invalid');
-        valido = false;
-      } 
+		const categoriasEscolhidas = [...campos.categoria.options]
+			.filter(opt => opt.selected)
+			.map(opt => ({ id: opt.value, nome: opt.innerText }));
 
-      // Categoria (pelo menos 1 selecionada)
-      if ([...categoria.options].filter(option => option.selected).length === 0) {
-        categoria.classList.add('is-invalid');
-        valido = false;
-      }
+		const VendedorId = localStorage.getItem("user_id");
 
-      // Fotos (pelo menos 1 arquivo)
-      if (fotos.files.length === 0) {
-        fotos.classList.add('is-invalid');
-        valido = false;
-      }
+		const payload = {
+			nome: campos.nomeProduto.value,
+			descricao: campos.descricao.value,
+			valor: campos.valor.value,
+			categorias: categoriasEscolhidas,
+			fotos: fotosEmBase64,
+			vendedorId: VendedorId
+		};
 
-      if (!valido) return;
+		try {
+			const res = await fetch('/CadastrarProduto/Cadastrar', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify(payload)
+			});
 
-      const fotosEmBase64 = await converterFotosParaBase64(fotos);
+			const resultado = await res.json();
 
-      const categoriasEscolhidas = [...categoria.options].reduce((acc, option) => {
-          if (option.selected) acc.push({"id": option.value, "nome": option.innerText});
+			if (!resultado.sucesso) {
+				exibirToast(resultado.mensagem || "Erro ao cadastrar produto.");
+				return;
+			}
 
-          return acc;
-      }, []);
-
-      const VendedorId = localStorage.getItem("user_id");
-
-      fetch('/api/CadastrarProduto/cadastrar', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({
-                nome: nomeProduto.value,
-                descricao: descricao.value,
-                valor: valor.value,
-                categorias: categoriasEscolhidas,
-                fotos: fotosEmBase64,
-                VendedorId: VendedorId
-            })
-        })
-            .then(response => {
-                if (!response.ok) throw new Error('Não foi possível cadastrar o produto.');
-                return response.json();
-            })
-            .then(data => {
-                window.location.href = "/Produto?id=" + data.id;
-            })
-            .catch(err => {
-                alert("Erro ao cadastrar novo produto: " + err.message);
-            });
-    });
-
-    // Remover feedback de erro ao digitar/mudar valor
-    [nomeProduto, descricao, valor, categoria, fotos].forEach(el => {
-      el.addEventListener('input', () => {
-        el.classList.remove('is-invalid');
-        el.classList.remove('is-valid');
-      });
-    });
+			window.location.href = "/Produto?id=" + resultado.id;
+		} catch (err) {
+			exibirToast("Erro de comunicação com o servidor.");
+		}
+	});
 </script>
