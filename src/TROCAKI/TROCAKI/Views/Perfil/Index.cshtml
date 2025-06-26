@@ -1,57 +1,18 @@
-﻿@{
-	ViewData["Title"] = "Perfil";
+@{
+    ViewData["Title"] = "Perfil";
 }
-
-<style>
-    body {
-        background-color: #f8f9fa;
-    }
-
-    .profile-section {
-        background-color: white;
-        border-radius: 12px;
-        padding: 2rem;
-        margin-bottom: 2rem;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
-    }
-
-    .card-product {
-        position: relative;
-        transition: transform 0.2s;
-        cursor: pointer;
-    }
-
-        .card-product:hover {
-            transform: scale(1.02);
-        }
-
-    .product-image {
-        max-height: 180px;
-        object-fit: contain;
-        padding: 1rem;
-    }
-
-    .heart-btn {
-        position: absolute;
-        top: 10px;
-        right: 10px;
-        background: transparent;
-        border: none;
-        font-size: 1.4rem;
-        color: red;
-        z-index: 1;
-    }
-
-    .category-badge {
-        margin-right: 0.25rem;
-        font-size: 0.75rem;
-    }
-</style>
 
 <div class="container py-4">
 
+    <!-- Loader -->
+    <div id="perfil-loader" class="d-flex justify-content-center align-items-center bg-white rounded-4 p-5 shadow-sm" style="min-height: 300px;">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+            <span class="visually-hidden">Carregando...</span>
+        </div>
+    </div>
+
     <!-- Sessão Principal -->
-    <div class="profile-section">
+    <div id="perfil-conteudo" class="bg-white rounded-4 p-4 mb-4 shadow-sm d-none">
         <h3 class="mb-4">Informações do Usuário</h3>
         <div class="row">
             <div class="col-md-6 mb-3">
@@ -77,54 +38,6 @@
         </div>
     </div>
 
-    <!-- Meus Produtos -->
-    <div class="profile-section">
-        <h4 class="mb-4">Meus produtos</h4>
-
-        <div class="accordion" id="accordionMeusProdutos">
-            <!-- Accordion: Produtos em aberto -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingAberto">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAberto" aria-expanded="true" aria-controls="collapseAberto">
-                        Produtos em aberto
-                    </button>
-                </h2>
-                <div id="collapseAberto" class="accordion-collapse collapse show" aria-labelledby="headingAberto" data-bs-parent="#accordionMeusProdutos">
-                    <div class="accordion-body">
-                        <div class="d-flex flex-wrap gap-3" id="produtos-em-aberto-container">
-                            <!-- Produto em aberto -->
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Accordion: Produtos vendidos -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingVendidos">
-                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVendidos" aria-expanded="false" aria-controls="collapseVendidos">
-                        Produtos vendidos
-                    </button>
-                </h2>
-                <div id="collapseVendidos" class="accordion-collapse collapse" aria-labelledby="headingVendidos" data-bs-parent="#accordionMeusProdutos">
-                    <div class="accordion-body">
-                        <div class="d-flex flex-wrap gap-3" id="produtos-vendidos-container">
-                            <!-- Produto vendido -->
-                            
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- Lista de Desejo -->
-    <div class="profile-section">
-        <h4 class="mb-4">Lista de Desejo</h4>
-        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4 gap-3" id="lista-de-desejo-container">
-
-        </div>
-    </div>
 </div>
 
 <script>
@@ -137,83 +50,33 @@
         const usuarioNascimento = document.getElementById("UsuarioNascimento");
         const usuarioCidade = document.getElementById("UsuarioCidade");
 
-        const produtosEmAbertoContainer = document.getElementById("produtos-em-aberto-container");
-        const produtosVendidosContainer = document.getElementById("produtos-vendidos-container");
-        const listaDeDesejoContainer = document.getElementById("lista-de-desejo-container");
-
-        function formatarConteudoDoProduto(produto) {
-            let categoriasConteudo = "";
-            produto.categorias.forEach(categoria =>
-                categoriasConteudo += `<span class="badge bg-secondary">${categoria.nome}</span>`
-            );
-
-            const valor = produto.valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
-
-            const conteudo = `
-                <div class="card card-product shadow-sm">
-                    <a class="text-decoration-none text-dark" href="/Produto?id=${produto.id}">
-                        <img src="${produto.fotos[0]}" class="card-img-top p-3" alt="${produto.nome}">
-                        <div class="card-body">
-                            <h6 class="card-title">${produto.nome}</h6>
-                            <p class="text-muted small">${produto.descricao}</p>
-                            <p class="fw-bold text-orange">${valor}</p>
-                            <div class="d-flex flex-wrap gap-1 mb-2">
-                                ${categoriasConteudo}
-                            </div>
-                        </div>
-                    </a>
-                </div>
-            `;
-
-            return conteudo;
-        }
+        const loader = document.getElementById("perfil-loader");
+        const conteudo = document.getElementById("perfil-conteudo");
 
         try {
-            const response = await fetch('/Perfil/ObterInformacoesDoUsuario', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+            const res = await fetch("/Perfil/ObterInformacoesDoUsuario", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ userId })
             });
 
-            const resultado = await response.json();
+            const resultado = await res.json();
 
-            if (!resultado?.usuario?.id) window.location.href = "/";
+            if (!resultado.sucesso) return window.location.href = "/";
 
-            usuarioNome.innerHTML = resultado.usuario.nome;
-            usuarioEmail.innerHTML = resultado.usuario.email;
-            usuarioTelefone.innerHTML = resultado.usuario.telefone;
-            usuarioCidade.innerHTML = resultado.usuario.cidade;
+            const { usuario } = resultado;
 
-            const data = new Date(resultado.usuario.dataNascimento);
-            const formatada = data.toLocaleDateString('pt-BR');
+            usuarioNome.textContent = usuario.nome;
+            usuarioEmail.textContent = usuario.email;
+            usuarioTelefone.textContent = usuario.telefone;
+            usuarioCidade.textContent = usuario.cidade;
+            usuarioNascimento.textContent = new Date(usuario.dataNascimento).toLocaleDateString('pt-BR');
 
-            usuarioNascimento.innerHTML = formatada;
+            // Troca loader pelo conteúdo
+            loader.classList.add("d-none");
+            conteudo.classList.remove("d-none");
 
-            produtosEmAbertoContainer.innerHTML = "Nenhum produto em aberto.";
-            produtosVendidosContainer.innerHTML = "Nenhum produto vendido.";
-
-            resultado.meusProdutos.forEach(produto => {
-                if(produto.status === "aberto") {
-                    if (produtosEmAbertoContainer.innerHTML === "Nenhum produto em aberto.") produtosEmAbertoContainer.innerHTML = "";
-
-                    produtosEmAbertoContainer.innerHTML += formatarConteudoDoProduto(produto);
-                } else {
-                    if (produtosVendidosContainer.innerHTML === "Nenhum produto vendido.") produtosVendidosContainer.innerHTML = "";
-
-                    produtosVendidosContainer.innerHTML += formatarConteudoDoProduto(produto);
-                }
-            });
-
-            listaDeDesejoContainer.innerHTML = "Nenhum produto na lista de desejos.";
-            resultado.listaDeDesejos.forEach(produto => {
-                if (produto.status === "aberto") {
-                    if (listaDeDesejoContainer.innerHTML === "Nenhum produto na lista de desejos.") listaDeDesejoContainer.innerHTML = "";
-
-                    listaDeDesejoContainer.innerHTML += formatarConteudoDoProduto(produto);
-                }
-            });
-        } catch (error) {
-            window.alert(error);
+        } catch (erro) {
             window.location.href = "/";
         }
     });
