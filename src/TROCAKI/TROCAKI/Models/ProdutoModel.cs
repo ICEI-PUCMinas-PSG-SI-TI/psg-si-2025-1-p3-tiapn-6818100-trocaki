@@ -1,4 +1,4 @@
-﻿namespace TROCAKI.Models
+namespace TROCAKI.Models
 {
     /// <summary>
     /// Representa um produto disponível para venda.
