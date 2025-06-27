@@ -1,8 +1,5 @@
 ﻿namespace TROCAKI.Models
 {
-    /// <summary>
-    /// Representa uma proposta de compra feita por um usuário para um produto.
-    /// </summary>
     public class PropostaDeCompraModel
     {
         // Atributos

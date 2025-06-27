@@ -1,8 +1,5 @@
 namespace TROCAKI.Models
 {
-    /// <summary>
-    /// Representa um usuário do sistema.
-    /// </summary>
     public class UsuarioModel
     {
         // Constante

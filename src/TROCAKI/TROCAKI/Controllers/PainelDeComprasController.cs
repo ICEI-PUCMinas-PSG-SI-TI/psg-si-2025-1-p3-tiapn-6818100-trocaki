@@ -60,15 +60,5 @@ namespace TROCAKI.Controllers
                 });
             }
         }
-
-        //[HttpPost]
-        //public JsonResult BuscarPropostas([FromBody] UsuarioIdModel usuario)
-        //{
-        //    var propostas = _propostaDeCompraRepositorio.ObterPropostas(usuario.Id, null, null, null, out string erro);
-
-        //    if (!string.IsNullOrEmpty(erro)) return Json(new { sucesso = false, mensagem = erro });
-
-        //    return Json(new { sucesso = true, propostas });
-        //}
     }
 }
