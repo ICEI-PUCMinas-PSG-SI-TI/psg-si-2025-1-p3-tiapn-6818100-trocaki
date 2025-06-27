@@ -1,0 +1,269 @@
+﻿@{
+	ViewData["Title"] = "Painel de Compras";
+}
+
+<!-- Loader -->
+<div id="painel-loader" class="d-flex justify-content-center align-items-center bg-white rounded-4 p-5 shadow-sm"
+	 style="min-height: 300px;">
+	<div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+		<span class="visually-hidden">Carregando...</span>
+	</div>
+</div>
+
+<div id="painel-conteudo" class="d-none">
+	<div class="container py-5">
+		<h3 class="mb-4">Painel de Compras</h3>
+
+		<!-- Navegação -->
+		<ul class="nav nav-tabs mb-4" id="painelComprasTabs" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="desejos-tab" data-bs-toggle="tab" data-bs-target="#desejos"
+						type="button" role="tab" aria-controls="desejos" aria-selected="true">
+					Lista de desejos
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="propostas-tab" data-bs-toggle="tab" data-bs-target="#propostas"
+						type="button" role="tab" aria-controls="propostas" aria-selected="false">
+					Minhas propostas
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="pedidos-tab" data-bs-toggle="tab" data-bs-target="#pedidos" type="button"
+						role="tab" aria-controls="pedidos" aria-selected="false">
+					Meus pedidos
+				</button>
+			</li>
+		</ul>
+
+		<!-- Conteúdo das abas -->
+		<div class="tab-content" id="painelComprasTabsContent">
+
+			<!-- Lista de Desejos -->
+			<div class="tab-pane fade show active" id="desejos" role="tabpanel" aria-labelledby="desejos-tab">
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="lista-de-desejo-container">
+					<!-- Cards de produtos com status 'em aberto' da lista de desejos -->
+				</div>
+			</div>
+
+			<!-- Minhas Propostas -->
+			<div class="tab-pane fade" id="propostas" role="tabpanel" aria-labelledby="propostas-tab">
+				<div class="accordion mt-4" id="accordionPropostas">
+
+					<!-- Accordion: Propostas Abertas -->
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingAberta">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseAberta" aria-expanded="true" aria-controls="collapseAberta">
+								Propostas em aberto
+							</button>
+						</h2>
+						<div id="collapseAberta" class="accordion-collapse collapse show"
+							 aria-labelledby="headingAberta" data-bs-parent="#accordionPropostas">
+							<div class="accordion-body">
+								<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
+									 id="propostas-abertas-container">
+									<!-- Cards das propostas em aberto -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Accordion: Propostas Fechadas -->
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingFechada">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseFechada" aria-expanded="false" aria-controls="collapseFechada">
+								Propostas fechadas
+							</button>
+						</h2>
+						<div id="collapseFechada" class="accordion-collapse collapse" aria-labelledby="headingFechada"
+							 data-bs-parent="#accordionPropostas">
+							<div class="accordion-body">
+								<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
+									 id="propostas-fechadas-container">
+									<!-- Cards das propostas fechadas -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Accordion: Propostas Rejeitadas -->
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingRejeitada">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+									data-bs-target="#collapseRejeitada" aria-expanded="false"
+									aria-controls="collapseRejeitada">
+								Propostas rejeitadas
+							</button>
+						</h2>
+						<div id="collapseRejeitada" class="accordion-collapse collapse"
+							 aria-labelledby="headingRejeitada" data-bs-parent="#accordionPropostas">
+							<div class="accordion-body">
+								<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4"
+									 id="propostas-rejeitadas-container">
+									<!-- Cards das propostas rejeitadas -->
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+			<!-- Meus Pedidos -->
+			<div class="tab-pane fade" id="pedidos" role="tabpanel" aria-labelledby="pedidos-tab">
+				<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="meus-pedidos-container">
+					<!-- Cards dos pedidos do usuário -->
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', async () => {
+		const userId = localStorage.getItem('user_id');
+		if (!userId) return location.href = "/";
+
+		const $ = id => document.getElementById(id);
+
+		const elementos = {
+			propostasAbertasContainer: $('propostas-abertas-container'),
+			propostasFechadasContainer: $('propostas-fechadas-container'),
+			propostasRejeitadasContainer: $('propostas-rejeitadas-container'),
+			listaDeDesejoContainer: $("lista-de-desejo-container"),
+			meusPedidosContainer: $("meus-pedidos-container")
+		};
+
+		function formatarMoeda(valor) {
+			return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		}
+
+		function construirCardProposta(proposta) {
+			const badge = {
+				aberta: '<span class="badge bg-warning text-dark">Em aberto</span>',
+				fechada: '<span class="badge bg-success">Fechada</span>',
+				rejeitada: '<span class="badge bg-danger">Rejeitada</span>'
+			}[proposta.propostaStatus] || '';
+
+			return `
+			  <div class="col">
+				<div class="card h-100 shadow-sm d-flex flex-column">
+				  <a class="text-decoration-none text-dark" href="/Produto?id=${proposta.produtoId}">
+					<div class="ratio ratio-1x1">
+					  <img src="${proposta.produtoFotos[0]}" class="card-img-top object-fit-contain p-3" alt="${proposta.produtoNome}">
+					</div>
+					<div class="card-body d-flex flex-column">
+					  <h6 class="card-title text-truncate">${proposta.produtoNome}</h6>
+					  <p class="mb-1 text-muted small text-truncate">Preço original: <strong>${formatarMoeda(proposta.produtoValor)}</strong></p>
+					  <p class="mb-1 small">Proposta: <span class="text-primary fw-semibold">${formatarMoeda(proposta.valorProposto)}</span></p>
+					  <div class="mt-auto">${badge}</div>
+					</div>
+				  </a>
+				</div>
+			  </div>`;
+		}
+
+		function construirCardProduto(produto) {
+			const categorias = produto.categorias.map(c =>
+				`<span class="badge bg-secondary">${c.nome}</span>`
+			).join("");
+
+			const valor = produto.valor.toLocaleString('pt-BR', {
+				style: 'currency',
+				currency: 'BRL'
+			});
+
+			return `
+			<div class="col">
+				<div class="card h-100 shadow-sm d-flex flex-column">
+					<a class="text-decoration-none text-dark" href="/Produto?id=${produto.id}">
+					<div class="ratio ratio-1x1">
+						<img src="${produto.fotos[0]}" class="card-img-top object-fit-contain p-3" alt="${produto.nome}">
+					</div>
+					<div class="card-body d-flex flex-column">
+						<h6 class="card-title text-truncate">${produto.nome}</h6>
+						<p class="text-muted small text-truncate">${produto.descricao}</p>
+						<p class="fw-bold text-warning">${valor}</p>
+						<div class="d-flex flex-wrap gap-1 mt-auto">${categorias}</div>
+					</div>
+					</a>
+				</div>
+			</div>`;
+		}
+
+		function construirCardPedido(pedido) {
+			return `
+			  <div class="col">
+				<div class="card h-100 shadow-sm d-flex flex-column">
+				  <a class="text-decoration-none text-dark" href="/Produto?id=${pedido.produtoId}">
+					<div class="ratio ratio-1x1">
+					  <img src="${pedido.produtoFotos[0]}" class="card-img-top object-fit-contain p-3" alt="${pedido.produtoNome}">
+					</div>
+					<div class="card-body d-flex flex-column">
+					  <h6 class="card-title text-truncate">${pedido.produtoNome}</h6>
+					  <p class="mb-2 small">Valor acordado: <span class="fw-bold text-success">${formatarMoeda(pedido.propostaValorProposto)}</span></p>
+					  <p class="mb-2 small">Status: <span class="fw-bold text-primary">${pedido.status}</span></p>
+					  <div class="p-2 border border-secondary rounded mt-auto">
+						<p class="mb-1 small">Vendedor: ${pedido.vendedorNome}</p>
+						<p class="mb-1 small">Email: ${pedido.vendedorEmail}</p>
+						<p class="mb-0 small">Telefone: ${pedido.vendedorTelefone}</p>
+					  </div>
+					</div>
+				  </a>
+				</div>
+			  </div>`;
+		}
+
+
+		try {
+			const response = await fetch('/PainelDeCompras/ObterPropostas', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ id: userId })
+			});
+
+			const resultado = await response.json();
+
+			if (!resultado.sucesso) return window.location.href = "/";
+
+			const propostas = resultado?.propostas || [];
+			const propostasAbertas = propostas?.filter(p => p.propostaStatus === 'aberta') || [];
+			const propostasFechadas = propostas?.filter(p => p.propostaStatus === 'fechada') || [];
+			const propostasRejeitadas = propostas?.filter(p => p.propostaStatus === 'rejeitada') || [];
+
+			const listaDeDesejos = resultado?.listaDeDesejos || [];
+			const desejosAbertos = listaDeDesejos.filter(p => p.status === "aberto") || [];
+
+			const meusPedidos = resultado?.meusPedidos || [];
+
+			elementos.propostasAbertasContainer.innerHTML = propostasAbertas?.length
+				? propostasAbertas.map(construirCardProposta).join('')
+				: "<p>Nenhum proposta aberta.</p>";
+
+			elementos.propostasRejeitadasContainer.innerHTML = propostasRejeitadas?.length
+				? propostasRejeitadas.map(construirCardProposta).join('')
+				: "<p>Nenhum proposta rejeitada.</p>";
+
+			elementos.propostasFechadasContainer.innerHTML = propostasFechadas?.length
+				? propostasFechadas.map(construirCardProposta).join('')
+				: "<p>Nenhum proposta fechada.</p>";
+
+			elementos.listaDeDesejoContainer.innerHTML = desejosAbertos?.length
+				? desejosAbertos.map(construirCardProduto).join('')
+				: `<p>Nenhum produto em aberto na lista de desejos.</p>`;
+
+			elementos.meusPedidosContainer.innerHTML = meusPedidos?.length
+				? meusPedidos.map(construirCardPedido).join('')
+				: `<p>Nenhum pedido.</p>`;
+
+			// Remove loader
+			document.getElementById('painel-loader')?.classList.add('d-none');
+			document.getElementById('painel-conteudo')?.classList.remove('d-none');
+		} catch (error) {
+			console.error('Erro ao buscar propostas:', error);
+		}
+	});
+</script>

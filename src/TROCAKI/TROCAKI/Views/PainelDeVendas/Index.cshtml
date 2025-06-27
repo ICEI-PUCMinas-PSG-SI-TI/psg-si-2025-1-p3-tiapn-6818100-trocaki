@@ -1,0 +1,324 @@
+﻿@{
+	ViewData["Title"] = "Painel de Vendas";
+}
+
+<!-- Loader -->
+<div id="painel-loader" class="d-flex justify-content-center align-items-center bg-white rounded-4 p-5 shadow-sm" style="min-height: 300px;">
+	<div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;">
+		<span class="visually-hidden">Carregando...</span>
+	</div>
+</div>
+
+<div id="painel-conteudo" class="d-none">
+	<div class="container py-5">
+		<h3 class="mb-4">Painel de Vendas</h3>
+
+		<!-- Navegação -->
+		<ul class="nav nav-tabs mb-4" id="painelVendasTabs" role="tablist">
+			<li class="nav-item" role="presentation">
+				<button class="nav-link active" id="produtos-tab" data-bs-toggle="tab" data-bs-target="#produtos" type="button" role="tab" aria-controls="produtos" aria-selected="true">
+					Meus produtos
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="propostas-recebidas-tab" data-bs-toggle="tab" data-bs-target="#propostas-recebidas" type="button" role="tab" aria-controls="propostas-recebidas" aria-selected="false">
+					Propostas recebidas
+				</button>
+			</li>
+			<li class="nav-item" role="presentation">
+				<button class="nav-link" id="pedidos-gerados-tab" data-bs-toggle="tab" data-bs-target="#pedidos-gerados" type="button" role="tab" aria-controls="pedidos-gerados" aria-selected="false">
+					Pedidos gerados
+				</button>
+			</li>
+		</ul>
+
+		<!-- Conteúdo das abas -->
+		<div class="tab-content" id="painelVendasTabsContent">
+
+			<!-- Meus Produtos -->
+			<div class="tab-pane fade show active" id="produtos" role="tabpanel" aria-labelledby="produtos-tab">
+				<div class="accordion" id="accordionMeusProdutos">
+					<!-- Accordion: Produtos em aberto -->
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingAberto">
+							<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAberto" aria-expanded="true" aria-controls="collapseAberto">
+								Produtos em aberto
+							</button>
+						</h2>
+						<div id="collapseAberto" class="accordion-collapse collapse show" aria-labelledby="headingAberto" data-bs-parent="#accordionMeusProdutos">
+							<div class="accordion-body">
+								<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="produtos-em-aberto-container">
+									<!-- Produto em aberto -->
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!-- Accordion: Produtos vendidos -->
+					<div class="accordion-item">
+						<h2 class="accordion-header" id="headingVendidos">
+							<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVendidos" aria-expanded="false" aria-controls="collapseVendidos">
+								Produtos vendidos
+							</button>
+						</h2>
+						<div id="collapseVendidos" class="accordion-collapse collapse" aria-labelledby="headingVendidos" data-bs-parent="#accordionMeusProdutos">
+							<div class="accordion-body">
+								<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="produtos-vendidos-container">
+									<!-- Produto vendido -->
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Propostas Recebidas -->
+			<div class="tab-pane fade" id="propostas-recebidas" role="tabpanel" aria-labelledby="propostas-recebidas-tab">
+				<div class="mt-4">
+					<h4 class="mb-4">Propostas Recebidas</h4>
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="propostas-recebidas-container">
+						<!-- Cards das propostas recebidas -->
+					</div>
+				</div>
+			</div>
+
+			<!-- Pedidos Gerados -->
+			<div class="tab-pane fade" id="pedidos-gerados" role="tabpanel" aria-labelledby="pedidos-gerados-tab">
+				<div class="mt-4">
+					<h4 class="mb-4">Pedidos Gerados</h4>
+					<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4" id="pedidos-gerados-container">
+						<!-- Cards dos pedidos gerados a partir das propostas aceitas -->
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Modal de Confirmação -->
+<div class="modal fade" id="modalConfirmacao" tabindex="-1" aria-labelledby="modalConfirmacaoLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="modalConfirmacaoLabel">Confirmar ação</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+			</div>
+			<div class="modal-body">
+				<p id="mensagem-confirmacao"></p>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-primary" id="botao-confirmar-acao">Confirmar</button>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+	document.addEventListener('DOMContentLoaded', async () => {
+		const userId = localStorage.getItem('user_id');
+		if (!userId) return location.href = "/";
+
+		const $ = id => document.getElementById(id);
+		const modalConfirmacao = new bootstrap.Modal($('modalConfirmacao'));
+
+		let propostaIdSelecionada = null;
+		let acaoSelecionada = null;
+
+		const elementos = {
+			propostasRecebidasContainer: $('propostas-recebidas-container'),
+			mensagemConfirmacao: $('mensagem-confirmacao'),
+			botaoConfirmarAcao: $('botao-confirmar-acao'),
+			produtosEmAbertoContainer: $("produtos-em-aberto-container"),
+			produtosVendidosContainer: $("produtos-vendidos-container"),
+			pedidosGeradosContainer: $("pedidos-gerados-container")
+		};
+
+		function formatarMoeda(valor) {
+			return Number(valor).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		}
+
+		function exibirMensagemPadrao(container, texto) {
+			container.innerHTML = `<p>${texto}</p>`;
+		  }
+
+		function formatarConteudoDoProduto(produto) {
+			const categorias = produto.categorias.map(c =>
+				`<span class="badge bg-secondary">${c.nome}</span>`
+			).join("");
+
+			const valor = produto.valor.toLocaleString('pt-BR', {
+				style: 'currency',
+				currency: 'BRL'
+			});
+
+			return `
+			<div class="col">
+				<div class="card h-100 shadow-sm d-flex flex-column">
+					<a class="text-decoration-none text-dark" href="/Produto?id=${produto.id}">
+						<div class="ratio ratio-1x1">
+							<img src="${produto.fotos[0]}" class="card-img-top object-fit-contain p-3" alt="${produto.nome}">
+						</div>
+						<div class="card-body d-flex flex-column">
+							<h6 class="card-title text-truncate">${produto.nome}</h6>
+							<p class="text-muted small text-truncate">${produto.descricao}</p>
+							<p class="fw-bold text-orange">${valor}</p>
+							<div class="d-flex flex-wrap gap-1 mt-auto">${categorias}</div>
+						</div>
+					</a>
+				</div>
+			</div>`;
+		}
+
+
+		elementos.botaoConfirmarAcao.addEventListener('click', () => {
+			if (acaoSelecionada === 'aceitar') aceitarProposta(propostaIdSelecionada);
+			else if (acaoSelecionada === 'rejeitar') rejeitarProposta(propostaIdSelecionada);
+			modalConfirmacao.hide();
+		});
+
+		try {
+			const response = await fetch('/PainelDeVendas/ObterPropostas', {
+				method: 'POST',
+				headers: { 'Content-Type': 'application/json' },
+				body: JSON.stringify({ id: userId })
+			});
+
+			const resultado = await response.json();
+
+			if (!resultado.sucesso) return window.location.href = "/";
+
+			const meusProdutos = resultado?.meusProdutos || [];
+			const produtosAbertos = meusProdutos.filter(p => p.status === "aberto") || [];
+			const produtosVendidos = meusProdutos.filter(p => p.status !== "aberto") || [];
+
+			const propostas = resultado?.propostas || [];
+
+			const pedidosGerados = resultado?.pedidosGerados || [];
+
+			elementos.produtosEmAbertoContainer.innerHTML = "";
+			if (produtosAbertos.length === 0) exibirMensagemPadrao(elementos.produtosEmAbertoContainer, "Nenhum produto em aberto.");
+			else produtosAbertos.forEach(p => elementos.produtosEmAbertoContainer.innerHTML += formatarConteudoDoProduto(p));
+
+			elementos.produtosVendidosContainer.innerHTML = "";
+			if (produtosVendidos.length === 0) exibirMensagemPadrao(elementos.produtosVendidosContainer, "Nenhum produto vendido.");
+			else produtosVendidos.forEach(p => elementos.produtosVendidosContainer.innerHTML += formatarConteudoDoProduto(p));
+
+			elementos.propostasRecebidasContainer.innerHTML = propostas.length
+			? propostas.map(proposta => `
+				<div class="col">
+					<div class="card h-100 shadow-sm d-flex flex-column">
+						<div class="ratio ratio-1x1">
+							<img src="${proposta.produtoFotos[0]}" class="card-img-top object-fit-contain p-3" alt="${proposta.produtoNome}">
+						</div>
+						<div class="card-body d-flex flex-column">
+							<h6 class="card-title text-truncate">${proposta.produtoNome}</h6>
+							<p class="text-muted small">Preço original: <strong>${formatarMoeda(proposta.produtoValor)}</strong></p>
+							<div class="p-2 border border-secondary rounded mt-2 mb-2">
+								<p class="mb-1">Proposta de <strong>${proposta.compradorNome}</strong></p>
+								<p class="mb-1">Telefone: ${proposta.compradorTelefone}</p>
+								<p class="mb-1">E-mail: ${proposta.compradorEmail}</p>
+								<p class="mb-1"><strong>Valor proposto</strong>: <span class="text-primary">${formatarMoeda(proposta.valorProposto)}</span></p>
+								<p class="mb-0">Descrição: ${proposta.descricao}</p>
+							</div>
+							<div class="mt-auto">
+								<span class="badge bg-warning text-dark">Em aberto</span>
+							</div>
+						</div>
+						<div class="card-footer d-flex gap-2">
+							<button class="btn btn-success btn-sm w-100" data-id="${proposta.propostaId}" data-acao="aceitar">Aceitar</button>
+							<button class="btn btn-danger btn-sm w-100" data-id="${proposta.propostaId}" data-acao="rejeitar">Rejeitar</button>
+						</div>
+					</div>
+				</div>
+			`).join('')
+			: "<p>Nenhuma proposta recebida.</p>";
+
+			// Adiciona os listeners aos botões
+			elementos.propostasRecebidasContainer.querySelectorAll('button[data-id]').forEach(btn => {
+				btn.addEventListener('click', () => {
+					propostaIdSelecionada = btn.getAttribute('data-id');
+					acaoSelecionada = btn.getAttribute('data-acao');
+
+					elementos.mensagemConfirmacao.textContent = `Tem certeza que deseja ${acaoSelecionada} esta proposta?`;
+					modalConfirmacao.show();
+				});
+			});
+
+			elementos.pedidosGeradosContainer.innerHTML = pedidosGerados?.length
+			? pedidosGerados.map(pedido => `
+				<div class="col">
+					<div class="card h-100 shadow-sm d-flex flex-column">
+						<div class="ratio ratio-1x1">
+							<img src="${pedido.produtoFotos[0]}" class="card-img-top object-fit-contain p-3" alt="${pedido.produtoNome}">
+						</div>
+						<div class="card-body d-flex flex-column">
+							<h6 class="card-title text-truncate">${pedido.produtoNome}</h6>
+							<p class="mb-2 small">Valor acordado: <span class="fw-bold text-orange">${formatarMoeda(pedido.propostaValorProposto)}</span></p>
+							<p class="mb-2 small">Status: <span class="fw-bold text-primary">${pedido.status}</span></p>
+							<div class="p-2 border border-secondary rounded mt-auto">
+								<p class="mb-1 small">Comprador: ${pedido.compradorNome}</p>
+								<p class="mb-1 small">E-mail: ${pedido.compradorEmail}</p>
+								<p class="mb-0 small">Telefone: ${pedido.compradorTelefone}</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			`).join('')
+			: "<p>Nenhum pedido gerado.</p>";
+
+			// Remove loader
+			document.getElementById('painel-loader')?.classList.add('d-none');
+			document.getElementById('painel-conteudo')?.classList.remove('d-none');
+		} catch (error) {
+			console.error('Erro ao buscar propostas:', error);
+		}
+
+		async function aceitarProposta(id) {
+			try {
+				const response = await fetch('/PainelDeVendas/AceitarProposta', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ id: id })
+				});
+
+				const result = await response.json();
+
+				if (result.sucesso) {
+					location.reload(); // Recarrega para atualizar a interface
+				} else {
+					alert("Erro ao aceitar proposta: " + result.mensagem);
+				}
+			} catch (error) {
+				alert("Erro inesperado ao aceitar proposta. " + error);
+			}
+		}
+
+		async function rejeitarProposta(id) {
+			try {
+				const response = await fetch('/PainelDeVendas/RejeitarProposta', {
+					method: 'POST',
+					headers: {
+						'Content-Type': 'application/json'
+					},
+					body: JSON.stringify({ id })
+				});
+
+				const result = await response.json();
+
+				if (result.sucesso) {
+					location.reload(); // Recarrega para atualizar a interface
+				} else {
+					alert("Erro ao rejeitar proposta: " + result.mensagem);
+				}
+			} catch (error) {
+				alert("Erro inesperado ao rejeitar proposta.");
+			}
+		}
+	});
+</script>

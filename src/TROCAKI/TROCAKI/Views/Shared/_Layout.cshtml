@@ -23,11 +23,11 @@
                         <li class="nav-item" id="cadastrarProdutoHeader">
                             <a class="nav-link text-dark" asp-area="" asp-controller="CadastrarProduto" asp-action="index">Cadastrar produto</a>
                         </li>
-                        <li class="nav-item" id="minhasPropostasHeader">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="MinhasPropostas" asp-action="index">Minhas propostas</a>
+                        <li class="nav-item" id="painelDeComprasHeader">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PainelDeCompras" asp-action="index">Painel de compras</a>
                         </li>
-                        <li class="nav-item" id="propostasRecebidasHeader">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="PropostasRecebidas" asp-action="index">Propostas recebidas</a>
+                        <li class="nav-item" id="painelDeVendasHeader">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="PainelDeVendas" asp-action="index">Painel de vendas</a>
                         </li>
                         <li class="nav-item" id="perfilHeader">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Perfil" asp-action="index">Perfil</a>
@@ -36,7 +36,7 @@
                             <a class="nav-link text-dark" asp-area="" asp-controller="UsuarioConta" asp-action="index">Entrar/Cadastrar</a>
                         </li>
                         <li class="nav-item" id="sairHeader">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" onclick="localStorage.removeItem('user_id')">Sair</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index" onclick="localStorage.removeItem('user_id'); location.href='/'">Sair</a>
                         </li>
                     </ul>
                 </div>
@@ -67,12 +67,12 @@
             loginHeader.style.display = "none";
         } else {
             const cadastrarProdutoHeader = document.getElementById('cadastrarProdutoHeader');
-            const minhasPropostasHeader = document.getElementById('minhasPropostasHeader');
-            const propostasRecebidasHeader = document.getElementById('propostasRecebidasHeader');
+            const painelDeVendasHeader = document.getElementById('painelDeVendasHeader');
+            const painelDeComprasHeader = document.getElementById('painelDeComprasHeader');
             const perfilHeader = document.getElementById('perfilHeader');
             const sairHeader = document.getElementById('sairHeader');
 
-            [cadastrarProdutoHeader, minhasPropostasHeader, propostasRecebidasHeader, perfilHeader, sairHeader].forEach(element =>
+            [cadastrarProdutoHeader, painelDeVendasHeader, painelDeComprasHeader, perfilHeader, sairHeader].forEach(element =>
                 element.style.display = "none"
             )
         }
