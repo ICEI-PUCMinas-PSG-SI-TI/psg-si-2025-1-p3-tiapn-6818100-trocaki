@@ -1,8 +1,5 @@
 namespace TROCAKI.Models
 {
-    /// <summary>
-    /// Representa um produto disponível para venda.
-    /// </summary>
     public class ProdutoModel
     {
         // Atributos
