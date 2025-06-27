@@ -74,12 +74,12 @@ Atualizado em: 23/05/2025
 
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
-|  Abel Rodrigues Louback Filho       | Banco de dados dos Processos 1 e 2; Banco de dados dos Processo 3 e 4 | 23/05/2025      | 30/05/2025 | 📝    |       |
-|  Anael Ferreira de Oliveira       | Telas dos processos 1 e 2; Telas dos processos 3 e 4 | 23/05/2025     | 30/05/2025 | 📝    |      |
-|  Gabrielle Maia de Andrade Souza       | Telas dos processos 5 e 6; Banco de dados dos processos 5 e 6 com registros | 23/05/2025     | 30/06/2025 | 📝    |      |
-|  Miguel Oliveira Faria       | Telas do processo 7 e 8; Banco de dados do processo 9 com registros | 23/05/2025      | 06/06/2025 | 📝    |      |
-|  Pedro Ivo Barroso Garrido       | Tela do processo 9; Banco de dados dos processos 7 e 8 com registros  | 23/05/2025     | 06/06/2025  | 📝    |       |
-|  Wagner Alexsander de Carvalho Viana       | Desenvolvimento dos indicadores integrado com banco de dados; Gráficos e validação final | 23/05/2025      | 06/06/2025 | 📝    |       |
+|  Abel Rodrigues Louback Filho       | Banco de dados, Back e Front End do processo de Realizar cadastro e login dos usuários | 23/05/2025      | 27/06/2025 | ✔️    | 26/06/2025 |
+|  Anael Ferreira de Oliveira       | Banco de dados, Back e Front End do processo de perfil de perfil de usário, na exibição de dedos referentes a cada um | 23/05/2025     | 27/06/2025 | ✔️    | 26/06/2025 |
+|  Gabrielle Maia de Andrade Souza       | Banco de dados, Back e Front End dos processos de cadastro de produto (PROCESSO 2) e integração com o Processo 5 - Processo de Selecionar produtos cadastrados | 23/05/2025 | 30/06/2025 | ✔️    | 26/06/2025 |
+|  Miguel Oliveira Faria       | Banco de dados, Back e Front End do Processo 3, exibição e seleção de produtos exibido na home page | 23/05/2025 | 27/06/2025 | ✔️    | 26/06/2025 |
+|  Pedro Ivo Barroso Garrido       | Banco de dados, Back e Front End do Processo 8, criação de comentários e de respostas subsequentes  | 23/05/2025 | 27/06/2025  | ✔️    | 26/06/2025 |
+|  Wagner Alexsander de Carvalho Viana       | Banco de dados, Back e Front End dos processos 4,6 e 7, sendo processos ligados á ofertas de produtos, sendo cadastrar, selecionar e fechar compra, além do processo 9 de lista de desejos   | 23/05/2025 | 27/06/2025 | ✔️    | 26/06/2025 |
 
 
 Legenda:
