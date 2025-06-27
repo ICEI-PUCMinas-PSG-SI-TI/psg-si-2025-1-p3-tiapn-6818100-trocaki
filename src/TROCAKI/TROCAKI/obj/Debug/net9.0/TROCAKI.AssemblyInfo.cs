@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("TROCAKI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c7456954d25d4553bcba5ebb3877f90b0ec48b73")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+63eeba7ef8105e98d0f1e62daa639ffdd240afd9")]
 [assembly: System.Reflection.AssemblyProductAttribute("TROCAKI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("TROCAKI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -5,7 +5,7 @@
         public string Id { get; set; }
         public string Texto { get; set; }
         public string Resposta { get; set; }
-        public string IdProduto { get; set; }
+        public string ProdutoId { get; set; }
         public string CompradorId { get; set; }
         public string CompradorNome { get; set; }
         public string VendedorId { get; set; }

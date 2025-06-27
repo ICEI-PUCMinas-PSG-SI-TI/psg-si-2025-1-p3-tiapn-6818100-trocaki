@@ -48,7 +48,7 @@ namespace TROCAKI.Repositorio
                     Id = reader.GetString("id"),
                     Texto = reader.GetString("texto"),
                     Resposta = reader.GetString("resposta"),
-                    IdProduto = reader.GetString("Produto_Id"),
+                    ProdutoId = reader.GetString("Produto_Id"),
                     CompradorId = reader.GetString("comprador_id"),
                     CompradorNome = reader.GetString("comprador_nome"),
                     VendedorId = reader.GetString("vendedor_id"),
@@ -59,6 +59,43 @@ namespace TROCAKI.Repositorio
             }
 
             return lista;
+        }
+
+        public void InserirComentario(CriarComentarioModel comentario)
+        {
+            using var conexao = new MySqlConnection(_strindeDeConexao);
+            conexao.Open();
+
+            string query = @"
+                INSERT INTO comentarios (id, texto, resposta, Produto_id, Comprador_id)
+                VALUES (@id, @texto, '', @produto_id, @comprador_id)
+            ";
+
+            using var cmd = new MySqlCommand(query, conexao);
+            cmd.Parameters.AddWithValue("@id", Guid.NewGuid().ToString());
+            cmd.Parameters.AddWithValue("@texto", comentario.Texto);
+            cmd.Parameters.AddWithValue("@produto_id", comentario.ProdutoId);
+            cmd.Parameters.AddWithValue("@comprador_id", comentario.CompradorId);
+
+            cmd.ExecuteNonQuery();
+        }
+
+        public void ResponderComentario(RespostaComentarioModel model)
+        {
+            using var conexao = new MySqlConnection(_strindeDeConexao);
+            conexao.Open();
+
+            var query = @"
+                UPDATE comentarios
+                SET resposta = @resposta
+                WHERE id = @comentarioId
+            ";
+
+            using var cmd = new MySqlCommand(query, conexao);
+            cmd.Parameters.AddWithValue("@resposta", model.Resposta);
+            cmd.Parameters.AddWithValue("@comentarioId", model.ComentarioId);
+
+            cmd.ExecuteNonQuery();
         }
     }
 }
