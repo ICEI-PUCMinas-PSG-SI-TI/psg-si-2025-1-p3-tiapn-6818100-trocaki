@@ -275,7 +275,7 @@
 					: mostrar(el.botaoAdicionar);
 
 				// Mostrar propostas (se houver)
-				if (!propostas.length) {
+				if (!propostas.length || !userId?.length) {
 					esconder(el.propostaAbertaContainer);
 					esconder(el.accordionPropostas);
 				} else {

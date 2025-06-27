@@ -34,6 +34,14 @@ namespace TROCAKI.Controllers
         [HttpPost]
         public JsonResult ObterInformacoesDoUsuario([FromBody] ProdutoDesejoModel request)
         {
+            if (string.IsNullOrWhiteSpace(request?.CompradorId))
+            {
+                return Json(new
+                {
+                    sucesso = true
+                });
+            }
+
             List<PropostaDeCompraModel> propostas = _propostaDeCompraRepositorio.ObterPropostas(request.CompradorId, null, request.ProdutoId, null);
 
             bool estaNaLista = _listaDeDesejosRepositorio.ProdutoEstaNaListaDeDesejos(request.CompradorId, request.ProdutoId);
