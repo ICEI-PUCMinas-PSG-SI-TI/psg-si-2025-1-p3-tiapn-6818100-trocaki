@@ -1,4 +1,4 @@
-﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 using TROCAKI.Models;
 using TROCAKI.Repositorio;
 
@@ -86,6 +86,46 @@ namespace TROCAKI.Controllers
             catch (Exception ex)
             {
                 return Json(new { sucesso = false, erro = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult Comentar([FromBody] CriarComentarioModel model)
+        {
+            if (string.IsNullOrWhiteSpace(model?.Texto) ||
+                string.IsNullOrWhiteSpace(model?.ProdutoId) ||
+                string.IsNullOrWhiteSpace(model?.CompradorId))
+            {
+                return Json(new { sucesso = false, mensagem = "Dados inválidos." });
+            }
+
+            try
+            {
+                _comentarioRepositorio.InserirComentario(model);
+                return Json(new { sucesso = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = "Erro ao salvar comentário.", detalhes = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        public JsonResult ResponderComentario([FromBody] RespostaComentarioModel model)
+        {
+            if (string.IsNullOrWhiteSpace(model?.ComentarioId) || string.IsNullOrWhiteSpace(model?.Resposta))
+            {
+                return Json(new { sucesso = false, mensagem = "Dados inválidos." });
+            }
+
+            try
+            {
+                _comentarioRepositorio.ResponderComentario(model);
+                return Json(new { sucesso = true });
+            }
+            catch (Exception ex)
+            {
+                return Json(new { sucesso = false, mensagem = "Erro ao salvar resposta.", detalhes = ex.Message });
             }
         }
     }
