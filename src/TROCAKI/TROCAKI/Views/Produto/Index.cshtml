@@ -1,354 +1,439 @@
-﻿@{
+@{
 	ViewData["Title"] = "Produto";
-    ProdutoModel produto = ViewBag.Produto as ProdutoModel;
-    List<ComentarioModel> comentarios = ViewBag.Comentarios as List<ComentarioModel>;
+	ProdutoModel produto = ViewBag.Produto as ProdutoModel;
+	List<ComentarioModel> comentarios = ViewBag.Comentarios as List<ComentarioModel>;
 }
 
 <div class="container py-5" id="produto-container" data-vendedor-id="@produto.VendedorId">
-    <!-- Sessão Principal do Produto -->
-    <div class="row g-4">
-        <div class="col-md-6">
-            <!-- Carrossel -->
-            <div id="carouselProduto" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner rounded">
-                    @for(int i = 0; i < produto.Fotos.Count; i++)
-                    {
-                        <div class='carousel-item @(i == 0 ? "active" : "")'>
-                            <img src="@produto.Fotos[i]" class="d-block w-100" style="height: 400px; object-fit: contain;" alt="Imagem 1">
-                        </div>
-                    }
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselProduto" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon"></span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselProduto" data-bs-slide="next">
-                    <span class="carousel-control-next-icon"></span>
-                </button>
-            </div>
-        </div>
+	<!-- Sessão Principal do Produto -->
+	<div class="row g-4">
+		<div class="col-md-6">
+			<!-- Carrossel -->
+			<div id="carouselProduto" class="carousel slide" data-bs-ride="carousel">
+				<div class="carousel-inner rounded">
+					@for (int i = 0; i < produto.Fotos.Count; i++)
+					{
+						<div class='carousel-item @(i == 0 ? "active" : "")'>
+							<img src="@produto.Fotos[i]" class="d-block w-100" style="height: 400px; object-fit: contain;" alt="Imagem 1">
+						</div>
+					}
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselProduto" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselProduto" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+				</button>
+			</div>
+		</div>
 
-        <div class="col-md-6">
-            <h3>@produto.Nome</h3>
-            <p class="text-muted">@produto.Descricao</p>
-            <h5 class="text-primary">@produto.Valor.ToString("C2")</h5>
+		<div class="col-md-6">
+			<h3>@produto.Nome</h3>
+			<p class="text-muted">@produto.Descricao</p>
+			<h5 class="text-primary">@produto.Valor.ToString("C2")</h5>
 
-            <div class="mb-2">
-                @foreach (CategoriaModel categoria in produto.Categorias)
-                {
-                    <span class="badge bg-primary">@categoria.Nome</span>
-                }
-            </div>
+			<div class="mb-2">
+				@foreach (CategoriaModel categoria in produto.Categorias)
+				{
+					<span class="badge bg-primary">@categoria.Nome</span>
+				}
+			</div>
 
-            <hr />
-            <div class="mt-3">
-                <h6 class="fw-bold">Informações do Vendedor</h6>
-                <p class="mb-1"><strong>Nome:</strong> @produto.VendedorNome</p>
-                <p class="mb-1"><strong>Email:</strong> <a href="mailto:@produto.VendedorEmail">@produto.VendedorEmail</a></p>
-                <p class="mb-1"><strong>Telefone:</strong> <a href="tel:@produto.VendedorTelefone">@produto.VendedorTelefone</a></p>
-                <p class="mb-1"><strong>Cidade:</strong> @produto.VendedorCidade</p>
-            </div>
+			<hr />
+			<div class="mt-3">
+				<h6 class="fw-bold">Informações do Vendedor</h6>
+				<p class="mb-1"><strong>Nome:</strong> @produto.VendedorNome</p>
+				<p class="mb-1"><strong>Email:</strong> <a href="mailto:@produto.VendedorEmail">@produto.VendedorEmail</a></p>
+				<p class="mb-1"><strong>Telefone:</strong> <a href="tel:@produto.VendedorTelefone">@produto.VendedorTelefone</a></p>
+				<p class="mb-1"><strong>Cidade:</strong> @produto.VendedorCidade</p>
+			</div>
 
-            <div id="botoes-proposta-container" class="d-flex flex-row flex-wrap align-items-center justify-content-start gap-3">
-                <button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ofertaModal" id="botao-fazer-proposta">
-                    Fazer Proposta
-                </button>
+			<div id="botoes-proposta-container" class="d-flex flex-row flex-wrap align-items-center justify-content-start gap-3">
+				<button class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#ofertaModal" id="botao-fazer-proposta">
+					Fazer Proposta
+				</button>
 
-                <button class="btn btn-secondary mt-3 d-none" id="botao-adicionar-na-lista">
-                    Adicionar na lista de desejos
-                </button>
+				<button class="btn btn-secondary mt-3 d-none" id="botao-adicionar-na-lista">
+					Adicionar na lista de desejos
+				</button>
 
-                <button class="btn btn-secondary mt-3 d-none" id="botao-remover-da-lista">
-                    Remover da lista de desejos
-                </button>
-            </div>
-        </div>
-    </div>
+				<button class="btn btn-secondary mt-3 d-none" id="botao-remover-da-lista">
+					Remover da lista de desejos
+				</button>
+			</div>
 
-    <div class="card card-product shadow-sm p-4 mt-3 " id="propostaAbertaContainer" style="width: fit-content;">  </div>
+			<button class="btn btn-success mt-3" id="botao-produto-vendido" disabled>
+				PRODUTO VENDIDO
+			</button>
+		</div>
+	</div>
 
-    <!-- Minhas propostas -->
-    <div class="profile-section mt-3" id="accordionPropostasContainer">
-        <div class="accordion" id="accordionPropostasRejeitadas">
-            <!-- Accordion: Propostas fechadas -->
-            <div class="accordion-item">
-                <h2 class="accordion-header" id="headingAberto">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAberto" aria-expanded="true" aria-controls="collapseAberto">
-                        Propostas rejeitadas
-                    </button>
-                </h2>
-                <div id="collapseAberto" class="accordion-collapse collapse" aria-labelledby="headingAberto" data-bs-parent="#accordionPropostasRejeitadas">
-                    <div class="accordion-body">
-                        <div class="d-flex flex-wrap gap-3" id="propostas-rejeitadas-container">
-                            <!-- Produto em aberto -->
+	<div class="card card-product shadow-sm p-4 mt-3 " id="propostaAbertaContainer" style="width: fit-content;">  </div>
 
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+	<!-- Minhas propostas -->
+	<div class="profile-section mt-3" id="accordionPropostasContainer">
+		<div class="accordion" id="accordionPropostasRejeitadas">
+			<!-- Accordion: Propostas fechadas -->
+			<div class="accordion-item">
+				<h2 class="accordion-header" id="headingAberto">
+					<button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAberto" aria-expanded="true" aria-controls="collapseAberto">
+						Propostas rejeitadas
+					</button>
+				</h2>
+				<div id="collapseAberto" class="accordion-collapse collapse" aria-labelledby="headingAberto" data-bs-parent="#accordionPropostasRejeitadas">
+					<div class="accordion-body">
+						<div class="d-flex flex-wrap gap-3" id="propostas-rejeitadas-container">
+							<!-- Produto em aberto -->
 
-    <!-- Botão Comentar -->
-    <div class="d-flex justify-content-between align-items-center mt-5 mb-3">
-        <h4>Comentários</h4>
-        <button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#comentarioModal" id="botao-comentar">
-            Comentar
-        </button>
-    </div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- Sessão Comentários -->
-    <div class="list-group">
-        @if (comentarios.Count == 0)
-        {
-            <p class="mb-1" id="comentario1-texto">Esse produto não possui comentários ainda.</p>
-        } else
-        {
-            @foreach (ComentarioModel comentario in comentarios)
-            {
-                <div class="list-group-item">
-                    <h6 class="mb-1">@comentario.CompradorNome</h6>
-                    <p class="mb-1" id="comentario1-texto">@comentario.Texto</p>
+	<!-- Botão Comentar -->
+	<div class="d-flex justify-content-between align-items-center mt-5 mb-3">
+		<h4>Comentários</h4>
+		<button class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#comentarioModal" id="botao-comentar">
+			Comentar
+		</button>
+	</div>
 
-                    @if (comentario.Resposta != null)
-                    {
-                        <div class="ms-3 text-muted small">
-                            <strong>Resposta:</strong> Obrigado pelo feedback!
-                        </div>
-                    }
-                    else
-                    {
-                        <button class="btn btn-outline-secondary btn-sm mt-2 botao-responder-comentario" onclick="abrirModalResposta('Johnathan Doe', 'Produto excelente, chegou certinho.')">
-                            Responder Comentário
-                        </button>
-                    }
-                </div>
-            }
-        }
-    </div>
+	<!-- Sessão Comentários -->
+	<div class="list-group">
+		@if (comentarios.Count == 0)
+		{
+			<p class="mb-1" id="comentario1-texto">Esse produto não possui comentários ainda.</p>
+		}
+		else
+		{
+			@foreach (ComentarioModel comentario in comentarios)
+			{
+				<div class="list-group-item">
+					<h6 class="mb-1">@comentario.CompradorNome</h6>
+					<p class="mb-1" id="comentario1-texto">@comentario.Texto</p>
+
+					@if (comentario.Resposta != "")
+					{
+						<div class="ms-3 text-muted small">
+							<strong>Resposta:</strong> @comentario.Resposta
+						</div>
+					}
+					else
+					{
+						<button class="btn btn-outline-secondary btn-sm mt-2 botao-responder-comentario" onclick="abrirModalResposta('@comentario.CompradorNome', '@comentario.Texto', '@comentario.Id')">
+							Responder Comentário
+						</button>
+					}
+				</div>
+			}
+		}
+	</div>
 </div>
 
 <!-- Modal de Resposta -->
 <div class="modal fade" id="respostaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content p-3 rounded-4">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-                <button type="button" class="btn-close me-auto" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                <h5 class="modal-title mb-3">Responder Comentário</h5>
-                <div class="mb-3 p-3 bg-light rounded border">
-                    <strong id="autorComentario"></strong>
-                    <p class="mb-0" id="textoComentario"></p>
-                </div>
-                <form>
-                    <div class="mb-3">
-                        <textarea class="form-control" rows="3" placeholder="Digite sua resposta..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Responder Comentário</button>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+		<div class="modal-content p-3 rounded-4">
+			<div class="d-flex justify-content-between align-items-center mb-2">
+				<button type="button" class="btn-close me-auto" data-bs-dismiss="modal" aria-label="Fechar"></button>
+			</div>
+			<div class="modal-body">
+				<h5 class="modal-title mb-3">Responder Comentário</h5>
+				<div class="mb-3 p-3 bg-light rounded border">
+					<strong id="autorComentario"></strong>
+					<p class="mb-0" id="textoComentario"></p>
+				</div>
+				<form id="formRespostaComentario" novalidate>
+					<div class="mb-3">
+						<textarea class="form-control" id="comentarioResposta" rows="3" placeholder="Digite sua resposta..." required></textarea>
+						<div class="invalid-feedback">
+							O comentário é obrigatório.
+						</div>
+					</div>
+					<input type="hidden" id="comentarioIdParaResposta">
+					<button type="submit" class="btn btn-primary w-100">Responder Comentário</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Modal de Comentário -->
 <div class="modal fade" id="comentarioModal" tabindex="-1" aria-labelledby="comentarioModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content p-3 rounded-4">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-                <button type="button" class="btn-close me-auto" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                <h5 class="modal-title mb-3" id="comentarioModalLabel">Comentário</h5>
-                <form>
-                    <div class="mb-3">
-                        <label for="comentarioTexto" class="form-label">Comentário:</label>
-                        <textarea class="form-control" id="comentarioTexto" rows="3" placeholder="Digite seu comentário..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100">Fazer Comentário</button>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+		<div class="modal-content p-3 rounded-4">
+			<div class="d-flex justify-content-between align-items-center mb-2">
+				<button type="button" class="btn-close me-auto" data-bs-dismiss="modal" aria-label="Fechar"></button>
+			</div>
+			<div class="modal-body">
+				<h5 class="modal-title mb-3" id="comentarioModalLabel">Comentário</h5>
+				<form id="formComentario" novalidate>
+					<div class="mb-3">
+						<label for="comentarioTexto" class="form-label">Comentário:</label>
+						<textarea class="form-control" id="comentarioTexto" rows="3" placeholder="Digite seu comentário..." required></textarea>
+						<div class="invalid-feedback">O comentário é obrigatório.</div>
+					</div>
+					<button type="submit" class="btn btn-primary w-100">Fazer Comentário</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <!-- Modal de Oferta -->
 <div class="modal fade" id="ofertaModal" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content p-3 rounded-4">
-            <div class="d-flex justify-content-between align-items-center mb-2">
-                <button type="button" class="btn-close me-auto" data-bs-dismiss="modal" aria-label="Fechar"></button>
-            </div>
-            <div class="modal-body">
-                <h5 class="modal-title mb-3">Oferta</h5>
-                <form id="formulario-fazer-proposta" novalidate>
-                    <div class="mb-3">
-                        <label for="valorOferta" class="form-label">Valor</label>
-                        <input type="number" class="form-control" id="valorOferta" placeholder="Digite o valor ofertado" required>
-                        <div class="invalid-feedback">Informe um valor maior que zero.</div>
-                    </div>
-                    <div class="mb-3">
-                        <label for="comentarioOferta" class="form-label">Comentário</label>
-                        <textarea class="form-control" id="comentarioOferta" rows="3" placeholder="Inclua uma observação" required></textarea>
-                        <div class="invalid-feedback">O comentário não pode estar vazio.</div>
-                    </div>
-                    <button type="submit" class="btn btn-primary w-100" id="botao-fazer-proposta">Fazer Oferta</button>
-                </form>
-            </div>
-        </div>
-    </div>
+	<div class="modal-dialog">
+		<div class="modal-content p-3 rounded-4">
+			<div class="d-flex justify-content-between align-items-center mb-2">
+				<button type="button" class="btn-close me-auto" data-bs-dismiss="modal" aria-label="Fechar"></button>
+			</div>
+			<div class="modal-body">
+				<h5 class="modal-title mb-3">Oferta</h5>
+				<form id="formulario-fazer-proposta" novalidate>
+					<div class="mb-3">
+						<label for="valorOferta" class="form-label">Valor</label>
+						<input type="number" class="form-control" id="valorOferta" placeholder="Digite o valor ofertado" required>
+						<div class="invalid-feedback">Informe um valor maior que zero.</div>
+					</div>
+					<div class="mb-3">
+						<label for="comentarioOferta" class="form-label">Comentário</label>
+						<textarea class="form-control" id="comentarioOferta" rows="3" placeholder="Inclua uma observação" required></textarea>
+						<div class="invalid-feedback">O comentário não pode estar vazio.</div>
+					</div>
+					<button type="submit" class="btn btn-primary w-100" id="botao-fazer-proposta">Fazer Oferta</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 
 <script>
-    document.addEventListener('DOMContentLoaded', async () => {
-        const produtoId = new URLSearchParams(window.location.search).get('id');
-        const vendedorId = document.getElementById('produto-container')?.dataset.vendedorId;
-        const userId = localStorage.getItem('user_id');
+	document.addEventListener('DOMContentLoaded', async () => {
+		// Variáveis de contexto
+		const produtoId = new URLSearchParams(window.location.search).get('id');
+		const vendedorId = document.getElementById('produto-container')?.dataset.vendedorId;
+		const userId = localStorage.getItem('user_id');
 
-        const $ = id => document.getElementById(id);
-        const $$ = classe => document.getElementsByClassName(classe);
+		// Seletores utilitários
+		const $ = id => document.getElementById(id);
+		const $$ = classe => document.getElementsByClassName(classe);
 
-        const elementos = {
-            botoesProposta: $('botoes-proposta-container'),
-            botaoComentar: $('botao-comentar'),
-            botoesResponderComentario: $$('botao-responder-comentario'),
-            botaoAdicionar: $('botao-adicionar-na-lista'),
-            botaoRemover: $('botao-remover-da-lista'),
-            formularioProposta: $('formulario-fazer-proposta'),
-            accordionPropostas: $('accordionPropostasContainer'),
-            propostaAbertaContainer: $('propostaAbertaContainer'),
-            propostasRejeitadasContainer: $('propostas-rejeitadas-container'),
-            botaoFazerProposta: $('botao-fazer-proposta')
-        };
+		// Referência aos elementos
+		const el = {
+			botoesProposta: $('botoes-proposta-container'),
+			botaoComentar: $('botao-comentar'),
+			botoesResponderComentario: $$('botao-responder-comentario'),
+			botaoAdicionar: $('botao-adicionar-na-lista'),
+			botaoRemover: $('botao-remover-da-lista'),
+			botaoVendido: $('botao-produto-vendido'),
+			formularioProposta: $('formulario-fazer-proposta'),
+			accordionPropostas: $('accordionPropostasContainer'),
+			propostaAbertaContainer: $('propostaAbertaContainer'),
+			propostasRejeitadasContainer: $('propostas-rejeitadas-container'),
+			botaoFazerProposta: $('botao-fazer-proposta'),
+			comentarioForm: $('formComentario'),
+			comentarioTexto: $('comentarioTexto'),
+			responderComentarioForm: $('formRespostaComentario'),
+			comentarioRespostaTextarea: $('comentarioResposta'),
+			comentarioIdParaResposta: $('comentarioIdParaResposta')
+		};
 
-        const esconder = el => { el?.classList?.remove("d-flex"); el?.classList?.add("d-none"); };
-        const esconderTodos = col => Array.from(col || []).forEach(el => el.style.display = 'none');
+		// Funções utilitárias
+		const esconder = elem => elem?.classList?.add('d-none');
+		const mostrar = elem => elem?.classList?.remove('d-none');
+		const esconderTodos = lista => Array.from(lista || []).forEach(el => el.style.display = 'none');
+		const formatarMoeda = valor => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
 
-        const formatarValor = valor => valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+		// Controle de visibilidade de botões
+		const produtoFechado = "@produto.Status" === "fechado";
+		const usuarioEhVendedor = vendedorId === userId;
 
-        // Gerenciar visibilidade dos botões com base no usuário
-        if (!vendedorId || !userId || vendedorId === userId) {
-            esconder(elementos.botoesProposta);
-            esconder(elementos.botaoComentar);
-        }
+		if (!userId || usuarioEhVendedor || produtoFechado) {
+			esconder(el.botoesProposta);
+			esconder(el.botaoComentar);
+		}
 
-        if (!userId || vendedorId === userId) {
-            esconderTodos(elementos.botoesResponderComentario);
-        }
+		if (!userId || !usuarioEhVendedor) esconderTodos(el.botoesResponderComentario);
+		if (!produtoFechado) esconder(el.botaoVendido);
 
-        // Consultar lista de dejo de propostas
-        try {
-            const response = await fetch('/Produto/ObterInformacoesDoUsuario', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({ compradorId: userId, produtoId })
-            });
+		// Consulta dados do usuário no produto
+		async function carregarInformacoesUsuario() {
+			try {
+				const resposta = await fetch('/Produto/ObterInformacoesDoUsuario', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ compradorId: userId, produtoId })
+				});
 
-            const resultado = await response.json();
-            const { estaNaLista, propostas = [] } = resultado;
+				const { estaNaLista, propostas = [] } = await resposta.json();
 
-            // Mostrar botões de lista
-            estaNaLista
-                ? elementos.botaoRemover?.classList.remove('d-none')
-                : elementos.botaoAdicionar?.classList.remove('d-none');
+				// Mostrar botões de lista de desejos
+				estaNaLista
+					? mostrar(el.botaoRemover)
+					: mostrar(el.botaoAdicionar);
 
-            // Processar propostas
-            if (!propostas.length) {
-                elementos.propostaAbertaContainer?.classList.add('d-none');
-                elementos.accordionPropostas?.classList.add('d-none');
-            } else {
-                const aberta = propostas.find(p => p.statusProposta === "aberta");
-                const rejeitadas = propostas.filter(p => p.statusProposta === "rejeitada");
+				// Mostrar propostas (se houver)
+				if (!propostas.length) {
+					esconder(el.propostaAbertaContainer);
+					esconder(el.accordionPropostas);
+				} else {
+					const aberta = propostas.find(p => p.propostaStatus === "aberta");
+					const rejeitadas = propostas.filter(p => p.propostaStatus === "rejeitada");
 
-                if (aberta?.idProposta) {
-                    elementos.botaoFazerProposta.setAttribute("disabled", "");
+					if (aberta?.propostaId) {
+						el.botaoFazerProposta.setAttribute("disabled", "");
 
-                    elementos.propostaAbertaContainer.innerHTML = `
-                        <h5>Proposta em aberto</h5>
-                        <a class="text-decoration-none text-dark">
-                            <div class="card-body">
-                                <h6 class="card-title">Valor proposto: ${formatarValor(aberta.valorProposto)}</h6>
-                                <p class="card-title">Descricao: ${aberta.descricao}</p>
-                            </div>
-                        </a>
-                        <span class="badge bg-warning text-dark">Em aberto</span>
-                    `;
-                } else {
-                    elementos.propostaAbertaContainer?.classList.add('d-none');
-                }
+						el.propostaAbertaContainer.innerHTML = `
+							<h5>Proposta em aberto</h5>
+							<a class="text-decoration-none text-dark">
+								<div class="card-body">
+									<h6 class="card-title">Valor proposto: ${formatarMoeda(aberta.valorProposto)}</h6>
+									<p class="card-title">Descrição: ${aberta.descricao}</p>
+								</div>
+							</a>
+							<span class="badge bg-warning text-dark">Em aberto</span>
+						`;
+					} else {
+						esconder(el.propostaAbertaContainer);
+					}
 
-                if (rejeitadas.length) {
-                    elementos.propostasRejeitadasContainer.innerHTML = rejeitadas.map(p => `
-                        <h6 class="card-title">Valor proposto: ${formatarValor(p.valorProposto)}</h6>
-                        <p class="card-title">Descricao: ${p.descricao}</p>
-                        <span class="badge bg-danger">Rejeitada</span>
-                    `).join('');
-                } else {
-                    elementos.accordionPropostas?.classList.add('d-none');
-                }
-            }
-        } catch (error) {
-            console.error('Erro ao verificar lista de desejos:', error);
-        }
+					if (rejeitadas.length) {
+						el.propostasRejeitadasContainer.innerHTML = rejeitadas.map(p => `
+							<div class="card-body border border-secondary rounded p-2 mb-2">
+								<h6 class="card-title">Valor proposto: ${formatarMoeda(p.valorProposto)}</h6>
+								<p class="card-title">Descrição: ${p.descricao}</p>
+								<span class="badge bg-danger">Rejeitada</span>
+							</div>
+						`).join('');
+					} else {
+						esconder(el.accordionPropostas);
+					}
+				}
+			} catch (error) {
+				console.error('Erro ao carregar dados do usuário:', error);
+			}
+		}
 
-        // Adicionar/Remover da lista
-        const toggleLista = async (rota) => {
-            if (!userId || !produtoId) return alert("Você precisa estar logado.");
+		// Ações para lista de desejos
+		async function toggleLista(rota) {
+			if (!userId || !produtoId) return alert("Você precisa estar logado.");
 
-            try {
-                const response = await fetch(`/Produto/${rota}`, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ compradorId: userId, produtoId })
-                });
+			try {
+				const res = await fetch(`/Produto/${rota}`, {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ compradorId: userId, produtoId })
+				});
 
-                const res = await response.json();
-                res.sucesso ? location.reload() : alert("Erro: " + res.mensagem);
-            } catch (error) {
-                alert(`Erro ao ${rota.includes("Adicionar") ? "adicionar" : "remover"} o produto da lista.`);
-            }
-        };
+				const json = await res.json();
+				json.sucesso ? location.reload() : alert("Erro: " + json.mensagem);
+			} catch (error) {
+				alert(`Erro ao ${rota.includes("Adicionar") ? "adicionar" : "remover"} o produto da lista.`);
+			}
+		}
 
-        elementos.botaoAdicionar?.addEventListener('click', () => toggleLista('AdicionarProdutoNaListaDeDesejos'));
-        elementos.botaoRemover?.addEventListener('click', () => toggleLista('RemoverProdutoDaListaDeDesejos'));
+		// Enviar proposta
+		async function enviarProposta(event) {
+			event.preventDefault();
 
-        // Envio de proposta
-        elementos.formularioProposta?.addEventListener("submit", async (event) => {
-            event.preventDefault();
+			const valorInput = $('valorOferta');
+			const comentarioInput = $('comentarioOferta');
+			const valor = parseFloat(valorInput.value.trim());
+			const descricao = comentarioInput.value.trim();
 
-            const valorInput = $('valorOferta');
-            const comentarioInput = $('comentarioOferta');
-            const valor = parseFloat(valorInput.value.trim());
-            const descricao = comentarioInput.value.trim();
+			[valorInput, comentarioInput].forEach(i => i.classList.remove("is-invalid"));
 
-            // Limpar erros anteriores
-            [valorInput, comentarioInput].forEach(input => input.classList.remove("is-invalid"));
+			if (isNaN(valor) || valor <= 0) valorInput.classList.add("is-invalid");
+			if (!descricao) comentarioInput.classList.add("is-invalid");
 
-            if (isNaN(valor) || valor <= 0) valorInput.classList.add("is-invalid");
-            if (!descricao) comentarioInput.classList.add("is-invalid");
+			if (document.querySelector(".is-invalid")) return;
 
-            if (document.querySelector(".is-invalid")) return;
+			try {
+				const res = await fetch("/Produto/CriarNovaProposta", {
+					method: "POST",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify({ valor, descricao, produtoId, compradorId: userId })
+				});
 
-            try {
-                const res = await fetch("/Produto/CriarNovaProposta", {
-                    method: "POST",
-                    headers: { "Content-Type": "application/json" },
-                    body: JSON.stringify({ valor, descricao, produtoId, compradorId: userId })
-                });
+				const json = await res.json();
+				json.sucesso ? location.reload() : alert("Erro ao enviar proposta.");
+			} catch (error) {
+				alert("Erro na requisição.");
+				console.error(error);
+			}
+		}
 
-                const resultado = await res.json();
-                resultado.sucesso ? location.reload() : alert("Erro ao enviar oferta.");
-            } catch (error) {
-                console.error("Erro:", error);
-                alert("Erro na requisição.");
-            }
-        });
-    });
+		// Enviar comentário
+		async function enviarComentario(event) {
+			event.preventDefault();
 
-    // Modal de resposta
-    function abrirModalResposta(autor, texto) {
-        document.getElementById('autorComentario').innerText = autor;
-        document.getElementById('textoComentario').innerText = texto;
-        new bootstrap.Modal(document.getElementById('respostaModal')).show();
-    }
+			if (!el.comentarioForm.checkValidity()) {
+				el.comentarioForm.classList.add('was-validated');
+				return;
+			}
+
+			const texto = el.comentarioTexto.value.trim();
+
+			try {
+				const res = await fetch('/Produto/Comentar', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ texto, produtoId, compradorId: userId })
+				});
+
+				const json = await res.json();
+				json?.sucesso ? location.reload() : alert("Erro ao enviar comentário.");
+			} catch (error) {
+				alert("Erro inesperado ao enviar o comentário.");
+			}
+		}
+
+		// Responder comentário
+		async function responderComentario(event) {
+			event.preventDefault();
+
+			if (!el.responderComentarioForm.checkValidity()) {
+				el.responderComentarioForm.classList.add('was-validated');
+				return;
+			}
+
+			const resposta = el.comentarioRespostaTextarea.value.trim();
+			const comentarioId = comentarioIdParaResposta.value;
+
+			try {
+				const response = await fetch('/Produto/ResponderComentario', {
+					method: 'POST',
+					headers: { 'Content-Type': 'application/json' },
+					body: JSON.stringify({ comentarioId, resposta })
+				});
+
+				const json = await response.json();
+				json?.sucesso ? location.reload() : alert("Erro ao enviar resposta.");
+			} catch (error) {
+				alert(error);
+			}
+		}
+
+		// Execução inicial
+		await carregarInformacoesUsuario();
+
+		// Eventos
+		el.botaoAdicionar?.addEventListener('click', () => toggleLista('AdicionarProdutoNaListaDeDesejos'));
+		el.botaoRemover?.addEventListener('click', () => toggleLista('RemoverProdutoDaListaDeDesejos'));
+		el.formularioProposta?.addEventListener('submit', enviarProposta);
+		el.comentarioForm?.addEventListener('submit', enviarComentario);
+		el.responderComentarioForm?.addEventListener('submit', responderComentario);
+	});
+
+	// Abrir modal de resposta a comentário
+		function abrirModalResposta(autor, texto, comentarioId) {
+		document.getElementById('autorComentario').innerText = autor;
+		document.getElementById('textoComentario').innerText = texto;
+		document.getElementById('comentarioIdParaResposta').value = comentarioId;
+
+		const modal = new bootstrap.Modal(document.getElementById('respostaModal'));
+		modal.show();
+	}
 </script>
