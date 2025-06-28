@@ -75,7 +75,7 @@ Atualizado em: 23/05/2025
 | Responsável   | Tarefa/Requisito | Iniciado em    | Prazo      | Status | Terminado em    |
 | :----         |    :----         |      :----:    | :----:     | :----: | :----:          |
 |  Abel Rodrigues Louback Filho       | Banco de dados, Back e Front End do processo de Realizar cadastro e login dos usuários | 23/05/2025      | 27/06/2025 | ✔️    | 26/06/2025 |
-|  Anael Ferreira de Oliveira       | Banco de dados, Back e Front End do processo de perfil de perfil de usário, na exibição de dedos referentes a cada um | 23/05/2025     | 27/06/2025 | ✔️    | 26/06/2025 |
+|  Anael Ferreira de Oliveira       | Banco de dados, Back e Front End do processo de perfil de perfil de usário, na exibição de dados referentes a cada um | 23/05/2025     | 27/06/2025 | ✔️    | 26/06/2025 |
 |  Gabrielle Maia de Andrade Souza       | Banco de dados, Back e Front End dos processos de cadastro de produto (PROCESSO 2) e integração com o Processo 5 - Processo de Selecionar produtos cadastrados | 23/05/2025 | 30/06/2025 | ✔️    | 26/06/2025 |
 |  Miguel Oliveira Faria       | Banco de dados, Back e Front End do Processo 3, exibição e seleção de produtos exibido na home page | 23/05/2025 | 27/06/2025 | ✔️    | 26/06/2025 |
 |  Pedro Ivo Barroso Garrido       | Banco de dados, Back e Front End do Processo 8, criação de comentários e de respostas subsequentes  | 23/05/2025 | 27/06/2025  | ✔️    | 26/06/2025 |
