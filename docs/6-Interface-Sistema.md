@@ -42,6 +42,8 @@ Após acessar a página do produto, o usuário autenticado pode clicar em **"Faz
 
 ![Fazer Proposta](https://github.com/user-attachments/assets/c0a315aa-b660-432c-bdc7-214593ef2514)
 
+### Minhas propostas
+
 As propostas enviadas pelo usuário podem ser visualizadas na tela **Painel de compras** na sessão **Minhas propostas**
 
 ![minhas-propostas](https://github.com/user-attachments/assets/f9da2cd9-831d-4656-a460-a3813f5641e7)
