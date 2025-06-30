@@ -4,7 +4,7 @@ _Visão geral da interação do usuário com o sistema, por meio das telas desen
 
 ## 6.1. Tela Principal do Sistema
 
-Trata-se da **página inicial (home page)** do site, a primeira interface visualizada pelos usuários — estejam eles autenticados ou não. Nessa tela, é possível visualizar e filtrar os produtos cadastrados no sistema que ainda estão **"em aberto"**, ou seja, disponíveis para negociação.
+Trata-se da **página inicial (home page)** do site, a primeira interface visualizada pelos usuários, estejam eles autenticados ou não. Nessa tela, é possível visualizar e filtrar os produtos cadastrados no sistema que ainda estão **"em aberto"**, ou seja, disponíveis para negociação.
 
 ![Tela Inicial](https://github.com/user-attachments/assets/9d9c636d-1f2e-4962-b179-b4e8817cec60)
 
@@ -18,13 +18,13 @@ Permite que o usuário insira suas credenciais para acessar o sistema.
 
 ### Tela de Cadastro
 
-Nesta tela, o usuário realiza o seu cadastro no sistema. Todos os campos são obrigatórios, e o CPF deve ser único para cada usuário.
+Nesta tela, o usuário realiza o seu cadastro no sistema. Todos os campos são obrigatórios e o CPF deve ser único para cada usuário.
 
 ![Tela de cadastro](https://github.com/user-attachments/assets/7474c203-8fbf-47d9-8e02-3f210064404c)
 
 ## 6.3. Telas do Processo 2 – Cadastro de Produto
 
-Tela onde o usuário autenticado pode cadastrar um novo produto para venda ou troca.
+Tela onde o usuário autenticado pode cadastrar um novo produto para venda.
 
 ![Cadastro de Produto](https://github.com/user-attachments/assets/f953b6ef-32f8-4807-9fdf-c2450540cc3c)
 
@@ -76,16 +76,16 @@ Apenas o **vendedor do produto** pode responder a comentários. Para isso, ele a
 
 O usuário autenticado acessa a home, clica em um produto que **não foi criado por ele**, e então seleciona a opção **"Adicionar à lista de desejos"**.
 
+![Visualizar Produto](https://github.com/user-attachments/assets/88d2def4-1140-4927-a96e-5c92fcd3cd5f)
+
 ### Visualizar Lista de Desejos
 
 Os produtos adicionados ficam disponíveis na tela **Painel de Compras**, seção **"Lista de desejos"**.
 
+![Lista de Desejos](https://github.com/user-attachments/assets/be78f8a1-6068-469a-af36-e8104bf14ea8)
+
 ### Remover Produto da Lista de Desejos
 
 Para remover um produto, basta acessá-lo novamente e clicar em **"Remover da lista de desejos"**.
-
-![Visualizar Produto](https://github.com/user-attachments/assets/88d2def4-1140-4927-a96e-5c92fcd3cd5f)
-
-![Lista de Desejos](https://github.com/user-attachments/assets/be78f8a1-6068-469a-af36-e8104bf14ea8)
 
 ![Remover da Lista de Desejos](https://github.com/user-attachments/assets/ab884757-6d86-498a-9035-e4d9dc6be77f)
