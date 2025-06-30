@@ -76,9 +76,11 @@ O usuário autenticado acessa a **home page**, clica em um card de produto e, se
 
 ### Responder Comentário
 
-Apenas o **vendedor do produto** pode responder a comentários. Para isso, ele acessa o **Painel de Vendas**, vai até **"Meus produtos"**, clica em um produto, localiza um comentário ainda não respondido e clica em **"Responder"**.
+Apenas o **vendedor do produto** pode responder a comentários. Para isso, ele acessa o **Painel de Vendas**, vai até **"Meus produtos"**, clica em um produto.
 
 ![Meus Produtos](https://github.com/user-attachments/assets/6f8d48a3-9185-49b0-85f3-f260ae97ff68)
+
+Feito isso, ele deve localizar um comentário ainda não respondido, clicar em **"Responder"**, preencher o formulário de resposta e enviar.
 
 ![Responder Comentário](https://github.com/user-attachments/assets/a491a0f7-f6a5-4e1c-acca-4a62b6d48899)
 
