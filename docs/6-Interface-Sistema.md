@@ -42,6 +42,10 @@ Após acessar a página do produto, o usuário autenticado pode clicar em **"Faz
 
 ![Fazer Proposta](https://github.com/user-attachments/assets/c0a315aa-b660-432c-bdc7-214593ef2514)
 
+As propostas enviadas pelo usuário podem ser visualizadas na tela **Painel de compras** na sessão **Minhas propostas**
+
+![minhas-propostas](https://github.com/user-attachments/assets/f9da2cd9-831d-4656-a460-a3813f5641e7)
+
 ## 6.5. Telas do Processo 7 – Fechar Compra
 
 ### Aceitar Proposta
@@ -55,6 +59,12 @@ O usuário vendedor acessa o **Painel de Vendas**, na seção **"Propostas receb
 Após aceitar a proposta, o sistema gera um pedido, que pode ser visualizado na seção **"Pedidos gerados"**.
 
 ![Pedidos Gerados](https://github.com/user-attachments/assets/671e1f13-3f2a-4588-9347-9ebc7dd02a14)
+
+### Meus pedidos
+
+O usuário comprador consegue visualizar os produtos gerados a partir das propostas enviadas através da página **Painel de compras** na sessão **Meus pedidos**
+
+![meus-pedidos](https://github.com/user-attachments/assets/540940e2-0d4a-4f10-bd3f-4c5d10ce5d10)
 
 ## 6.6. Telas do Processo 8 – Criar e Responder Comentários
 
